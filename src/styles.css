@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #05070a;
+  --color-fg: #e6ece8;
+  --color-muted: #8a9690;
+  --color-accent: #5dcfb0;
+  --color-raised: #12181a;
+  --color-surface: #0c1114;
+  --color-border: rgb(230 236 232 / 0.1);
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --radius-lg: 0.75rem;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-serif);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2%, -1%);
+  }
+  30% {
+    transform: translate(1%, 2%);
+  }
+  50% {
+    transform: translate(-1%, 3%);
+  }
+  70% {
+    transform: translate(3%, -2%);
+  }
+  90% {
+    transform: translate(-2%, 1%);
+  }
+}
+
+@keyframes specular {
+  0% {
+    transform: translateX(-40%) skewX(-12deg);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.18;
+  }
+  42% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateX(120%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes mote {
+  0% {
+    transform: translate3d(0, 12px, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(18px, -110vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.055);
+  }
+}
+
+@keyframes dolly {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fade-veil {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.prison-breathe {
+  animation: breathe 14s ease-in-out infinite;
+}
+
+.prison-dolly {
+  animation: dolly 18s ease-out forwards;
+}
+
+.stagger-in > * {
+  opacity: 0;
+  animation: rise-in 0.7s ease-out forwards;
+}
+.stagger-in > *:nth-child(1) {
+  animation-delay: 80ms;
+}
+.stagger-in > *:nth-child(2) {
+  animation-delay: 180ms;
+}
+.stagger-in > *:nth-child(3) {
+  animation-delay: 280ms;
+}
+.stagger-in > *:nth-child(4) {
+  animation-delay: 420ms;
+}
+
+.film-grain {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: repeating-radial-gradient(
+    circle at 20% 30%,
+    rgb(255 255 255 / 0.35) 0 1px,
+    transparent 1px 3px
+  );
+  animation: grain 0.8s steps(2) infinite;
+  mix-blend-mode: overlay;
+}
+
+.specular {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 28%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(180 230 220 / 0.16),
+    transparent
+  );
+  animation: specular 11s ease-in-out infinite;
+}
+
+.dust-mote {
+  position: absolute;
+  bottom: -8%;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgb(180 230 220 / 0.55);
+  animation: mote linear infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prison-breathe,
+  .prison-dolly,
+  .film-grain,
+  .specular,
+  .dust-mote,
+  .stagger-in > * {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}

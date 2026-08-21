@@ -5,6 +5,7 @@ import { Check, ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from "lucide
 import { useMemo, useRef, useState } from "react";
 import {
   BATCH_1_IDS,
+  BATCH_2_IDS,
   REVIEW_SECTIONS,
   STORY_BY_ID,
   STORY_CLIPS,
@@ -16,9 +17,10 @@ import {
 } from "@/lib/prison/storyPresence";
 import { cn } from "@/lib/utils";
 
-type Filter = "batch-1" | ReviewSection | "all";
+type Filter = "batch-2" | "batch-1" | ReviewSection | "all";
 
 const FILTERS: { id: Filter; label: string }[] = [
+  { id: "batch-2", label: "Batch 2" },
   { id: "batch-1", label: "Batch 1" },
   { id: "all", label: "Alle" },
   { id: "reusable", label: "Kanon" },
@@ -30,16 +32,19 @@ const FILTERS: { id: Filter; label: string }[] = [
 
 const STATUS: Record<StoryClip["status"], { label: string; tone: string }> = {
   reusable: { label: "Kanon", tone: "text-muted" },
+  approved: { label: "Freigegeben", tone: "text-accent" },
   "batch-1-preview": { label: "Freigabe", tone: "text-accent" },
+  "batch-2-production": { label: "Produktion", tone: "text-accent" },
   "awaiting-production": { label: "Wartet", tone: "text-muted" },
   storyboard: { label: "Konzept", tone: "text-muted" },
 };
 
 export function PresenceReview() {
-  const [filter, setFilter] = useState<Filter>("batch-1");
+  const [filter, setFilter] = useState<Filter>("batch-2");
   const [active, setActive] = useState<StoryCueId>("moriondo.capture_rage");
 
   const clips = useMemo(() => {
+    if (filter === "batch-2") return STORY_CLIPS.filter((c) => BATCH_2_IDS.includes(c.id));
     if (filter === "batch-1") return STORY_CLIPS.filter((c) => BATCH_1_IDS.includes(c.id));
     if (filter === "all") return STORY_CLIPS;
     return STORY_CLIPS.filter((c) => c.section === filter);
@@ -73,6 +78,7 @@ export function PresenceReview() {
               type="button"
               onClick={() => {
                 setFilter(f.id);
+                if (f.id === "batch-2") setActive("moriondo.capture_rage");
                 if (f.id === "batch-1") setActive("moriondo.capture_rage");
               }}
               className={cn(
@@ -87,10 +93,16 @@ export function PresenceReview() {
       </header>
 
       <main className="mx-auto max-w-6xl px-4 py-6 md:px-8 md:py-8">
+        {filter === "batch-2" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Moriondo-Produktion M01–M05. Capture Rage und True Break sind die längeren Master der
+            freigegebenen Stills. Maske, gespielte Wut und Nachbeben sind neu. 720p, 24 fps, ohne Ton.
+          </p>
+        ) : null}
         {filter === "batch-1" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Fünf Standbilder und kurze Motion-Previews zur Identitätsfreigabe. Noch keine
-            finalen 1080p-Master. Bestehende Verhör-Clips bleiben unangetastet.
+            Fünf Standbilder und kurze Motion-Previews zur Identitätsfreigabe. Stall, Spinne und Nest
+            sind owner-freigegeben. Capture Rage und True Break liegen in Batch 2 als längere Master.
           </p>
         ) : null}
 
@@ -109,7 +121,13 @@ export function PresenceReview() {
             ))
           : (
               <Section
-                title={filter === "batch-1" ? "Batch 1 · Freigabe" : (FILTERS.find((f) => f.id === filter)?.label ?? "")}
+                title={
+                  filter === "batch-2"
+                    ? "Batch 2 · Moriondo"
+                    : filter === "batch-1"
+                      ? "Batch 1 · Freigabe"
+                      : (FILTERS.find((f) => f.id === filter)?.label ?? "")
+                }
                 kicker="Cue · Poster · Playback"
                 clips={clips}
                 active={active}
@@ -362,7 +380,7 @@ function Section({
               <div className="p-3">
                 <div className="flex items-center justify-between gap-2">
                   <p className="font-display text-[0.95rem]">{clip.label}</p>
-                  {clip.status === "batch-1-preview" ? (
+                  {clip.status === "batch-2-production" || clip.status === "approved" || clip.status === "batch-1-preview" ? (
                     <Check className="size-3.5 text-accent" />
                   ) : null}
                 </div>

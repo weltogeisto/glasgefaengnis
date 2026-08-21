@@ -1,6 +1,6 @@
 {
-  "version": "cycle-01-batch-1",
-  "note": "JGA consumes semantic cue IDs. Filenames are not a public contract.",
+  "version": "cycle-01-batch-2",
+  "note": "JGA consumes semantic cue IDs. Filenames are not a public contract. Batch 2 Moriondo masters are 720p (1080p not available on this plan).",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -234,63 +234,66 @@
       "video": "/prison/cycle-01/moriondo-capture-rage.mp4",
       "poster": "/prison/cycle-01/moriondo-capture-rage.jpg",
       "loop": false,
-      "durationMs": 6040,
+      "durationMs": 10790,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "52% 48%",
       "entryPose": "capture",
       "exitPose": "staggered-still",
-      "sha256": "3ac8d2fe08d2fb3441a64cfa69d461b440943b9a36e4f02a12b796a293b3954e",
-      "status": "batch-1-preview"
+      "sha256": "ce0068cda5cad3046cac2c17c267df2e7d3adb6921a5fb4f1eef68cc00872520",
+      "status": "batch-2-production"
     },
     "moriondo.mask_reassembles": {
-      "video": null,
-      "poster": "/prison/idle.jpg",
+      "video": "/prison/cycle-01/moriondo-mask-reassembles.mp4",
+      "poster": "/prison/cycle-01/moriondo-mask-reassembles.jpg",
       "loop": false,
-      "durationMs": 10000,
+      "durationMs": 10790,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "52% 50%",
       "entryPose": "staggered-still",
       "exitPose": "idle",
-      "status": "awaiting-production"
+      "sha256": "0af7c164b63a52b3df4106a1ca9e353defcd4e9386d20614acff5aeef1dd2188",
+      "status": "batch-2-production"
     },
     "moriondo.rage_performed": {
-      "video": null,
-      "poster": "/prison/glass.jpg",
+      "video": "/prison/cycle-01/moriondo-rage-performed.mp4",
+      "poster": "/prison/cycle-01/moriondo-rage-performed.jpg",
       "loop": false,
-      "durationMs": 7500,
+      "durationMs": 8000,
       "camera": "medium-wide",
       "desktopObjectPosition": "50% 46%",
       "mobileObjectPosition": "52% 44%",
       "entryPose": "idle",
       "exitPose": "glass",
-      "status": "awaiting-production"
+      "sha256": "0c767e82e892fa3f3290d2f669499b7b48d96500fec3046a1852eea44317c000",
+      "status": "batch-2-production"
     },
     "moriondo.rage_true_break": {
       "video": "/prison/cycle-01/moriondo-rage-true-break.mp4",
       "poster": "/prison/cycle-01/moriondo-rage-true-break.jpg",
       "loop": false,
-      "durationMs": 6040,
+      "durationMs": 15790,
       "camera": "medium-wide",
       "desktopObjectPosition": "50% 48%",
       "mobileObjectPosition": "52% 46%",
       "entryPose": "accusation",
       "exitPose": "exhaustion-freeze",
-      "sha256": "66ffb2716c44bcd671fce8e763080339eae3ddf56e269d7a0fb0c821a8fe3c29",
-      "status": "batch-1-preview"
+      "sha256": "c3a19e85bc30eeacd40cf6b1a6dbd99840227fd394ade723a8fdc4b77bf8b4e3",
+      "status": "batch-2-production"
     },
     "moriondo.rage_aftermath": {
-      "video": null,
-      "poster": "/prison/hands.jpg",
+      "video": "/prison/cycle-01/moriondo-rage-aftermath.mp4",
+      "poster": "/prison/cycle-01/moriondo-rage-aftermath.jpg",
       "loop": true,
-      "durationMs": 10000,
+      "durationMs": 10790,
       "camera": "medium-wide",
       "desktopObjectPosition": "50% 48%",
       "mobileObjectPosition": "52% 46%",
       "entryPose": "exhaustion-freeze",
       "exitPose": "study",
-      "status": "awaiting-production"
+      "sha256": "deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91",
+      "status": "batch-2-production"
     },
     "stall.web_takeover": {
       "video": "/duesterwald/cycle-01/stall-web-takeover-16x9.mp4",
@@ -305,7 +308,7 @@
       "entryPose": "still-empty",
       "exitPose": "web-toward-forest",
       "sha256": "dfb9c3348e7397093a35d7d7b0daa88b60d0f63ff0e92401f5868e8d573d0e35",
-      "status": "batch-1-preview"
+      "status": "approved"
     },
     "spider.steven_command": {
       "video": "/duesterwald/cycle-01/steven-spider-command-16x9.mp4",
@@ -320,7 +323,7 @@
       "entryPose": "sovereign-still",
       "exitPose": "brood-bowed",
       "sha256": "119b5df7f26b149422b248c81c9041f1464b5421e847684f8f826c0b0085f17e",
-      "status": "batch-1-preview"
+      "status": "approved"
     },
     "spider.lower_brood_answers": {
       "video": null,
@@ -357,7 +360,7 @@
       "entryPose": "restrained-alive",
       "exitPose": "restrained-alive",
       "sha256": "f3fcf22b8fa2ebbb6849130910b869c747cf7ca44b4eff189f13bff6fc8d6412",
-      "status": "batch-1-preview"
+      "status": "approved"
     },
     "spider.counter_command": {
       "video": null,

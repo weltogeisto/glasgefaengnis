@@ -1,8 +1,47 @@
 # Moriondo Cycle I — Animation log
 
-**Batch 1 owner-approved 2026-08-21** (identity lock including stall-roster nest). 720p previews. 1080p masters are Batch 2+.
+**Batch 1 owner-approved 2026-08-21.**  
+**Batch 2 produced 2026-08-21** — M01–M05 Moriondo masters. Native 720p (1080p not available on this plan). Transition freeze pads on start/end.
 
 Approved stills B (`verlassener_stall_im_nebelwald.png`) and C (`unheimliche_spinnen_im_nebelwald.png`) were **not attached**. The stall and spider stills below are generated to the visual facts in the brief and stored under `docs/references/` as stand-ins pending owner replacement.
+
+## Batch 2 — Moriondo production
+
+| Cue | File | Duration | fps | Loop | Source still | SHA-256 (mp4) | Size |
+|---|---|---|---|---|---|---|---|
+| `moriondo.capture_rage` | `/prison/cycle-01/moriondo-capture-rage.mp4` | 10.79s | 24 | one-shot | approved Batch 1 still | `ce0068cda5cad3046cac2c17c267df2e7d3adb6921a5fb4f1eef68cc00872520` | 4.3 MB |
+| `moriondo.mask_reassembles` | `/prison/cycle-01/moriondo-mask-reassembles.mp4` | 10.79s | 24 | one-shot | identity-locked recovery still | `0af7c164b63a52b3df4106a1ca9e353defcd4e9386d20614acff5aeef1dd2188` | 2.6 MB |
+| `moriondo.rage_performed` | `/prison/cycle-01/moriondo-rage-performed.mp4` | 8.00s | 24 | one-shot | identity-locked calculated-advance still | `0c767e82e892fa3f3290d2f669499b7b48d96500fec3046a1852eea44317c000` | 2.4 MB |
+| `moriondo.rage_true_break` | `/prison/cycle-01/moriondo-rage-true-break.mp4` | 15.79s | 24 | one-shot | approved Batch 1 still | `c3a19e85bc30eeacd40cf6b1a6dbd99840227fd394ade723a8fdc4b77bf8b4e3` | 5.8 MB |
+| `moriondo.rage_aftermath` | `/prison/cycle-01/moriondo-rage-aftermath.mp4` | 10.79s | 24 | loop | identity-locked aftermath still | `deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91` | 2.0 MB |
+
+### Delivery notes (Batch 2)
+
+- Codec: H.264 High, `yuv420p`, 24 fps, `+faststart`, **no audio**.
+- Resolution: 1280×720 production (1080p locked on this Imagine plan).
+- ~8–10 freeze frames cloned at start and end for crossfades.
+- Posters are stills (no motion blur). Capture Rage / True Break posters are the owner-approved Batch 1 frames.
+- Existing reusable Mood clips were not regenerated.
+- Under 8 MB per clip (hard ceiling 12 MB).
+
+### Generation record (Batch 2)
+
+| Cue | Prompt intent | Model | Source reference |
+|---|---|---|---|
+| capture_rage | Animal humiliation, both palms on glass, 10s | Imagine image-to-video 720p/10s | approved `moriondo-capture-rage.jpg` |
+| mask_reassembles | Coat straighten, breath control, eyes lift, half-smile only at end | reference-to-image (capture-rage + idle + canon) → I2V 10s | identity lock |
+| rage_performed | Calculated advance, eyes tracking, self-terminates | reference-to-image (idle + capture-rage + glass) → I2V trimmed to 8s | identity lock |
+| rage_true_break | Face collapse, lost tracking, broken surge, 15s | Imagine image-to-video 720p/15s | approved `moriondo-rage-true-break.jpg` |
+| rage_aftermath | Almost motionless, recovering study, no smile | reference-to-image (true-break + idle + hands) → I2V 10s | identity lock |
+
+### Identity QC (Batch 2)
+
+- Same circular cell, green torch, black coat, receding dark hair and beard across all five.
+- Capture rage: frontal shout, both palms, loss of mask — distinct from performed.
+- Performed rage: balanced, eyes on camera, stops on his terms.
+- True break: unfocused, one palm, more broken, longer — distinct from performed and from generic `rage.mp4`.
+- Mask: coat-straightening recovery between capture and idle.
+- Aftermath: exhausted study, rumpled coat, loop-compatible stillness.
 
 ## Batch 1 previews
 

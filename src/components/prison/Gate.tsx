@@ -42,7 +42,7 @@ export function Gate() {
           to="/"
           className="mt-3 flex min-h-12 w-full items-center justify-center rounded-xl bg-raised font-display text-[0.8rem] uppercase tracking-[0.12em] text-accent shadow-[0_0_0_1px_var(--color-border)]"
         >
-          Batch 1 prüfen
+          Batch 2 prüfen
         </Link>
         <div className="mt-3 flex items-center justify-between gap-3">
           <button

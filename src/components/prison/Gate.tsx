@@ -1,10 +1,10 @@
 "use client";
 
+import { Link } from "@tanstack/react-router";
 import { Volume2, VolumeX } from "lucide-react";
 import { startAmbience, unlockAudio } from "@/lib/prison/audio";
 import { usePrison } from "@/lib/prison/store";
 import { Stage } from "./Stage";
-
 
 export function Gate() {
   const enter = usePrison((s) => s.enter);
@@ -34,24 +34,32 @@ export function Gate() {
         <button
           type="button"
           onClick={onEnter}
-          className="mt-5 flex min-h-12 w-full items-center justify-center rounded-xl bg-accent font-display text-[0.8rem] uppercase tracking-[0.12em] text-bg transition-transform duration-150 ease-out active:scale-[0.96]"
+          className="mt-5 flex min-h-12 w-full items-center justify-center rounded-xl bg-accent font-display text-[0.8rem] uppercase tracking-[0.12em] text-bg transition-transform duration-[var(--motion-fast,250ms)] ease-out active:scale-[0.96]"
         >
           Vor das Glas treten
         </button>
-        <button
-          type="button"
-          onClick={() => {
-            unlockAudio();
-            toggleSound();
-          }}
-          className="mt-3 inline-flex min-h-11 items-center gap-2 text-muted"
-          aria-label={sound ? "Ton an" : "Ton aus"}
+        <Link
+          to="/"
+          className="mt-3 flex min-h-12 w-full items-center justify-center rounded-xl bg-raised font-display text-[0.8rem] uppercase tracking-[0.12em] text-accent shadow-[0_0_0_1px_var(--color-border)]"
         >
-          {sound ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
-          <span className="font-display text-[0.68rem] uppercase tracking-[0.14em]">
-            {sound ? "Ton bereit" : "Stumm"}
-          </span>
-        </button>
+          Batch 1 prüfen
+        </Link>
+        <div className="mt-3 flex items-center justify-between gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              unlockAudio();
+              toggleSound();
+            }}
+            className="inline-flex min-h-11 items-center gap-2 text-muted"
+            aria-label={sound ? "Ton an" : "Ton aus"}
+          >
+            {sound ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
+            <span className="font-display text-[0.68rem] uppercase tracking-[0.14em]">
+              {sound ? "Ton bereit" : "Stumm"}
+            </span>
+          </button>
+        </div>
       </div>
     </section>
   );

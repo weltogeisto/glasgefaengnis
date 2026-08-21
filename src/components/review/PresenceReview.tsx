@@ -1,4 +1,4 @@
-use client";
+"use client";
 
 import { Link } from "@tanstack/react-router";
 import { Check, ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from "lucide-react";

@@ -18,18 +18,18 @@ export const REPLIES: Record<string, Reply> = {
   },
   bruchstelle: {
     text: "Ah. Die Bruchstelle. Du hast Ohren. Selten, bei Männern deiner Art.\n\nLies jetzt den Codex. In Grün steht, was ich mit Namen tue. Sag es mir. Wortnah.",
-    mood: "approach",
+    mood: "whisper",
     audio: "bruchstelle",
     progress: { riddle: true },
   },
   pferd: {
     text: `Du schreist nach dem Stall, wie ein Kind nach der Speise, die man ihm nahm, ehe es kauen lernte.\n\nDas Tier ist nicht fort. Die Bindung ist umgesungen. Wer nach Fleisch sucht, sucht den Teller, nicht den Koch.\n\n${RIDDLE}`,
-    mood: "pace",
+    mood: "sniff",
     audio: "pferd",
   },
   wer: {
     text: "Ich bin, was übrig blieb, als das Lied falsch gesungen wurde. Höflich. Nicht gütig. Und du stehst draußen.",
-    mood: "glass",
+    mood: "closer",
     audio: "wer",
   },
   lied: {
@@ -40,28 +40,53 @@ export const REPLIES: Record<string, Reply> = {
   droh: {
     text: "Du willst das Glas brechen. Wie rührend. Wie appetitlich ungebildet.\n\nIch habe mich selbst hineingesungen. Nicht aus Reue. Aus Geschmack.",
     mood: "laugh",
-    audio: "droh",
+    audio: "laugh",
   },
   wege: {
     text: "Du hast gelesen. Selten. Also ein Geschenk, das keines ist.\n\nDrei glühende Wege. Nur einer führt zum Stall. Die anderen führen dich in den Irrtum.",
-    mood: "laugh",
+    mood: "delight",
     audio: "wege",
     progress: { letters: true },
   },
   elbereth: {
     text: "Diesen Namen nimmst du in den Mund, als wäre er ein Schlüssel. Er ist keiner. Er ist Licht. Und Licht stört mich. Weiter.",
-    mood: "menace",
+    mood: "rage",
     audio: "elbereth",
   },
   warte: {
     text: "Ich habe Jahrhunderte geübt. Du hast sechs Fragen. Wähle sie weise.",
-    mood: "turn",
+    mood: "sit",
     audio: "warte",
   },
   hoeflich: {
     text: `Höflichkeit zuerst, Hendrik. ${RIDDLE}\n\nWähle. Ich habe Zeit. Du nicht.`,
-    mood: "talk",
+    mood: "bow",
     audio: "hoeflich",
+  },
+  storm: {
+    text: "Siehst du? Alles in einem Gesicht. Zorn. Hunger. Höflichkeit. Wähle, welches du füttern willst.",
+    mood: "storm",
+    audio: "storm",
+  },
+  sniff: {
+    text: "Nasses Leder. Angst. Und etwas Süßes darunter. Du bringst den Stall mit dir, Hendrik.",
+    mood: "sniff",
+    audio: "sniff",
+  },
+  closer: {
+    text: "Näher. Noch näher. Ich schreie nie. Du musst das Glas nicht brechen, um mich zu riechen.",
+    mood: "closer",
+    audio: "wer",
+  },
+  hysteria: {
+    text: "Ha. Wie rührend. Wie appetitlich.\n\nEin Lachen ist nur Zorn, der die Zähne gefunden hat.",
+    mood: "laugh",
+    audio: "laugh",
+  },
+  stride: {
+    text: "Sechs Schritte. Zurück. Ich messe mein Haus. Ich habe Zeit. Du nicht.",
+    mood: "stride",
+    audio: "warte",
   },
 };
 
@@ -123,14 +148,27 @@ export function matchReply(raw: string): Reply {
   if (/(drei gluhende|gluhende wege|wege)/.test(q)) return REPLIES.wege;
   if (/elbereth/.test(q)) return REPLIES.elbereth;
   if (/warte|codex gelesen/.test(q)) return REPLIES.warte;
+  if (/(lach|lachst|witz|appetitlich)/.test(q)) return REPLIES.hysteria;
+  if (/(naher|komm nah|closer)/.test(q)) return REPLIES.closer;
+  if (/(riech|geruch|duft|leder)/.test(q)) return REPLIES.sniff;
+  if (/(zorn|wut|gesicht|emotion)/.test(q)) return REPLIES.storm;
+  if (/(lauf|schritt|auf und ab|pace|geh auf)/.test(q)) return REPLIES.stride;
   return REPLIES.hoeflich;
 }
 
 export function chipsFor(riddle: boolean, letters: boolean, questions: number, maxQ: number): string[] {
   if (questions >= maxQ) return ["Wann öffnet die nächste Wache?", "Ich lese den Codex"];
-  if (!riddle) return ["Bruchstelle", "Die Hoffnung", "Das Pferd", "Wer bist du?", "Ich höre dein Lied"];
+  if (!riddle)
+    return [
+      "Bruchstelle",
+      "Das Pferd",
+      "Wer bist du?",
+      "Warum lachst du?",
+      "Komm näher",
+      "Geh auf und ab",
+    ];
   if (!letters) return ["Drei glühende Wege", "Ich habe den Codex gelesen", "Sing vom leeren Stall", "Elbereth"];
-  return ["Ich warte", "Elbereth", "Was ist deine Musik?"];
+  return ["Ich warte", "Riech mich", "Elbereth", "Was ist deine Musik?"];
 }
 
 export function objectiveFor(riddle: boolean, letters: boolean, questions: number, maxQ: number): string {

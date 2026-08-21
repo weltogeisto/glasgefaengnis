@@ -28,13 +28,15 @@ No auth, no database. Progress is in-memory (localStorage later).
 
 ## Presence moods
 
-`idle` stand-still · `pace` circle · `approach` / `talk` walk to glass · `glass` / `menace` palm on pane · `laugh` smile · `turn` back · `sit` rest · `song` hush · `corridor` gate dolly.
+Wide cell: `idle` `pace` (along the glass L→R) `stride` (full width and back) `hands` (hands behind back) `over` (look over shoulder) `depth` (toward camera and back) `trace` (fingers on pane) `approach` `talk` `glass` `sit` `song` `bow` `sniff` `turn` `corridor`.
 
-Ambient cycle (when not speaking): idle → pace → turn → sit → idle → glass.
+Close face: `storm` / `face` emotion cycle · `laugh` hysterical · `rage` · `delight` · `closer` · `whisper`.
+
+Ambient: idle → pace → stride → hands → over → depth → sit → trace → sniff → glass.
 
 ## Audio
 
-Prebaked MP3s in `public/prison/*.mp3` (xAI TTS, voice `rigel`, German). Unlock **synchronously** on "Vor das Glas treten". Never call TTS at runtime (quota).
+Prebaked MP3s in `public/prison/*.mp3` (xAI TTS, voice **`lux`**, German, speed `0.72`). Unlock **synchronously** on "Vor das Glas treten". Never call TTS at runtime (quota).
 
 ## Rules for other agents
 
@@ -48,6 +50,5 @@ Prebaked MP3s in `public/prison/*.mp3` (xAI TTS, voice `rigel`, German). Unlock 
 ## Open work
 
 - Rites 3–4 (Chiffre, Stall)
-- Unique `song` / `sit` clips from canon (currently aliased to idle)
 - Persist watch progress in localStorage
-- More palm-on-glass / circle-pace variants
+- More unique close-up laugh / sit variants

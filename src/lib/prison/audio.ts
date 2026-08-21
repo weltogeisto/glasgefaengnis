@@ -14,6 +14,9 @@ const VOICE_SRC: Record<string, string> = {
   elbereth: "/prison/elbereth.mp3",
   warte: "/prison/warte.mp3",
   hoeflich: "/prison/hoeflich.mp3",
+  laugh: "/prison/laugh.mp3",
+  storm: "/prison/storm.mp3",
+  sniff: "/prison/sniff.mp3",
 };
 
 let voices: Record<string, Howl> | null = null;

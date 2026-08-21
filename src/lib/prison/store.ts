@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import { AMBIENT_CYCLE, type Mood } from "./presence";
+import { AFTER_MOOD, AMBIENT_CYCLE, HOLD_MS, type Mood } from "./presence";
 import {
   chipsFor,
   matchReply,
@@ -122,22 +122,16 @@ export const usePrison = create<PrisonState>((set, get) => ({
         letters: nextLetters,
       } as PrisonState),
     });
-    const hold = reply.mood === "song" ? 9000 : 6200;
+    const hold = HOLD_MS[reply.mood] ?? 6200;
     holdTimer = setTimeout(() => {
-      const after: Mood =
-        reply.mood === "laugh" || reply.mood === "menace"
-          ? "glass"
-          : reply.mood === "song"
-            ? "turn"
-            : "pace";
-      set({ busy: false, mood: after });
+      set({ busy: false, mood: AFTER_MOOD[reply.mood] ?? "pace" });
     }, hold);
   },
 
   cycleAmbient: () => {
     const s = get();
     if (!s.entered || s.busy) return;
-    if (s.mood === "talk" || s.mood === "laugh" || s.mood === "song" || s.mood === "approach") {
+    if (s.mood === "talk" || s.mood === "laugh" || s.mood === "song" || s.mood === "storm" || s.mood === "rage") {
       return;
     }
     ambientIndex = (ambientIndex + 1) % AMBIENT_CYCLE.length;

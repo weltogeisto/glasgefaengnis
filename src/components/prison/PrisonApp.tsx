@@ -15,7 +15,6 @@ export function PrisonApp() {
   const questions = usePrison((s) => s.questions);
   const maxQ = usePrison((s) => s.maxQ);
   const sound = usePrison((s) => s.sound);
-  const speaking = usePrison((s) => s.speaking);
   const toggleSound = usePrison((s) => s.toggleSound);
   const leave = usePrison((s) => s.leave);
   const panel = usePrison((s) => s.panel);
@@ -25,7 +24,7 @@ export function PrisonApp() {
       <Stage
         mood={entered ? mood : "corridor"}
         kenBurns={entered ? "breathe" : "dolly"}
-        speaking={speaking}
+        docked={entered}
       />
       {entered ? (
         <>

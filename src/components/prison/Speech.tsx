@@ -30,7 +30,7 @@ export function Speech({ text }: { text: string }) {
   if (!text) return null;
 
   return (
-    <div className="pointer-events-none fixed inset-x-4 z-30 max-h-28 overflow-y-auto top-[4.6rem] md:inset-x-auto md:left-8 md:right-[min(28rem,40vw)] md:top-20 md:max-h-44">
+    <div className="pointer-events-none fixed inset-x-4 z-30 max-h-24 overflow-y-auto bottom-[calc(44dvh+0.6rem)] md:inset-x-auto md:left-8 md:right-[min(28rem,40vw)] md:bottom-10 md:max-h-36">
       <div className="max-w-xl rounded-r-xl border-l-2 border-accent/60 bg-bg/75 px-4 py-3 backdrop-blur-md">
         <p className="mb-1 font-display text-[0.65rem] uppercase tracking-[0.18em] text-accent">
           Moriondo

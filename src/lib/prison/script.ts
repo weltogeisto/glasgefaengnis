@@ -12,8 +12,8 @@ export type Reply = {
 
 export const REPLIES: Record<string, Reply> = {
   open: {
-    text: `Hendrik. Du riechst nach nassem Leder und ungeduldiger Hoffnung. Setz dich. Ich schreie nie.\n\n${RIDDLE}\n\nSechs Gänge. Dann bin ich satt.`,
-    mood: "talk",
+    text: "Hendrik. Du riechst nach nassem Leder und ungeduldiger Hoffnung. Setz dich. Ich schreie nie. Sechs Gänge. Dann bin ich satt.",
+    mood: "idle",
     audio: "open",
   },
   bruchstelle: {
@@ -158,15 +158,7 @@ export function matchReply(raw: string): Reply {
 
 export function chipsFor(riddle: boolean, letters: boolean, questions: number, maxQ: number): string[] {
   if (questions >= maxQ) return ["Wann öffnet die nächste Wache?", "Ich lese den Codex"];
-  if (!riddle)
-    return [
-      "Bruchstelle",
-      "Das Pferd",
-      "Wer bist du?",
-      "Warum lachst du?",
-      "Komm näher",
-      "Geh auf und ab",
-    ];
+  if (!riddle) return ["Bruchstelle", "Das Pferd", "Wer bist du?", "Warum lachst du?"];
   if (!letters) return ["Drei glühende Wege", "Ich habe den Codex gelesen", "Sing vom leeren Stall", "Elbereth"];
   return ["Ich warte", "Riech mich", "Elbereth", "Was ist deine Musik?"];
 }

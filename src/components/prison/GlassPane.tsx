@@ -1,4 +1,4 @@
-export function GlassPane({ close }: { close?: boolean }) {
+export function GlassPane() {
   const motes = [
     { left: "12%", delay: "0s", dur: "18s" },
     { left: "28%", delay: "3s", dur: "22s" },
@@ -15,13 +15,12 @@ export function GlassPane({ close }: { close?: boolean }) {
       <div
         className="absolute inset-0"
         style={{
-          background: close
-            ? "linear-gradient(to top, rgb(5 7 10 / 0.35) 0%, transparent 18%, rgb(5 7 10 / 0.2) 100%)"
-            : "linear-gradient(to top, rgb(5 7 10 / 0.92) 0%, transparent 38%, rgb(5 7 10 / 0.28) 100%)",
+          background:
+            "linear-gradient(to top, rgb(5 7 10 / 0.92) 0%, transparent 38%, rgb(5 7 10 / 0.28) 100%)",
         }}
       />
       <div
-        className={close ? "absolute inset-0 hidden" : "absolute inset-0 hidden md:block"}
+        className="absolute inset-0 hidden md:block"
         style={{
           background: "linear-gradient(to right, transparent 42%, rgb(5 7 10 / 0.72) 100%)",
         }}

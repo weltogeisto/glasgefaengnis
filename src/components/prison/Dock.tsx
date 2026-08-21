@@ -92,28 +92,28 @@ function Verhoer() {
 
   return (
     <>
-      <p className="shrink-0 px-4 pt-2 text-[0.88rem] leading-snug">{objective}</p>
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 py-2">
-        <div className="mb-3 rounded-xl bg-raised/80 px-3 py-2.5">
+      <p className="shrink-0 px-4 pt-2 text-[0.82rem] leading-snug text-muted">{objective}</p>
+      <div className="flex shrink-0 flex-wrap gap-2 px-4 py-2">
+        {chips.map((c) => (
+          <button
+            key={c}
+            type="button"
+            disabled={busy || questions >= maxQ}
+            onClick={() => send(c)}
+            className="min-h-11 rounded-full bg-accent/15 px-3.5 py-2 text-[0.78rem] text-fg shadow-[0_0_0_1px_var(--color-border)] transition-transform duration-150 ease-out active:scale-[0.96]"
+          >
+            {c}
+          </button>
+        ))}
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto px-4">
+        <div className="rounded-xl bg-raised/80 px-3 py-2">
           <p className="mb-1 font-display text-[0.62rem] uppercase tracking-[0.16em] text-accent">
             Sein Rätsel
           </p>
-          <p className="text-[0.88rem] leading-snug">{RIDDLE}</p>
+          <p className="text-[0.82rem] leading-snug">{RIDDLE}</p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {chips.map((c) => (
-            <button
-              key={c}
-              type="button"
-              disabled={busy || questions >= maxQ}
-              onClick={() => send(c)}
-              className="min-h-11 rounded-full bg-accent/15 px-3.5 py-2 text-[0.78rem] text-fg shadow-[0_0_0_1px_var(--color-border)] transition-transform duration-150 ease-out active:scale-[0.96]"
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <div className="mt-3 flex gap-1">
+        <div className="mt-2 flex gap-1 pb-1">
           {Array.from({ length: maxQ }, (_, i) => (
             <span
               key={i}

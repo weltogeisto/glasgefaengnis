@@ -1,7 +1,7 @@
 "use client";
 
 import { create } from "zustand";
-import { AFTER_MOOD, AMBIENT_CYCLE, speakingVisual, type Mood } from "./presence";
+import { AFTER_MOOD, AMBIENT_CYCLE, type Mood } from "./presence";
 import {
   chipsFor,
   matchReply,
@@ -73,7 +73,7 @@ export const usePrison = create<PrisonState>((set, get) => ({
     clearHold();
     set({
       entered: true,
-      mood: "talk",
+      mood: "idle",
       speaking: true,
       busy: true,
       line: REPLIES.open.text,
@@ -120,11 +120,10 @@ export const usePrison = create<PrisonState>((set, get) => ({
     const nextQuestions = s.questions + 1;
     const nextRiddle = s.riddle || !!reply.progress?.riddle;
     const nextLetters = s.letters || !!reply.progress?.letters;
-    const visual = speakingVisual(reply.mood);
     set({
       busy: true,
       speaking: true,
-      mood: visual,
+      mood: reply.mood,
       line: reply.text,
       questions: nextQuestions,
       riddle: nextRiddle,

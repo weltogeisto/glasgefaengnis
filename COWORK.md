@@ -36,9 +36,9 @@ Ambient: idle → pace → stride → hands → over → depth → sit → trace
 
 ## Lip sync
 
-While a line is spoken, camera cuts to the close-up (`talk` / `whisper`). Jaw is driven by prebaked RMS envelopes in `src/lib/prison/envelopes.json` (50 Hz, from the MP3s) mixed onto `lips-open.jpg` over `lips-closed.mp4`. Hold the shot until the audio **ends** — do not cut on a fixed timer. Laugh / storm / rage / song keep their performance clips.
+Do **not** cut to extreme close-up on speech. He stays a body in the cell. Close-up files (`lips-*.jpg/mp4`, `face.mp4`) stay in `public/prison` for optional rites, not the greeting.
 
-Never call TTS at runtime. If you replace an MP3, regenerate that key in `envelopes.json` (`ffmpeg` → RMS → normalize).
+Audio still holds until the MP3 ends (`envelopes.json`). Never call TTS at runtime.
 
 ## Audio
 

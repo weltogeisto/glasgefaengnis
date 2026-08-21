@@ -1,1 +1,18 @@
-PLACEHOLDER_WILL_REPLACE
+{
+  "version": "cycle-01-phase-0",
+  "note": "Phase 0: five Batch 1 assets locked as owner-approved-existing. Do not regenerate. 720p masters (1080p unavailable on plan).",
+  "cues": {
+    "moriondo.idle": {
+      "video": "/prison/idle.mp4",
+      "poster": "/prison/idle.jpg",
+      "loop": true,
+      "durationMs": 10000,
+      "camera": "wide",
+      "desktopObjectPosition": "48% 42%",
+      "mobileObjectPosition": "50% 42%",
+      "entryPose": "idle",
+      "exitPose": "idle",
+      "sha256": "c39eee3fb8d868a660ec6b531ed17318369a86e93bdb22843d42631791cde561"
+    }
+  }
+}

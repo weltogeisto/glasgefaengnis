@@ -1,7 +1,7 @@
 "use client";
 
 import { Howl, Howler } from "howler";
-
+import { envelopeAt, envelopeDurationMs, resetLip, smoothLip } from "./lipsync";
 
 const VOICE_SRC: Record<string, string> = {
   open: "/prison/open.mp3",
@@ -21,9 +21,12 @@ const VOICE_SRC: Record<string, string> = {
 
 let voices: Record<string, Howl> | null = null;
 let current: Howl | null = null;
+let currentKey: string | null = null;
 let unlocked = false;
 let muted = false;
 let droneNodes: { stop: () => void } | null = null;
+let endTimer: ReturnType<typeof setTimeout> | null = null;
+let fakeStart = 0;
 
 function ensureVoices() {
   if (voices) return voices;
@@ -63,22 +66,73 @@ export function setMuted(next: boolean) {
   if (next) stopVoice();
 }
 
-export function playVoice(key: string) {
-  if (muted) return;
+export function playVoice(key: string, onEnd?: () => void) {
   unlockAudio();
   stopVoice();
+  if (muted) {
+    currentKey = key;
+    fakeStart = performance.now();
+    const ms = envelopeDurationMs(key) + 280;
+    endTimer = setTimeout(() => {
+      currentKey = null;
+      fakeStart = 0;
+      resetLip();
+      onEnd?.();
+    }, ms);
+    return;
+  }
   const pack = ensureVoices();
   const howl = pack[key] ?? pack.hoeflich;
   current = howl;
+  currentKey = pack[key] ? key : "hoeflich";
+  resetLip();
+  howl.off("end");
+  const finish = () => {
+    if (endTimer) {
+      clearTimeout(endTimer);
+      endTimer = null;
+    }
+    if (current !== howl) return;
+    current = null;
+    currentKey = null;
+    resetLip();
+    onEnd?.();
+  };
+  howl.once("end", finish);
   howl.stop();
   howl.play();
+  const ms = envelopeDurationMs(currentKey) + 280;
+  endTimer = setTimeout(finish, ms);
 }
 
 export function stopVoice() {
+  if (endTimer) {
+    clearTimeout(endTimer);
+    endTimer = null;
+  }
   if (current) {
+    current.off("end");
     current.stop();
     current = null;
   }
+  currentKey = null;
+  resetLip();
+}
+
+export function isVoicePlaying() {
+  return !!current && current.playing();
+}
+
+export function speakingEnergy(): number {
+  if (!currentKey) return smoothLip(0);
+  let sec = 0;
+  if (current) {
+    const t = current.seek();
+    sec = typeof t === "number" ? t : 0;
+  } else if (fakeStart) {
+    sec = (performance.now() - fakeStart) / 1000;
+  }
+  return smoothLip(envelopeAt(currentKey, sec));
 }
 
 export function glassTick() {

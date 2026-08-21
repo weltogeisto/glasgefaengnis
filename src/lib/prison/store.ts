@@ -1,13 +1,14 @@
 "use client";
 
 import { create } from "zustand";
-import { AFTER_MOOD, AMBIENT_CYCLE, HOLD_MS, type Mood } from "./presence";
+import { AFTER_MOOD, AMBIENT_CYCLE, speakingVisual, type Mood } from "./presence";
 import {
   chipsFor,
   matchReply,
   objectiveFor,
   REPLIES,
 } from "./script";
+import { envelopeDurationMs } from "./lipsync";
 import { glassTick, playVoice, setMuted, stopVoice, unlockAudio } from "./audio";
 
 export type Panel = "verhoer" | "codex" | "akte";
@@ -22,6 +23,7 @@ type PrisonState = {
   riddle: boolean;
   letters: boolean;
   busy: boolean;
+  speaking: boolean;
   sound: boolean;
   chips: string[];
   objective: string;
@@ -44,6 +46,13 @@ function refreshMeta(s: PrisonState) {
   };
 }
 
+function clearHold() {
+  if (holdTimer) {
+    clearTimeout(holdTimer);
+    holdTimer = null;
+  }
+}
+
 export const usePrison = create<PrisonState>((set, get) => ({
   entered: false,
   panel: "verhoer",
@@ -54,31 +63,36 @@ export const usePrison = create<PrisonState>((set, get) => ({
   riddle: false,
   letters: false,
   busy: false,
+  speaking: false,
   sound: true,
   chips: chipsFor(false, false, 0, 6),
   objective: objectiveFor(false, false, 0, 6),
 
   enter: () => {
     unlockAudio();
-    playVoice("open");
+    clearHold();
     set({
       entered: true,
       mood: "talk",
+      speaking: true,
+      busy: true,
       line: REPLIES.open.text,
       panel: "verhoer",
     });
-    if (holdTimer) clearTimeout(holdTimer);
-    holdTimer = setTimeout(() => {
-      set({ mood: "idle", busy: false });
-    }, 7000);
+    const finish = () => {
+      if (!get().entered) return;
+      set({ mood: "idle", busy: false, speaking: false });
+    };
+    playVoice("open", finish);
+    holdTimer = setTimeout(finish, envelopeDurationMs("open") + 400);
     if (ambientTimer) clearInterval(ambientTimer);
     ambientTimer = setInterval(() => get().cycleAmbient(), 11000);
   },
 
   leave: () => {
     stopVoice();
-    if (holdTimer) clearTimeout(holdTimer);
-    set({ entered: false, mood: "corridor", busy: false });
+    clearHold();
+    set({ entered: false, mood: "corridor", busy: false, speaking: false });
   },
 
   setPanel: (panel) => {
@@ -102,14 +116,15 @@ export const usePrison = create<PrisonState>((set, get) => ({
     unlockAudio();
     glassTick();
     const reply = matchReply(q);
-    if (holdTimer) clearTimeout(holdTimer);
-    playVoice(reply.audio);
+    clearHold();
     const nextQuestions = s.questions + 1;
     const nextRiddle = s.riddle || !!reply.progress?.riddle;
     const nextLetters = s.letters || !!reply.progress?.letters;
+    const visual = speakingVisual(reply.mood);
     set({
       busy: true,
-      mood: reply.mood,
+      speaking: true,
+      mood: visual,
       line: reply.text,
       questions: nextQuestions,
       riddle: nextRiddle,
@@ -122,15 +137,18 @@ export const usePrison = create<PrisonState>((set, get) => ({
         letters: nextLetters,
       } as PrisonState),
     });
-    const hold = HOLD_MS[reply.mood] ?? 6200;
-    holdTimer = setTimeout(() => {
-      set({ busy: false, mood: AFTER_MOOD[reply.mood] ?? "pace" });
-    }, hold);
+    const finish = () => {
+      const now = get();
+      if (!now.entered || !now.busy) return;
+      set({ busy: false, speaking: false, mood: AFTER_MOOD[reply.mood] ?? "pace" });
+    };
+    playVoice(reply.audio, finish);
+    holdTimer = setTimeout(finish, envelopeDurationMs(reply.audio) + 400);
   },
 
   cycleAmbient: () => {
     const s = get();
-    if (!s.entered || s.busy) return;
+    if (!s.entered || s.busy || s.speaking) return;
     if (s.mood === "talk" || s.mood === "laugh" || s.mood === "song" || s.mood === "storm" || s.mood === "rage") {
       return;
     }

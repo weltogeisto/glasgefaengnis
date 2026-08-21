@@ -15,13 +15,18 @@ export function PrisonApp() {
   const questions = usePrison((s) => s.questions);
   const maxQ = usePrison((s) => s.maxQ);
   const sound = usePrison((s) => s.sound);
+  const speaking = usePrison((s) => s.speaking);
   const toggleSound = usePrison((s) => s.toggleSound);
   const leave = usePrison((s) => s.leave);
   const panel = usePrison((s) => s.panel);
 
   return (
     <main className="relative min-h-dvh overflow-hidden bg-bg text-fg">
-      <Stage mood={entered ? mood : "corridor"} kenBurns={entered ? "breathe" : "dolly"} />
+      <Stage
+        mood={entered ? mood : "corridor"}
+        kenBurns={entered ? "breathe" : "dolly"}
+        speaking={speaking}
+      />
       {entered ? (
         <>
           <header className="pointer-events-none fixed inset-x-0 top-0 z-40 flex items-start justify-between px-4 pt-4">

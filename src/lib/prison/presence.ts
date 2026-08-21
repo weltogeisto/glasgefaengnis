@@ -32,7 +32,7 @@ export const PRESENCE: Record<Mood, PresenceClip> = {
   idle: { video: "/prison/idle.mp4", poster: "/prison/idle.jpg" },
   pace: { video: "/prison/pace.mp4", poster: "/prison/pace.jpg" },
   approach: { video: "/prison/approach.mp4", poster: "/prison/approach.jpg" },
-  talk: { video: "/prison/talk.mp4", poster: "/prison/talk.jpg" },
+  talk: { video: "/prison/lips-closed.mp4", poster: "/prison/lips-closed.jpg" },
   laugh: { video: "/prison/laugh.mp4", poster: "/prison/laugh.jpg" },
   song: { video: "/prison/song.mp4", poster: "/prison/song.jpg" },
   menace: { video: "/prison/glass.mp4", poster: "/prison/glass.jpg" },
@@ -42,7 +42,7 @@ export const PRESENCE: Record<Mood, PresenceClip> = {
   corridor: { video: "/prison/corridor.mp4", poster: "/prison/corridor.jpg" },
   storm: { video: "/prison/face.mp4", poster: "/prison/face.jpg" },
   closer: { video: "/prison/closer.mp4", poster: "/prison/closer.jpg" },
-  whisper: { video: "/prison/whisper.mp4", poster: "/prison/whisper.jpg" },
+  whisper: { video: "/prison/lips-whisper.mp4", poster: "/prison/whisper.jpg" },
   sniff: { video: "/prison/sniff.mp4", poster: "/prison/sniff.jpg" },
   bow: { video: "/prison/bow.mp4", poster: "/prison/bow.jpg" },
   rage: { video: "/prison/rage.mp4", poster: "/prison/rage.jpg" },
@@ -88,11 +88,31 @@ export const AFTER_MOOD: Partial<Record<Mood, Mood>> = {
   rage: "glass",
   song: "turn",
   sniff: "stride",
-  whisper: "talk",
+  whisper: "pace",
   closer: "glass",
   bow: "idle",
   delight: "whisper",
   menace: "glass",
   stride: "pace",
   hands: "over",
+  talk: "idle",
 };
+
+export const CLOSE_MOODS: Mood[] = [
+  "talk",
+  "whisper",
+  "storm",
+  "rage",
+  "closer",
+  "delight",
+];
+
+export const LIP_MOODS: Mood[] = ["talk", "whisper"];
+
+export function speakingVisual(mood: Mood): Mood {
+  if (mood === "laugh" || mood === "storm" || mood === "rage" || mood === "song") {
+    return mood;
+  }
+  if (mood === "whisper") return "whisper";
+  return "talk";
+}

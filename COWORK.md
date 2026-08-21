@@ -34,6 +34,12 @@ Close face: `storm` / `face` emotion cycle · `laugh` hysterical · `rage` · `d
 
 Ambient: idle → pace → stride → hands → over → depth → sit → trace → sniff → glass.
 
+## Lip sync
+
+While a line is spoken, camera cuts to the close-up (`talk` / `whisper`). Jaw is driven by prebaked RMS envelopes in `src/lib/prison/envelopes.json` (50 Hz, from the MP3s) mixed onto `lips-open.jpg` over `lips-closed.mp4`. Hold the shot until the audio **ends** — do not cut on a fixed timer. Laugh / storm / rage / song keep their performance clips.
+
+Never call TTS at runtime. If you replace an MP3, regenerate that key in `envelopes.json` (`ffmpeg` → RMS → normalize).
+
 ## Audio
 
 Prebaked MP3s in `public/prison/*.mp3` (xAI TTS, voice **`lux`**, German, speed `0.72`). Unlock **synchronously** on "Vor das Glas treten". Never call TTS at runtime (quota).

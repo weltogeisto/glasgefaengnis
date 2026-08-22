@@ -119,6 +119,25 @@ All: 1280×720 H.264 High yuv420p 24 fps, no audio, `+faststart`.
 Posters are the source stills (no motion blur).
 Do **not** set `locked: true` until owner Freigabe.
 
+### Hidden Nest rev. 3 — owner-requested 2026-08-22
+
+Previous locked v2 SHA `f3fcf22b8fa2ebbb6849130910b869c747cf7ca44b4eff189f13bff6fc8d6412` backed up under `duesterwald/cycle-01/locked-batch1/`.
+
+| File | SHA-256 |
+|------|---------|
+| mounts-hidden-nest.mp4 | `c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52` |
+| mounts-hidden-nest.jpg | `b98a522a6fccb6cb0ab8fa2bac6e210dfe3581467bb9f6b3e070d17e52046ce5` |
+
+Changes vs locked v2:
+- Grauwarg des Wilderlands now readable (large grey warg, left hammock)
+- Spiders removed from the silk hammocks (they are abductors, not captives)
+- No Nazgûl
+- No gore (nest remains alive / breathing)
+- Still hammock composition — distinct from abduction drag
+
+Status: `batch-2-production`, `locked: false`, awaiting re-Freigabe.
+
+
 ### Owner rules respected
 
 - Fellbeast is a stall mount, not a Nazgûl, not a sky-filling dragon. Horse-scale body, long neck, leathery bat wings, no rider.

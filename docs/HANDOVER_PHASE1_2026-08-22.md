@@ -1,57 +1,38 @@
-# HANDOVER — Phase 1 Connectives (2026-08-22)
+# HANDOVER — Phase 1 (2026-08-22)
 
-## Status: IN REVIEW — assets on `cowork/presence` + live preview
+## Status: IN REVIEW
 
-Phase 1 stills + videos + `storyPresence.ts` + `presence-manifest.json` are in the app
-and pushed to GitHub branch `cowork/presence`. Hidden Nest was not touched.
-
-Owner: open `/review/presence` → **Reittiere**. Abduction should no longer be the nest poster.
+Abduction + brood + counter are on `cowork/presence` and in the live preview.
+Hidden Nest was revised **on owner request** (was locked Batch 1).
 
 ---
 
-## What to confirm (Freigabe checklist)
+## Hidden Nest rev. 3 — confirm
 
-### mounts.abduction_flashback
-- [ ] Visually different from locked Hidden Nest (hammocks)
-- [ ] Horse-sized Fellbeast (stall mount), smaller than the Mûmak — long neck, leathery bat wings, no rider
+Owner: `/review/presence` → **Reittiere** → Hidden Nest.
+
+- [ ] Grauwarg (grey wolf mount) is present and readable
 - [ ] No spiders hanging as captives
-- [ ] Steven’s spider is not among the abducted
-- [ ] Gore where silk cuts into animals
-- [ ] Oliphaunt + horses present
+- [ ] No Nazgûl
+- [ ] Still a hammock nest (not the abduction drag)
+- [ ] No gore
+- [ ] Distinct from Abduction Flashback
 
-### spider.lower_brood_answers
-- [ ] Steven = cream abdomen + red hourglass (Batch-1 `steven_command`)
-- [ ] Split brood response readable
-
-### spider.counter_command
-- [ ] Same Steven identity
-- [ ] Successful reversal readable
-- [ ] Slack strand toward Moriondo readable
+Video SHA: `c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52`  
+Prior locked v2 SHA `f3fcf22b…` is backed up. Status `batch-2-production`, not locked.
 
 ---
 
-## Delivered masters (720p, 24 fps, H.264, no audio)
+## Already delivered (unchanged this pass)
 
-| Cue | Video SHA-256 | Size |
-|-----|---------------|------|
-| mounts.abduction_flashback | `2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723` | 8.2 MB |
-| spider.lower_brood_answers | `c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845` | 4.7 MB |
-| spider.counter_command | `f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a` | 4.9 MB |
-
-Status: `batch-2-production`. **Not locked.**
+| Cue | Video SHA-256 |
+|-----|---------------|
+| mounts.abduction_flashback | `2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723` |
+| spider.lower_brood_answers | `c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845` |
+| spider.counter_command | `f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a` |
 
 ---
 
-## After owner Freigabe
+## After Freigabe
 
-1. Set the three cues to `owner-approved-existing` + `locked: true`
-2. Insert them into `CYCLE_I_SPINE` (abduction before hidden_nest; brood after steven_command; counter before true_break)
-3. Do **not** start Jan / Phial production before that
-
----
-
-## Do not
-
-- Regenerate Batch 1
-- Touch Hidden Nest
-- Lock these three without Freigabe
+Lock the three Phase 1 cues **and** Hidden Nest rev. 3. Then Cycle I spine. No Jan before that.

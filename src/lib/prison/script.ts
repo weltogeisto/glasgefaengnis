@@ -1,92 +1,91 @@
 import type { Mood } from "./presence";
 
+/**
+ * MEDIA_PROTOTYPE_ONLY
+ *
+ * This is a canon-safe media and performance demonstration. It is deliberately not the
+ * authoritative multiplayer interrogation, clue graph, participant memory or final solution.
+ * JGA Fellowship OS owns those systems. Do not expand this matcher into the production game.
+ */
+export const MEDIA_PROTOTYPE_ONLY = true as const;
+
 export const RIDDLE =
-  "Wo andere die Hoffnung suchen, suche ich etwas Schärferes. Sternennarbe, blaue Augen, leere Ostkarte. Was suche ich zuerst?";
+  "Ein Faden blieb zurück, als alle anderen dem Düsterwald folgten. Er war nicht schwächer. Er gehorchte einem stärkeren Willen. Welcher Faden war es?";
 
 export type Reply = {
   text: string;
   mood: Mood;
-  audio: string;
+  /** Existing speech files belong to the deprecated prototype. New canon stays silent until re-recorded. */
+  audio?: string;
   progress?: { riddle?: boolean; letters?: boolean };
 };
 
 export const REPLIES: Record<string, Reply> = {
   open: {
-    text: "Hendrik. Du riechst nach nassem Leder und ungeduldiger Hoffnung. Setz dich. Ich schreie nie. Sechs Gänge. Dann bin ich satt.",
+    text: "Die Ställe sind leer. Die Tiere leben. Zwischen diesen beiden Sätzen liegt der Fehler, den ihr finden müsst. Setz dich nicht. Wer bequem wird, glaubt mir zu früh.",
     mood: "idle",
-    audio: "open",
   },
   bruchstelle: {
-    text: "Ah. Die Bruchstelle. Du hast Ohren. Selten, bei Männern deiner Art.\n\nLies jetzt den Codex. In Grün steht, was ich mit Namen tue. Sag es mir. Wortnah.",
+    text: "Stevens Spinne. Nicht verschont. Nicht übersehen. Sie brach meinen Befehl und zwang die niedere Brut unter ihren eigenen Willen. Jetzt wisst ihr, wo mein Netz zum ersten Mal versagte.",
     mood: "whisper",
-    audio: "bruchstelle",
     progress: { riddle: true },
   },
   pferd: {
-    text: `Du schreist nach dem Stall, wie ein Kind nach der Speise, die man ihm nahm, ehe es kauen lernte.\n\nDas Tier ist nicht fort. Die Bindung ist umgesungen. Wer nach Fleisch sucht, sucht den Teller, nicht den Koch.\n\n${RIDDLE}`,
+    text: `Sie wurden physisch fortgeschafft. Düsterwald-Spinnen trugen, zogen und führten sie durch das Netz. Sie sind lebendig. Das beantwortet nur die Hand — noch nicht den Zweck.\n\n${RIDDLE}`,
     mood: "sniff",
-    audio: "pferd",
   },
   wer: {
-    text: "Ich bin, was übrig blieb, als das Lied falsch gesungen wurde. Höflich. Nicht gütig. Und du stehst draußen.",
+    text: "Moriondo. Besiegt genug, um hinter Glas zu stehen. Gefährlich genug, um euch von hier aus bei der Arbeit zuzusehen.",
     mood: "closer",
-    audio: "wer",
   },
   lied: {
-    text: `Old Tom sings of sun and stream. I sing the stall that lost its dream.\n\nSchön, dass du Ohren hast. Jetzt den Verstand.\n\n${RIDDLE}`,
-    mood: "song",
-    audio: "lied",
+    text: `Kein Lied. Ein Befehl, verteilt über Zug, Knoten und Gehorsam. Nennt es Magie, wenn euch das Wort beruhigt.\n\n${RIDDLE}`,
+    mood: "turn",
   },
   droh: {
-    text: "Du willst das Glas brechen. Wie rührend. Wie appetitlich ungebildet.\n\nIch habe mich selbst hineingesungen. Nicht aus Reue. Aus Geschmack.",
-    mood: "laugh",
-    audio: "laugh",
+    text: "Das Glas hielt, als mein Zorn größer war als mein Verstand. Es wird auch deine Drohung halten. Die Frage ist nicht, wer das Gefängnis bricht. Die Frage ist, wer draußen wem gehorcht.",
+    mood: "rage",
   },
   wege: {
-    text: "Du hast gelesen. Selten. Also ein Geschenk, das keines ist.\n\nDrei glühende Wege. Nur einer führt zum Stall. Die anderen führen dich in den Irrtum.",
+    text: "Vier Beweise, ehe Stevens Spinne den Gegenbefehl tragen kann: Brut. Pfad. Hort. Schnitt. Fehlt einer, antwortet nur ein Teil des Netzes — und ich lerne aus eurem Irrtum.",
     mood: "delight",
-    audio: "wege",
     progress: { letters: true },
   },
   elbereth: {
-    text: "Diesen Namen nimmst du in den Mund, als wäre er ein Schlüssel. Er ist keiner. Er ist Licht. Und Licht stört mich. Weiter.",
+    text: "Licht verletzt die Urseide nicht allein. Erst wenn ihr etwas freiwillig darin bindet, das ich nicht befehlen kann, verliert der alte Zauber seinen Halt.",
     mood: "rage",
-    audio: "elbereth",
   },
   warte: {
-    text: "Ich habe Jahrhunderte geübt. Du hast sechs Fragen. Wähle sie weise.",
+    text: "Warten ist keine Untätigkeit. Während ihr schweigt, entscheidet ihr, welche Spur ihr freigebt — und welche Macht ihr ihr damit gebt.",
     mood: "sit",
-    audio: "warte",
   },
   hoeflich: {
-    text: `Höflichkeit zuerst, Hendrik. ${RIDDLE}\n\nWähle. Ich habe Zeit. Du nicht.`,
+    text: `Eine bessere Frage. Oder wenigstens eine ehrlichere.\n\n${RIDDLE}\n\nFreigeben ist noch kein Beweisen. Versucht, diesen Unterschied zu behalten.`,
     mood: "bow",
-    audio: "hoeflich",
   },
   storm: {
-    text: "Siehst du? Alles in einem Gesicht. Zorn. Hunger. Höflichkeit. Wähle, welches du füttern willst.",
+    text: "Zorn kann gespielt werden. Echter Kontrollverlust schaut niemandem beim Wirken zu. Merkt euch den Unterschied, bevor ihr glaubt, mich provoziert zu haben.",
     mood: "storm",
-    audio: "storm",
   },
   sniff: {
-    text: "Nasses Leder. Angst. Und etwas Süßes darunter. Du bringst den Stall mit dir, Hendrik.",
+    text: "Nasses Leder. Waldharz. Angst. Der Stall haftet euch noch an. Das Netz weiß längst, welche Spur ihr zuerst schützen wollt.",
     mood: "sniff",
-    audio: "sniff",
   },
   closer: {
-    text: "Näher. Noch näher. Ich schreie nie. Du musst das Glas nicht brechen, um mich zu riechen.",
+    text: "Näher. Nicht weil ich dich brauche. Weil Menschen im Spiegel lieber mein Gesicht prüfen als ihre eigene Entscheidung.",
     mood: "closer",
-    audio: "wer",
   },
   hysteria: {
-    text: "Ha. Wie rührend. Wie appetitlich.\n\nEin Lachen ist nur Zorn, der die Zähne gefunden hat.",
+    text: "Lachen ist nützlich. Es macht eine Drohung kleiner und den Lachenden unvorsichtiger. Beides genügt mir.",
     mood: "laugh",
-    audio: "laugh",
   },
   stride: {
-    text: "Sechs Schritte. Zurück. Ich messe mein Haus. Ich habe Zeit. Du nicht.",
+    text: "Ich messe nicht die Zelle. Ich messe, wie lange ihr braucht, bis eine geteilte Beobachtung für euch zur Wahrheit wird.",
     mood: "stride",
-    audio: "warte",
+  },
+  cocoon: {
+    text: "Ein Nest gehört zu keinem Reittier. Zu groß. Zu alt. Zu sorgfältig gebunden. Ihr habt noch nicht entschieden, ob das eine Rettung oder eine zweite Gefangenschaft bedeutet.",
+    mood: "glass",
   },
 };
 
@@ -95,43 +94,53 @@ export type CodexSection = {
   title: string;
   paragraphs: string[];
   green?: string;
-  citeKey?: string;
+  citeKey?: "bruchstelle" | "wege";
 };
 
 export const CODEX: CodexSection[] = [
   {
-    kicker: "Das Tiefe Herz des Schattens",
-    title: "Ursprung und Wesen",
+    kicker: "Nachspiel von Dol Guldur",
+    title: "Eine wirkliche Niederlage",
     paragraphs: [
-      "Moriondo ist eine uralte, böse und ortsgebundene Macht unter den Bergen des Ostens. Sein Reich endet mit seinem Fels. Er begehrt weder Banner noch Krone.",
-      "Lange existierte er nicht als Geist mit Leib, sondern als Druck im Dunkel: ein in den Fels gesenkter Wille.",
+      "Moriondo wurde im Glassaal bezwungen und körperlich in den Zylinder gebannt. Seine erste Reaktion war kein kalkuliertes Schauspiel, sondern ein unkontrollierter Angriff auf das Glas.",
+      "Er bleibt gefährlich, weil sein Einfluss nicht nur durch unmittelbare Gewalt wirkt. Er beobachtet, welche Aussagen geteilt, geglaubt und gemeinsam bestätigt werden.",
     ],
   },
   {
-    kicker: "In Geist, nicht in Antlitz",
-    title: "Der böse Spiegel",
+    kicker: "Spuren in den Stallungen",
+    title: "Die körperliche Entführung",
     paragraphs: [
-      "Die Weisen kennen Tom Bombadil — Meister seines Lieds, unberührbar vom Ring. Moriondo ist dasselbe Gesetz, umgedreht.",
-      "Auch er singt, und das, was er singt, gehorcht. Ortsgebunden aus Macht, nicht aus Schwäche.",
+      "Die Reittiere wurden von niederen Düsterwald-Spinnen verschleppt. Zurück blieben Zaumzeug, Schleifspuren, Harz und verschieden gebundene Fäden.",
+      "Die Tiere leben. Die Mount-Nester sind Haftorte und zugleich Knoten eines größeren Befehlsnetzes.",
     ],
   },
   {
-    kicker: "Diebstahl ohne Hände",
-    title: "Das Lied vom leeren Stall",
+    kicker: "Der erste Fehler im Netz",
+    title: "Stevens Spinne",
     paragraphs: [
-      "Kein Schloss war gebrochen. Die Tiere waren nicht fortgeschafft. Ihre Bindung war unternommen.",
-      "Er nennt den leeren Stall, nicht das Tier. Wer nach dem Körper sucht, sucht falsch.",
+      "Eine Spinne blieb zurück. Sie war nicht frei von Moriondos Befehl; sie war stärker als er an diesem Knoten und zwang die niedere Brut, ihr zu gehorchen.",
+      "Sie kann einen Gegenbefehl tragen. Sie kann ihn nicht selbst zusammensetzen.",
     ],
-    green: "Er unternimmt den Namen. Er sang den Stall leer.",
+    green: "Ein Faden blieb, weil ein stärkerer Wille ihn hielt.",
+    citeKey: "bruchstelle",
   },
   {
-    kicker: "Belagerung und Beute",
-    title: "Die Nacht der Feste",
+    kicker: "Der Rat der Reiter",
+    title: "Freigeben ist nicht bestätigen",
     paragraphs: [
-      "Als der Turm barst, fand man ihn in einem Zylinder aus Glas. Er hatte sich selbst hineingesungen. Nicht aus Reue. Aus Souveränität.",
+      "Eine freigegebene Spur wird sichtbar und kann neue Fragen für andere Reiter öffnen. Sie gilt dadurch noch nicht als wahr.",
+      "Erst unabhängige Belege machen aus einer Beobachtung einen tragfähigen Teil des Gegenbefehls.",
     ],
-    green: "Drei glühende Wege lagen auf Aikanors Karte — Rhûn, seine Hallen, Harad.",
+    green: "Brut · Pfad · Hort · Schnitt",
     citeKey: "wege",
+  },
+  {
+    kicker: "Nicht im Stallregister",
+    title: "Das unzugeordnete Nest",
+    paragraphs: [
+      "Jenseits der Mount-Nester liegt ein Gefäß aus älterer Urseide. Es ist größer, tiefer gebunden und keinem Reittier zugeordnet.",
+      "Die frühen Aufzeichnungen zeigen weder Gesicht noch sichere Gestalt. Seine Bedeutung bleibt bis zur gemeinsamen Entschlüsselung versiegelt.",
+    ],
   },
 ];
 
@@ -140,32 +149,33 @@ export function matchReply(raw: string): Reply {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
-  if (/(bruchstelle|bruch)/.test(q)) return REPLIES.bruchstelle;
-  if (/(pferd|reittier|stall|wo ist)/.test(q)) return REPLIES.pferd;
-  if (/(wer bist|wer seid)/.test(q)) return REPLIES.wer;
-  if (/(lied|sing|musik)/.test(q)) return REPLIES.lied;
-  if (/(droh|toet|tot|schlag|brechen|zerstor)/.test(q)) return REPLIES.droh;
-  if (/(drei gluhende|gluhende wege|wege)/.test(q)) return REPLIES.wege;
-  if (/elbereth/.test(q)) return REPLIES.elbereth;
-  if (/warte|codex gelesen/.test(q)) return REPLIES.warte;
-  if (/(lach|lachst|witz|appetitlich)/.test(q)) return REPLIES.hysteria;
-  if (/(naher|komm nah|closer)/.test(q)) return REPLIES.closer;
-  if (/(riech|geruch|duft|leder)/.test(q)) return REPLIES.sniff;
-  if (/(zorn|wut|gesicht|emotion)/.test(q)) return REPLIES.storm;
+  if (/(steven|bruchstelle|starkerer wille|spinne blieb)/.test(q)) return REPLIES.bruchstelle;
+  if (/(pferd|reittier|mount|stall|entfuhr|verschlepp|wo sind)/.test(q)) return REPLIES.pferd;
+  if (/(wer bist|wer seid|moriondo)/.test(q)) return REPLIES.wer;
+  if (/(lied|sing|musik|befehl)/.test(q)) return REPLIES.lied;
+  if (/(droh|tot|schlag|brechen|zerstor|glas)/.test(q)) return REPLIES.droh;
+  if (/(brut|pfad|hort|schnitt|vier beweise|gegenbefehl)/.test(q)) return REPLIES.wege;
+  if (/(elbereth|phiole|phial|licht|urseide)/.test(q)) return REPLIES.elbereth;
+  if (/(warte|schweig|freigeb|bestatig)/.test(q)) return REPLIES.warte;
+  if (/(lach|witz|appetitlich)/.test(q)) return REPLIES.hysteria;
+  if (/(naher|komm nah|closer|spiegel)/.test(q)) return REPLIES.closer;
+  if (/(riech|geruch|duft|leder|harz)/.test(q)) return REPLIES.sniff;
+  if (/(zorn|wut|kontrollverlust|emotion)/.test(q)) return REPLIES.storm;
   if (/(lauf|schritt|auf und ab|pace|geh auf)/.test(q)) return REPLIES.stride;
+  if (/(kokon|cocoon|nest|nicht zugeordnet|zu gross)/.test(q)) return REPLIES.cocoon;
   return REPLIES.hoeflich;
 }
 
 export function chipsFor(riddle: boolean, letters: boolean, questions: number, maxQ: number): string[] {
-  if (questions >= maxQ) return ["Wann öffnet die nächste Wache?", "Ich lese den Codex"];
-  if (!riddle) return ["Bruchstelle", "Das Pferd", "Wer bist du?", "Warum lachst du?"];
-  if (!letters) return ["Drei glühende Wege", "Ich habe den Codex gelesen", "Sing vom leeren Stall", "Elbereth"];
-  return ["Ich warte", "Riech mich", "Elbereth", "Was ist deine Musik?"];
+  if (questions >= maxQ) return ["Wann öffnet die nächste Wache?", "Ich prüfe die Akte"];
+  if (!riddle) return ["Die leeren Ställe", "Stevens Spinne", "Wer bist du?", "Was hielt das Glas?"];
+  if (!letters) return ["Brut · Pfad · Hort · Schnitt", "Das unzugeordnete Nest", "Was willst du?", "Licht gegen Urseide"];
+  return ["Freigeben ist nicht bestätigen", "Was misst das Glas?", "Ich schweige", "Warum lächelst du?"];
 }
 
 export function objectiveFor(riddle: boolean, letters: boolean, questions: number, maxQ: number): string {
-  if (questions >= maxQ) return "Diese Wache ist zu Ende. Lies den Codex. Komm wieder.";
-  if (!riddle) return "Schritt 1: sein Rätsel. Wähle die Antwort, die nur dich kennt — nicht das Pferd.";
-  if (!letters) return "Schritt 2: Codex, grüne Zeile. „Zum Glas sagen“ — oder tippe das Zitat.";
-  return "Die ersten zwei Türen stehen offen. Die Chiffre braucht Zeit.";
+  if (questions >= maxQ) return "Diese Medienwache endet hier. Die eigentliche Ermittlung läuft später gemeinsam in JGA OS weiter.";
+  if (!riddle) return "Finde den ersten Knoten, an dem Moriondos Befehl versagte.";
+  if (!letters) return "Ordne die vier Bestandteile, die Stevens Spinne für einen Gegenbefehl braucht.";
+  return "Trenne Beobachtung, Freigabe und Beweis. Moriondo versucht, sie gleichzusetzen.";
 }

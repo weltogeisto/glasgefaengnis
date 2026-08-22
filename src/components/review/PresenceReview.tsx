@@ -122,6 +122,8 @@ export function PresenceReview() {
                 if (f.id === "spine") setActive(CYCLE_I_SPINE[0]);
                 if (f.id === "batch-2") setActive("moriondo.capture_rage");
                 if (f.id === "batch-1") setActive("moriondo.capture_rage");
+                if (f.id === "stall-spider") setActive("spider.lower_brood_answers");
+                if (f.id === "mount-rescue") setActive("mounts.abduction_flashback");
               }}
               className={cn(
                 "min-h-11 shrink-0 rounded-lg px-3 font-display text-[0.68rem] uppercase tracking-[0.12em] text-muted transition-colors duration-150",
@@ -151,6 +153,19 @@ export function PresenceReview() {
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
             Moriondo-Produktion M01–M05. Capture Rage und True Break sind die längeren Master der
             freigegebenen Stills. Maske, gespielte Wut und Nachbeben sind neu. 720p, 24 fps, ohne Ton.
+          </p>
+        ) : null}
+        {filter === "mount-rescue" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Phase 1 Connectives zur Freigabe. Abduction ist ein eigener Shot — nicht das Nest.
+            Fellbeast als Stall-Reittier, kleiner als der Mûmak. Keine Spinnen unter den Gefangenen.
+            Hidden Nest bleibt locked.
+          </p>
+        ) : null}
+        {filter === "stall-spider" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Steven-Identität auf dem locked Batch-1-Command. Lower Brood Answers ist der neue
+            Phase-1-Connective.
           </p>
         ) : null}
 

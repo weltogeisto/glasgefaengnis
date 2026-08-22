@@ -1,6 +1,6 @@
 {
   "version": "cycle-01-phase-0",
-  "note": "Phase 0 complete and owner-approved. Five Batch 1 assets locked. Phase 1 connective production next. 720p masters.",
+  "note": "Phase 1 connective masters in review (batch-2-production, not locked). Five Batch 1 assets remain owner-approved-existing. 720p masters.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -334,28 +334,32 @@
       "usedIn": "Discovery of Steven's authority. May open the later counter-command before a new continuation."
     },
     "spider.lower_brood_answers": {
-      "video": null,
-      "poster": "/duesterwald/cycle-01/steven-spider-command-16x9.jpg",
+      "video": "/duesterwald/cycle-01/lower-brood-answers.mp4",
+      "poster": "/duesterwald/cycle-01/lower-brood-answers.jpg",
       "loop": false,
-      "durationMs": 8500,
+      "durationMs": 10040,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "50% 55%",
       "entryPose": "brood-bowed",
       "exitPose": "split-response",
-      "status": "awaiting-production"
+      "sha256": "c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845",
+      "status": "batch-2-production",
+      "usedIn": "Phase 1 connective. Steven identity locked to stall/mount view. Lower brood partial response."
     },
     "mounts.abduction_flashback": {
-      "video": null,
-      "poster": "/duesterwald/cycle-01/mounts-hidden-nest.jpg",
+      "video": "/duesterwald/cycle-01/mounts-abduction-flashback.mp4",
+      "poster": "/duesterwald/cycle-01/mounts-abduction-flashback.jpg",
       "loop": false,
-      "durationMs": 10000,
+      "durationMs": 10040,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "50% 52%",
       "entryPose": "alive-resisting",
       "exitPose": "deeper-forest",
-      "status": "awaiting-production"
+      "sha256": "2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723",
+      "status": "batch-2-production",
+      "usedIn": "Phase 1 connective. Alive capture of the stall roster. Fellbeast is a stall mount, smaller than the Mûmak. No spiders as captives. Gore where silk bites."
     },
     "mounts.hidden_nest": {
       "video": "/duesterwald/cycle-01/mounts-hidden-nest.mp4",
@@ -373,16 +377,18 @@
       "usedIn": "First collective proof the stall-roster mounts live in the Düsterwald. Mount nest only — not the Jan great cocoon."
     },
     "spider.counter_command": {
-      "video": null,
-      "poster": "/duesterwald/cycle-01/steven-spider-command-16x9.jpg",
+      "video": "/duesterwald/cycle-01/spider-counter-command.mp4",
+      "poster": "/duesterwald/cycle-01/spider-counter-command.jpg",
       "loop": false,
-      "durationMs": 12000,
+      "durationMs": 10040,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "50% 55%",
       "entryPose": "sovereign-still",
       "exitPose": "strand-slack",
-      "status": "awaiting-production"
+      "sha256": "f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a",
+      "status": "batch-2-production",
+      "usedIn": "Phase 1 connective. Steven successfully counters. Slack strand and brood reversal must stay readable."
     },
     "mounts.release": {
       "video": null,

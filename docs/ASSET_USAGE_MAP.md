@@ -26,8 +26,12 @@ The following cues are protected by the approval registry. Their current files m
 | `moriondo.rage_true_break` | `c3a19e85bc30eeacd40cf6b1a6dbd99840227fd394ade723a8fdc4b77bf8b4e3` | Evidence-backed break when Steven’s spider is proven to have defeated Moriondo’s command. |
 | `stall.web_takeover` | `dfb9c3348e7397093a35d7d7b0daa88b60d0f63ff0e92401f5868e8d573d0e35` | First profile/stall incident. The 4:3 variant is canonical for personal profiles. |
 | `spider.steven_command` | `119b5df7f26b149422b248c81c9041f1464b5421e847684f8f826c0b0085f17e` | First proof that Steven’s spider can command the lower brood. |
-| `mounts.hidden_nest` | `ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16` | Collective proof that the complete mount roster is alive in the Düsterwald. This is not Jan’s cocoon. |
+| `spider.lower_brood_answers` | `c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845` | Partial command: one brood answers while another remains still. |
 | `mounts.abduction_flashback` | `2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723` | Physical abduction evidence. The current restrained injury treatment is owner-approved. |
+| `mounts.hidden_nest` | `ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16` | Collective proof that the complete mount roster is alive in the Düsterwald. This is not Jan’s cocoon. |
+| `spider.counter_command` | `f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a` | Completed reversal and severance of Moriondo’s return strand. |
+| `nest.great_cocoon_teaser` | `c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16` | First appearance of the unassigned monument nest. No readable identity. |
+| `nest.cocoon_inner_pulse` | `a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e` | Proof of a living non-mount occupant; no face is shown. |
 | `phial.three_smiths_strike` | `caa1d2a634ded41209f15294d01ec6bf166e730b3025e5bce80484dce54e3506` | Collective forge blow by Ruben, Max and Hendrik; Max delivers the depicted main strike. |
 | `phial.ruben_assemble` | `119c08a7933b72b3da98f52b12211d95a9746d2aece227a5b308a5577b8d8410` | Ruben performs the approved fine assembly and seats the Blaue-Glut rune. |
 
@@ -42,10 +46,8 @@ The following cues are protected by the approval registry. Their current files m
 | `moriondo.mask_reassembles` | `0af7c164b63a52b3df4106a1ca9e353defcd4e9386d20614acff5aeef1dd2188` | Connects capture rage to controlled interrogation presence. |
 | `moriondo.rage_performed` | `0c767e82e892fa3f3290d2f669499b7b48d96500fec3046a1852eea44317c000` | Deliberate intimidation that remains under control. |
 | `moriondo.rage_aftermath` | `deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91` | Cold recovery after the genuine break. |
-| `spider.lower_brood_answers` | `c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845` | Partial command: one brood answers while another remains still. |
-| `spider.counter_command` | `f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a` | Completed reversal and severance of Moriondo’s return strand. |
-| `nest.great_cocoon_teaser` | `c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16` | First appearance of the unassigned monument nest. No readable identity. |
-| `nest.cocoon_inner_pulse` | `a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e` | Proof of a living non-mount occupant; no face is shown. |
+| `mounts.release` | `1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e` | Phase B review master. Silk loosens, spiders withdraw, mounts regain footing. Awaiting Freigabe. |
+| `mounts.return` | `f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e` | Phase B review master. Exhausted stall-roster return toward the empty stall. Awaiting Freigabe. |
 
 ---
 
@@ -67,6 +69,12 @@ The **Play Cycle I spine** action on `/review/presence` demonstrates:
 12. `moriondo.rage_aftermath`
 
 This is a media continuity review, not the authoritative puzzle sequence. JGA Fellowship OS decides when each beat becomes available.
+
+**Play Rettung** on `/review/presence` is the Phase B review sequence (not locked):
+
+1. `spider.counter_command`
+2. `mounts.release`
+3. `mounts.return`
 
 ---
 
@@ -117,15 +125,10 @@ The owner-approved three-smith and Ruben structure is final unless the owner cha
 
 ## 6. Missing animation work
 
-### Mount resolution
-
-- `mounts.release`
-- `mounts.return`
-
 ### Forge continuation
 
-- `phial.forge_night_watch`
-- `phial.forge_completion`
+- `phial.forge_night_watch` — storyboard still present, video not produced
+- `phial.forge_completion` — storyboard still present, video not produced
 - `phial.ignition_against_silk`
 
 Optional only when pacing requires it:

@@ -186,4 +186,31 @@ QC:
 - Fewer lower spiders (one on a distant strand)
 - Inner pulse: occupant is caught inside. Only a five-finger cloth imprint strains the sealed silk. No visible hand, no face.
 
+**Later lock (same day):** both Phase 2 teasers were owner-approved and locked. The cloth-imprint-only QC line above describes superseded rev. 3. The locked rev. 4 pulse is `a46761b7` — skin through mesh, hand remains under the Urseide, no free hand, no face. See `config/presence-approvals.json`.
+
+## Phase B — Mount resolution review masters — 2026-08-22
+
+Status `batch-2-production`, `locked: false`, awaiting Freigabe. Locked Hidden Nest and Counter Command were not regenerated.
+
+| Cue | File | Duration | fps | Loop | SHA-256 (mp4) | Size |
+|---|---|---|---|---|---|---|
+| `mounts.release` | `/duesterwald/cycle-01/mounts-release.mp4` | 10.79s | 24 | one-shot | `1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e` | 4.4 MB |
+| `mounts.return` | `/duesterwald/cycle-01/mounts-return.mp4` | 10.79s | 24 | one-shot | `f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e` | 4.6 MB |
+
+- Codec: H.264 High, yuv420p, 24 fps, `+faststart`, **no audio**, 1280×720.
+- ~9 freeze frames cloned at start and end.
+- Posters are the generation stills (no motion blur).
+- Identity lock: Hidden Nest rev. 4 for species/scale; stall web takeover for the return destination.
+- Review: `/review/presence` filter **Rettung** and **Play Rettung**.
+
+QC:
+- Silk loosens; lower spiders withdraw rather than attack.
+- Grey warg tests a freed paw; other mounts regain footing.
+- Return is exhausted recovery toward the cobwebbed stall, not a celebration.
+- No Nazgûl. No spiders as captives. No readable Jan. No embedded text.
+
+### Not yet
+
+Forge continuation videos (`phial.forge_night_watch`, `phial.forge_completion`, `phial.ignition_against_silk`) remain storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
+
 

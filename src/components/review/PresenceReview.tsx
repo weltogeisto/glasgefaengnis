@@ -7,9 +7,10 @@ import {
   APPROVED_EXISTING_IDS,
   BATCH_1_IDS,
   BATCH_2_IDS,
+  CYCLE_I_RESOLUTION,
   CYCLE_I_SPINE,
+  FORGE_CONTINUATION_IDS,
   PHASE_2_IDS,
-  PHASE_3_IDS,
   REVIEW_SECTIONS,
   STORY_BY_ID,
   STORY_CLIPS,
@@ -21,11 +22,21 @@ import {
 } from "@/lib/prison/storyPresence";
 import { cn } from "@/lib/utils";
 
-type Filter = "approved-existing" | "spine" | "batch-2" | "batch-1" | "phase-2" | "phase-3" | ReviewSection | "all";
+type Filter =
+  | "approved-existing"
+  | "spine"
+  | "resolution"
+  | "batch-2"
+  | "batch-1"
+  | "phase-2"
+  | "phase-3"
+  | ReviewSection
+  | "all";
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "approved-existing", label: "Approved existing" },
   { id: "spine", label: "Cycle I Spine" },
+  { id: "resolution", label: "Rettung" },
   { id: "phase-2", label: "Jan" },
   { id: "phase-3", label: "Schmiede" },
   { id: "batch-2", label: "Batch 2" },
@@ -51,8 +62,9 @@ const STATUS: Record<StoryClip["status"], { label: string; tone: string }> = {
 };
 
 export function PresenceReview() {
-  const [filter, setFilter] = useState<Filter>("approved-existing");
-  const [active, setActive] = useState<StoryCueId>("moriondo.capture_rage");
+  const [filter, setFilter] = useState<Filter>("resolution");
+  const [active, setActive] = useState<StoryCueId>("mounts.release");
+  const [playlist, setPlaylist] = useState<StoryCueId[]>(CYCLE_I_RESOLUTION);
   const [spineMode, setSpineMode] = useState(false);
   const [spineIndex, setSpineIndex] = useState(0);
 
@@ -63,29 +75,33 @@ export function PresenceReview() {
     if (filter === "spine") {
       return CYCLE_I_SPINE.map((id) => STORY_BY_ID[id]).filter(Boolean);
     }
+    if (filter === "resolution") {
+      return CYCLE_I_RESOLUTION.map((id) => STORY_BY_ID[id]).filter(Boolean);
+    }
     if (filter === "batch-2") return STORY_CLIPS.filter((c) => BATCH_2_IDS.includes(c.id));
     if (filter === "batch-1") return STORY_CLIPS.filter((c) => BATCH_1_IDS.includes(c.id));
     if (filter === "phase-2") return STORY_CLIPS.filter((c) => PHASE_2_IDS.includes(c.id));
-    if (filter === "phase-3") return STORY_CLIPS.filter((c) => PHASE_3_IDS.includes(c.id));
+    if (filter === "phase-3") return STORY_CLIPS.filter((c) => FORGE_CONTINUATION_IDS.includes(c.id));
     if (filter === "all") return STORY_CLIPS;
     return STORY_CLIPS.filter((c) => c.section === filter);
   }, [filter]);
 
   const current = STORY_BY_ID[active] ?? clips[0];
 
-  function playSpine() {
-    setFilter("spine");
+  function playSequence(ids: StoryCueId[], nextFilter: Filter) {
+    setFilter(nextFilter);
+    setPlaylist(ids);
     setSpineMode(true);
     setSpineIndex(0);
-    setActive(CYCLE_I_SPINE[0]);
+    setActive(ids[0]);
   }
 
   function onSpineEnded() {
     if (!spineMode) return;
     const next = spineIndex + 1;
-    if (next < CYCLE_I_SPINE.length) {
+    if (next < playlist.length) {
       setSpineIndex(next);
-      setActive(CYCLE_I_SPINE[next]);
+      setActive(playlist[next]);
     } else {
       setSpineMode(false);
       setSpineIndex(0);
@@ -102,11 +118,18 @@ export function PresenceReview() {
             </p>
             <h1 className="font-display text-xl tracking-wide md:text-2xl">Zyklus I · Review</h1>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               type="button"
-              onClick={playSpine}
+              onClick={() => playSequence(CYCLE_I_RESOLUTION, "resolution")}
               className="inline-flex min-h-11 items-center rounded-xl bg-accent px-4 font-display text-[0.68rem] uppercase tracking-[0.14em] text-bg"
+            >
+              Play Rettung
+            </button>
+            <button
+              type="button"
+              onClick={() => playSequence(CYCLE_I_SPINE, "spine")}
+              className="inline-flex min-h-11 items-center rounded-xl bg-raised px-4 font-display text-[0.68rem] uppercase tracking-[0.14em] text-fg"
             >
               Play Cycle I spine
             </button>
@@ -128,12 +151,15 @@ export function PresenceReview() {
                 setSpineMode(false);
                 if (f.id === "approved-existing") setActive("moriondo.capture_rage");
                 if (f.id === "spine") setActive(CYCLE_I_SPINE[0]);
+                if (f.id === "resolution") setActive("mounts.release");
                 if (f.id === "batch-2") setActive("moriondo.capture_rage");
                 if (f.id === "batch-1") setActive("moriondo.capture_rage");
                 if (f.id === "phase-2") setActive("nest.great_cocoon_teaser");
+                if (f.id === "phase-3") setActive("phial.three_smiths_strike");
                 if (f.id === "stall-spider") setActive("spider.lower_brood_answers");
-                if (f.id === "mount-rescue") setActive("mounts.hidden_nest");
+                if (f.id === "mount-rescue") setActive("mounts.release");
                 if (f.id === "jan-mystery") setActive("nest.great_cocoon_teaser");
+                if (f.id === "phial-forge") setActive("phial.three_smiths_strike");
               }}
               className={cn(
                 "min-h-11 shrink-0 rounded-lg px-3 font-display text-[0.68rem] uppercase tracking-[0.12em] text-muted transition-colors duration-150",
@@ -149,20 +175,32 @@ export function PresenceReview() {
       <main className="mx-auto max-w-6xl px-4 py-6 md:px-8 md:py-8">
         {filter === "approved-existing" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Owner-approved und <strong>locked</strong>: Batch 1 plus Phase-1-Connectives. Nicht
-            regenerieren. Alle erscheinen in der Cycle-I-Spine.
+            Owner-approved und <strong>locked</strong>. Nicht regenerieren. Capture, Stall, Steven,
+            Abduction, Nest, Counter, Jan-Teaser und die zwei Schmiede-Schläge.
           </p>
         ) : null}
         {filter === "spine" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Capture → Abduction → Nest → Steven → True Break → Counter. Locked Assets plus Phase-1-Connectives.
-            Jan-Teaser sind noch nicht in der Spine. {spineMode ? `Abspielen: ${spineIndex + 1}/${CYCLE_I_SPINE.length}` : "Play-Button starten."}
+            Capture → Abduction → Nest → Steven → True Break → Counter. Locked Assets plus Connectives.
+            Jan-Teaser bleiben auf dem eigenen Filter. {spineMode ? `Abspielen: ${spineIndex + 1}/${playlist.length}` : "Play-Button starten."}
+          </p>
+        ) : null}
+        {filter === "resolution" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Phase B zur Freigabe: Counter Command, dann Release, dann Return. Nicht locked.
+            Arten und Maßstab bleiben am Hidden Nest. {spineMode ? `Abspielen: ${spineIndex + 1}/${playlist.length}` : "Play Rettung starten."}
           </p>
         ) : null}
         {filter === "phase-2" || filter === "jan-mystery" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Phase 2 · Jan-Mysterium zur Freigabe. Ein weiteres Nest, das zu keinem Reittier gehört.
-            Älter, größer, ein Gefäß. Kein Gesicht. Nicht das Hidden Nest.
+            Großes Nest: Teaser und Inner Pulse sind locked und bleiben ohne Gesicht. Lesbare Jan-Reveal
+            und Emergence warten auf die Identitäts-Sperre aus JGA OS.
+          </p>
+        ) : null}
+        {filter === "phase-3" || filter === "phial-forge" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Drei Schmiede und Rubens Feinmontage sind locked. Nachtwache und Vollendung sind Storyboards
+            um diese beiden Schläge — kein Einzel-Schmied.
           </p>
         ) : null}
         {filter === "batch-2" ? (
@@ -173,8 +211,8 @@ export function PresenceReview() {
         ) : null}
         {filter === "mount-rescue" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Hidden Nest Rev. 4 ist locked. Abduction und Counter Command sind locked Phase-1-Connectives.
-            Release und Return warten auf Produktion.
+            Hidden Nest Rev. 4, Abduction und Counter sind locked. Release und Return sind Review-Master
+            zur Freigabe.
           </p>
         ) : null}
         {filter === "stall-spider" ? (
@@ -190,7 +228,7 @@ export function PresenceReview() {
             spineMode={spineMode}
             onSpineEnded={onSpineEnded}
             spineIndex={spineIndex}
-            spineTotal={CYCLE_I_SPINE.length}
+            spineTotal={playlist.length}
           />
         ) : null}
 
@@ -212,13 +250,17 @@ export function PresenceReview() {
                     ? "Owner-approved existing · locked"
                     : filter === "spine"
                       ? "Cycle I Spine"
-                      : filter === "batch-2"
-                        ? "Batch 2 · Moriondo"
-                        : filter === "batch-1"
-                          ? "Batch 1 · Freigabe"
-                          : filter === "phase-2"
-                            ? "Phase 2 · Jan-Mysterium"
-                            : (FILTERS.find((f) => f.id === filter)?.label ?? "")
+                      : filter === "resolution"
+                        ? "Phase B · Rettung"
+                        : filter === "batch-2"
+                          ? "Batch 2 · Moriondo"
+                          : filter === "batch-1"
+                            ? "Batch 1 · Freigabe"
+                            : filter === "phase-2"
+                              ? "Jan · Teaser locked"
+                              : filter === "phase-3"
+                                ? "Schmiede · zwei Tage"
+                                : (FILTERS.find((f) => f.id === filter)?.label ?? "")
                 }
                 kicker="Cue · Poster · Playback"
                 clips={clips}

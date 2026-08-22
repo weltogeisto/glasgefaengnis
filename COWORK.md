@@ -101,10 +101,11 @@ Existing speech audio belongs to the deprecated song-prototype script. Do not re
 
 1. Keep the approved media unchanged.
 2. Use `/review/presence` to review the integrated Cycle I spine.
-3. Continue missing connective and resolution clips only under semantic cue IDs.
-4. Lock Jan’s canonical JGA identity before a readable reveal.
-5. Keep the first two cocoon clips non-identifying.
-6. Produce the missing mount release/return and Jan/Phial resolution assets after the corresponding identity and storyboard gates.
+3. Review Phase B `mounts.release` and `mounts.return` (filter **Rettung**) — do not lock them without owner Freigabe.
+4. Continue missing forge continuation clips only under semantic cue IDs, around the two approved smith scenes.
+5. Lock Jan’s canonical JGA identity before a readable reveal.
+6. Keep the first two cocoon clips non-identifying.
+7. Produce Jan/Phial resolution assets only after the corresponding identity and storyboard gates.
 
 ## Development rules
 

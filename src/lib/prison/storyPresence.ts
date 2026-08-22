@@ -38,6 +38,12 @@ export type StoryCueId =
   | "nest.cocoon_inner_pulse"
   | "phial.three_smiths_strike"
   | "phial.ruben_assemble"
+  | "phial.forge_night_watch"
+  | "phial.forge_completion"
+  | "phial.ignition_against_silk"
+  | "jan.reveal_in_cocoon"
+  | "nest.silk_break_release"
+  | "jan.emergence"
   | "moriondo.open_door_seated"
   | "moriondo.threshold_study"
   | "moriondo.remembered_grudge";
@@ -416,11 +422,11 @@ export const STORY_CLIPS: StoryClip[] = [
     label: "Mounts Release",
     purpose: "Restraints loosen. Spiders withdraw. Tense relief, no triumph.",
     section: "mount-rescue",
-    status: "awaiting-production",
-    video: null,
-    poster: "/duesterwald/cycle-01/mounts-hidden-nest.jpg",
+    status: "batch-2-production",
+    video: "/duesterwald/cycle-01/mounts-release.mp4",
+    poster: "/duesterwald/cycle-01/mounts-release.jpg",
     loop: false,
-    durationMs: 12000,
+    durationMs: 10790,
     camera: "wide",
     desktopObjectPosition: "50% 50%",
     mobileObjectPosition: "50% 52%",
@@ -429,17 +435,19 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "one-shot",
     filename: "mounts-release.mp4",
     batch: 4,
+    sha256: "1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e",
+    usedIn: "Phase B review master. Payoff after the counter-command. Species and scale locked to Hidden Nest rev. 4. Not locked — awaiting Freigabe.",
   },
   {
     id: "mounts.return",
     label: "Mounts Return",
     purpose: "Recovery toward the stable. Exhausted, alive.",
     section: "mount-rescue",
-    status: "awaiting-production",
-    video: null,
-    poster: "/duesterwald/cycle-01/stall-web-takeover-16x9.jpg",
+    status: "batch-2-production",
+    video: "/duesterwald/cycle-01/mounts-return.mp4",
+    poster: "/duesterwald/cycle-01/mounts-return.jpg",
     loop: false,
-    durationMs: 13000,
+    durationMs: 10790,
     camera: "wide",
     desktopObjectPosition: "50% 50%",
     mobileObjectPosition: "50% 55%",
@@ -448,6 +456,8 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "one-shot",
     filename: "mounts-return.mp4",
     batch: 4,
+    sha256: "f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e",
+    usedIn: "Phase B review master. Exhausted stall-roster return toward the empty webbed stall. Not locked — awaiting Freigabe.",
   },
   {
     id: "moriondo.open_door_seated",
@@ -550,6 +560,126 @@ export const STORY_CLIPS: StoryClip[] = [
     locked: true,
     usedIn: "Phase 3/4. Owner-approved 2026-08-22. Ruben on the Phial, small chasing hammer, Blaue-Glut rune seated.",
   },
+  {
+    id: "phial.forge_night_watch",
+    label: "Forge Night Watch",
+    purpose: "Between the collective strike and the fine assembly. The vessel remains incomplete.",
+    section: "phial-forge",
+    status: "storyboard",
+    video: null,
+    poster: "/phial/cycle-01/phial-forge-night-watch.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "50% 50%",
+    entryPose: "incomplete-vessel",
+    exitPose: "held-heat",
+    playback: "one-shot",
+    filename: "phial-forge-night-watch.mp4",
+    batch: 5,
+    usedIn: "Phase C connective. Extends the approved three-smith strike into the two-day forge. Storyboard still only until Freigabe.",
+  },
+  {
+    id: "phial.forge_completion",
+    label: "Forge Completion",
+    purpose: "The finished Phial. Inherited light rehoused. Grave, not a brighter lamp.",
+    section: "phial-forge",
+    status: "storyboard",
+    video: null,
+    poster: "/phial/cycle-01/phial-forge-completion.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "medium",
+    desktopObjectPosition: "50% 40%",
+    mobileObjectPosition: "52% 38%",
+    entryPose: "rune-seated",
+    exitPose: "vessel-complete",
+    playback: "one-shot",
+    filename: "phial-forge-completion.mp4",
+    batch: 5,
+    usedIn: "Phase C. Extends Ruben's approved assembly. Readable Jan remains blocked. Storyboard still only until Freigabe.",
+  },
+  {
+    id: "phial.ignition_against_silk",
+    label: "Ignition Against Silk",
+    purpose: "The completed Phial meets the Urseide. No readable occupant.",
+    section: "phial-forge",
+    status: "storyboard",
+    video: null,
+    poster: "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "50% 50%",
+    entryPose: "phial-raised",
+    exitPose: "silk-strain",
+    playback: "one-shot",
+    filename: "phial-ignition-against-silk.mp4",
+    batch: 5,
+    usedIn: "Phase C/E. Uses the locked great-cocoon architecture. No Jan face. Storyboard until identity gate.",
+  },
+  {
+    id: "jan.reveal_in_cocoon",
+    label: "Jan Reveal in Cocoon",
+    purpose: "First readable identity. Blocked until canonical JGA lock and owner Freigabe.",
+    section: "jan-mystery",
+    status: "storyboard",
+    video: null,
+    poster: "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "medium-wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "52% 50%",
+    entryPose: "silk-parted",
+    exitPose: "identity-readable",
+    playback: "one-shot",
+    filename: "jan-reveal-in-cocoon.mp4",
+    batch: 5,
+    usedIn: "Phase D/E. Do not generate a readable face until Jan's canonical JGA identity is locked.",
+  },
+  {
+    id: "nest.silk_break_release",
+    label: "Silk Break Release",
+    purpose: "Urseide yields to the Phial. Occupant still not fully readable.",
+    section: "jan-mystery",
+    status: "storyboard",
+    video: null,
+    poster: "/duesterwald/cycle-01/nest-cocoon-inner-pulse.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "medium-wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "52% 50%",
+    entryPose: "ignition",
+    exitPose: "binding-broken",
+    playback: "one-shot",
+    filename: "nest-silk-break-release.mp4",
+    batch: 5,
+    usedIn: "Phase E. Follows ignition. No early Jan identification.",
+  },
+  {
+    id: "jan.emergence",
+    label: "Jan Emergence",
+    purpose: "Jan is freed. Begins his app arc; does not complete his story.",
+    section: "jan-mystery",
+    status: "storyboard",
+    video: null,
+    poster: "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+    loop: false,
+    durationMs: 10000,
+    camera: "medium-wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "52% 50%",
+    entryPose: "binding-broken",
+    exitPose: "freed",
+    playback: "one-shot",
+    filename: "jan-emergence.mp4",
+    batch: 5,
+    usedIn: "Phase E. Blocked on the identity gate. Cycle I victory, not Jan's full resolution.",
+  },
 ];
 
 export const STORY_BY_ID: Record<StoryCueId, StoryClip> = Object.fromEntries(
@@ -598,9 +728,23 @@ export const PHASE_3_IDS: StoryCueId[] = [
   "phial.ruben_assemble",
 ];
 
+export const PHASE_B_IDS: StoryCueId[] = [
+  "mounts.release",
+  "mounts.return",
+];
+
+export const FORGE_CONTINUATION_IDS: StoryCueId[] = [
+  "phial.three_smiths_strike",
+  "phial.forge_night_watch",
+  "phial.ruben_assemble",
+  "phial.forge_completion",
+  "phial.ignition_against_silk",
+];
+
 /**
- * Cycle I spine — review-only linear sequence proving locked Batch 1 + Phase 1
- * connectives form one arc. Phase 2 Jan teasers stay out until Freigabe.
+ * Cycle I spine — review-only linear sequence of locked capture, abduction,
+ * nest, Steven, true break and counter. Jan teasers stay on their own filter.
+ * Mount release/return are a separate Phase B review sequence until Freigabe.
  * Played by the "Play Cycle I spine" button on /review/presence.
  */
 export const CYCLE_I_SPINE: StoryCueId[] = [
@@ -625,13 +769,20 @@ export const CYCLE_I_SPINE: StoryCueId[] = [
   "moriondo.rage_aftermath",
 ];
 
+/** Phase B review sequence — counter payoff. Not locked. */
+export const CYCLE_I_RESOLUTION: StoryCueId[] = [
+  "spider.counter_command",
+  "mounts.release",
+  "mounts.return",
+];
+
 export const REVIEW_SECTIONS: { id: ReviewSection; title: string; kicker: string }[] = [
   { id: "reusable", title: "Wiederverwendbare Clips", kicker: "Bereits im Kanon" },
   { id: "moriondo-cycle-01", title: "Moriondo · Zyklus I", kicker: "M01–M05" },
   { id: "stall-spider", title: "Stall und Spinne", kicker: "S01–S03" },
   { id: "mount-rescue", title: "Rettung der Reittiere", kicker: "A01–A05" },
-  { id: "jan-mystery", title: "Jan · Das große Nest", kicker: "Phase 2 · Teaser" },
-  { id: "phial-forge", title: "Phial · Schmiede", kicker: "Phase 3 · Blaue Glut" },
+  { id: "jan-mystery", title: "Jan · Das große Nest", kicker: "Teaser · Identitätssperre" },
+  { id: "phial-forge", title: "Phial · Schmiede", kicker: "Blaue Glut · Zwei Tage" },
   { id: "cycle-02", title: "Zyklus II · Konzepte", kicker: "Die offene Tür" },
 ];
 

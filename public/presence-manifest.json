@@ -1,6 +1,6 @@
 {
-  "version": "cycle-01-phase-3",
-  "note": "Phase 1 locked. Phase 3 Phial smith clips owner-approved 2026-08-22 (Blaue-Glut rune, Max strikes, Ruben assembles the vessel). 720p masters.",
+  "version": "cycle-01-phase-b",
+  "note": "Phase B mount resolution review masters 2026-08-22. Release and return are not locked. Approved binaries unchanged.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -454,28 +454,30 @@
       "usedIn": "Phase 3/4. Owner-approved 2026-08-22. Ruben on the Phial, small chasing hammer, Blaue-Glut rune seated."
     },
     "mounts.release": {
-      "video": null,
-      "poster": "/duesterwald/cycle-01/mounts-hidden-nest.jpg",
+      "video": "/duesterwald/cycle-01/mounts-release.mp4",
+      "poster": "/duesterwald/cycle-01/mounts-release.jpg",
       "loop": false,
-      "durationMs": 12000,
+      "durationMs": 10790,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "50% 52%",
       "entryPose": "restrained-alive",
       "exitPose": "footing-regained",
-      "status": "awaiting-production"
+      "sha256": "1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e",
+      "status": "batch-2-production"
     },
     "mounts.return": {
-      "video": null,
-      "poster": "/duesterwald/cycle-01/stall-web-takeover-16x9.jpg",
+      "video": "/duesterwald/cycle-01/mounts-return.mp4",
+      "poster": "/duesterwald/cycle-01/mounts-return.jpg",
       "loop": false,
-      "durationMs": 13000,
+      "durationMs": 10790,
       "camera": "wide",
       "desktopObjectPosition": "50% 50%",
       "mobileObjectPosition": "50% 55%",
       "entryPose": "forest-edge",
       "exitPose": "mount-card",
-      "status": "awaiting-production"
+      "sha256": "f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e",
+      "status": "batch-2-production"
     },
     "moriondo.open_door_seated": {
       "video": null,
@@ -511,6 +513,78 @@
       "mobileObjectPosition": "52% 40%",
       "entryPose": "study",
       "exitPose": "study",
+      "status": "storyboard"
+    },
+    "phial.forge_night_watch": {
+      "video": null,
+      "poster": "/phial/cycle-01/phial-forge-night-watch.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "50% 50%",
+      "entryPose": "incomplete-vessel",
+      "exitPose": "held-heat",
+      "status": "storyboard"
+    },
+    "phial.forge_completion": {
+      "video": null,
+      "poster": "/phial/cycle-01/phial-forge-completion.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "medium",
+      "desktopObjectPosition": "50% 40%",
+      "mobileObjectPosition": "52% 38%",
+      "entryPose": "rune-seated",
+      "exitPose": "vessel-complete",
+      "status": "storyboard"
+    },
+    "phial.ignition_against_silk": {
+      "video": null,
+      "poster": "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "50% 50%",
+      "entryPose": "phial-raised",
+      "exitPose": "silk-strain",
+      "status": "storyboard"
+    },
+    "jan.reveal_in_cocoon": {
+      "video": null,
+      "poster": "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "medium-wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "52% 50%",
+      "entryPose": "silk-parted",
+      "exitPose": "identity-readable",
+      "status": "storyboard"
+    },
+    "nest.silk_break_release": {
+      "video": null,
+      "poster": "/duesterwald/cycle-01/nest-cocoon-inner-pulse.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "medium-wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "52% 50%",
+      "entryPose": "ignition",
+      "exitPose": "binding-broken",
+      "status": "storyboard"
+    },
+    "jan.emergence": {
+      "video": null,
+      "poster": "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+      "loop": false,
+      "durationMs": 10000,
+      "camera": "medium-wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "52% 50%",
+      "entryPose": "binding-broken",
+      "exitPose": "freed",
       "status": "storyboard"
     }
   }

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-22",
+  "policy": "Files listed here are immutable owner-approved revisions. A replacement requires a new cue revision or an explicit registry update approved by the owner.",
+  "approvals": {
+    "moriondo.capture_rage": {
+      "approvedAt": "2026-08-21",
+      "basis": "Owner-approved Batch 1, retained as the canonical opening defeat beat.",
+      "files": {
+        "public/prison/cycle-01/moriondo-capture-rage.mp4": {
+          "gitBlobSha": "50062b8a40f6fb48e2d321983b04ccf92aad7ba1",
+          "sha256": "ce0068cda5cad3046cac2c17c267df2e7d3adb6921a5fb4f1eef68cc00872520"
+        },
+        "public/prison/cycle-01/moriondo-capture-rage.jpg": {
+          "gitBlobSha": "f9c013e745388e232b945fec92e5689d9fe68ab7"
+        }
+      }
+    },
+    "moriondo.rage_true_break": {
+      "approvedAt": "2026-08-21",
+      "basis": "Owner-approved genuine narcissistic break.",
+      "files": {
+        "public/prison/cycle-01/moriondo-rage-true-break.mp4": {
+          "gitBlobSha": "5a46bcc254b816162c18df22fc051cf82b57bc1b",
+          "sha256": "c3a19e85bc30eeacd40cf6b1a6dbd99840227fd394ade723a8fdc4b77bf8b4e3"
+        },
+        "public/prison/cycle-01/moriondo-rage-true-break.jpg": {
+          "gitBlobSha": "cc87df8eb86db29c8a9fb89a794d0aa5a5beb56b"
+        }
+      }
+    },
+    "stall.web_takeover": {
+      "approvedAt": "2026-08-21",
+      "basis": "Owner-approved empty-stall profile and desktop incident visual.",
+      "files": {
+        "public/duesterwald/cycle-01/stall-web-takeover-16x9.mp4": {
+          "gitBlobSha": "0557576be37393ff378820f2871100e1f7beab5d",
+          "sha256": "dfb9c3348e7397093a35d7d7b0daa88b60d0f63ff0e92401f5868e8d573d0e35"
+        },
+        "public/duesterwald/cycle-01/stall-web-takeover-16x9.jpg": {
+          "gitBlobSha": "98ced63f3b62f108633a1825b55ec2347067fecf"
+        },
+        "public/duesterwald/cycle-01/stall-web-takeover-4x3.mp4": {
+          "gitBlobSha": "a9706337c9f8ccd15b3ddd6574fd859b908f1cc0"
+        },
+        "public/duesterwald/cycle-01/stall-web-takeover-4x3.jpg": {
+          "gitBlobSha": "0001b8e635555d17bc2a48e5e4976f910c0b0ef3"
+        }
+      }
+    },
+    "spider.steven_command": {
+      "approvedAt": "2026-08-21",
+      "basis": "Owner-approved Steven command identity and brood submission beat.",
+      "files": {
+        "public/duesterwald/cycle-01/steven-spider-command-16x9.mp4": {
+          "gitBlobSha": "3034b588499b55f27e95af7547eb363e1dc91efb",
+          "sha256": "119b5df7f26b149422b248c81c9041f1464b5421e847684f8f826c0b0085f17e"
+        },
+        "public/duesterwald/cycle-01/steven-spider-command-16x9.jpg": {
+          "gitBlobSha": "8d91c67a29c5caf80b9bea0202abccd272e1140c"
+        },
+        "public/duesterwald/cycle-01/steven-spider-command-4x3.mp4": {
+          "gitBlobSha": "a255b6c99650a0cc436aab486bccf11b93670a2c"
+        },
+        "public/duesterwald/cycle-01/steven-spider-command-4x3.jpg": {
+          "gitBlobSha": "f2e217ef53b51cd431c47ddcfb48a03d70c16bae"
+        }
+      }
+    },
+    "spider.lower_brood_answers": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approval recorded in the current production branch.",
+      "files": {
+        "public/duesterwald/cycle-01/lower-brood-answers.mp4": {
+          "gitBlobSha": "93727a9405e201d1c56cad6159241bae4fd35a85",
+          "sha256": "c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845"
+        },
+        "public/duesterwald/cycle-01/lower-brood-answers.jpg": {
+          "gitBlobSha": "ad9adc4d637340eaf61cb07a8651f1f9d24af0d1"
+        }
+      }
+    },
+    "mounts.abduction_flashback": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner explicitly confirmed the current physical-abduction and controlled-injury treatment.",
+      "files": {
+        "public/duesterwald/cycle-01/mounts-abduction-flashback.mp4": {
+          "gitBlobSha": "0c89954e0e15bd15d92a6d5dd02c42b36b420195",
+          "sha256": "2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723"
+        },
+        "public/duesterwald/cycle-01/mounts-abduction-flashback.jpg": {
+          "gitBlobSha": "ceca29ce61f8d8653373a8ae7aceea5cb1685d87"
+        }
+      }
+    },
+    "mounts.hidden_nest": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner-approved revision 4 with the full live stall roster.",
+      "files": {
+        "public/duesterwald/cycle-01/mounts-hidden-nest.mp4": {
+          "gitBlobSha": "01e80f43a333defba09c0b192f1d765fdade18cd",
+          "sha256": "ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16"
+        },
+        "public/duesterwald/cycle-01/mounts-hidden-nest.jpg": {
+          "gitBlobSha": "3e40c0b7966b43053d22085b06de4acb4d3240f3"
+        }
+      }
+    },
+    "nest.great_cocoon_teaser": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approval recorded in the current production branch; non-identifying Jan teaser.",
+      "files": {
+        "public/duesterwald/cycle-01/nest-great-cocoon-teaser.mp4": {
+          "gitBlobSha": "85f87d438a0be52a64de3e3301ef1962f46576c3",
+          "sha256": "c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16"
+        },
+        "public/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg": {
+          "gitBlobSha": "41503b53bce3ebcf453f29e4d18aa953a5e51e7a"
+        }
+      }
+    },
+    "nest.cocoon_inner_pulse": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approval recorded in the current production branch; hand remains beneath the Urseide.",
+      "files": {
+        "public/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4": {
+          "gitBlobSha": "48d0a0225c0dc7f0a54d0ca86ff9585acb1d52a4",
+          "sha256": "a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e"
+        },
+        "public/duesterwald/cycle-01/nest-cocoon-inner-pulse.jpg": {
+          "gitBlobSha": "9d4ec38d4c410cc8d6eeb8ef107720052541c4fc"
+        }
+      }
+    },
+    "spider.counter_command": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approval recorded in the current production branch.",
+      "files": {
+        "public/duesterwald/cycle-01/spider-counter-command.mp4": {
+          "gitBlobSha": "d17d9346054dc0f38dbb6596972f025d6c860e79",
+          "sha256": "f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a"
+        },
+        "public/duesterwald/cycle-01/spider-counter-command.jpg": {
+          "gitBlobSha": "c976a9be74c4da0e49d20800f837b200809bc4e8"
+        }
+      }
+    },
+    "phial.three_smiths_strike": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner explicitly confirmed the three-smith structure and current casting.",
+      "files": {
+        "public/phial/cycle-01/phial-three-smiths-strike.mp4": {
+          "gitBlobSha": "bac6983c2ab01277c6f705ed1ec6659fbb5164d2",
+          "sha256": "caa1d2a634ded41209f15294d01ec6bf166e730b3025e5bce80484dce54e3506"
+        },
+        "public/phial/cycle-01/phial-three-smiths-strike.jpg": {
+          "gitBlobSha": "7e4d1feab5206d6a13d3ec7715971fd8690cbb82"
+        }
+      }
+    },
+    "phial.ruben_assemble": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner explicitly confirmed Ruben's assembly beat.",
+      "files": {
+        "public/phial/cycle-01/phial-ruben-assemble.mp4": {
+          "gitBlobSha": "5b0e9ccccee0ab6bccad11513ae34bb1c725d7fc",
+          "sha256": "119c08a7933b72b3da98f52b12211d95a9746d2aece227a5b308a5577b8d8410"
+        },
+        "public/phial/cycle-01/phial-ruben-assemble.jpg": {
+          "gitBlobSha": "1494ac80f92e436775fd350a20e5b5b1ff745b47"
+        }
+      }
+    }
+  }
+}

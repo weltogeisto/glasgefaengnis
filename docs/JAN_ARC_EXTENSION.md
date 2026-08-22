@@ -1,372 +1,263 @@
-# HANDOVER UPDATE — LOCK BATCH 1, THEN EXTEND INTO THE JAN ARC
+# Jan arc extension — build on the approved media
 
 **Repository:** `weltogeisto/glasgefaengnis`  
-**Branch:** `cowork/presence`  
-**Status:** This document extends `MORIONDO_CYCLE_01_ANIMATION_BRIEF.md` and overrides its old production order wherever the two conflict.
+**Production branch:** `cowork/presence`  
+**Authority:** `docs/STORY_CONTRACT.md` wins whenever older briefs conflict.
+
+This handover assumes the existing Moriondo, stall, spider, mount, cocoon and forge assets are valuable production material. Do not restart the arc and do not regenerate approved work merely to make it fit a newer outline.
 
 ---
 
-## 0. The decisive correction
+## 1. Existing assets are the spine
 
-The first Grok batch is not disposable preview material and must not be regenerated before the next story work begins.
+The following approved cues are already part of the story and are protected by `config/presence-approvals.json`:
 
-The owner has approved the existing Batch 1 work as exceptionally strong. Treat the existing clips, posters, identity, motion, composition, atmosphere, and mounted-roster nest as **locked canonical assets** for Cycle I.
+- `moriondo.capture_rage`
+- `moriondo.rage_true_break`
+- `stall.web_takeover`
+- `spider.steven_command`
+- `spider.lower_brood_answers`
+- `mounts.abduction_flashback`
+- `mounts.hidden_nest`
+- `spider.counter_command`
+- `nest.great_cocoon_teaser`
+- `nest.cocoon_inner_pulse`
+- `phial.three_smiths_strike`
+- `phial.ruben_assemble`
 
-### Non-negotiable asset rule
+They must be used, not treated as disposable previews.
 
-1. Preserve every existing Batch 1 file in place.
-2. Use every approved Batch 1 cue in the actual story sequence.
-3. Do not replace, reinterpret, or silently regenerate any of them.
-4. Any later 1080p output must be a non-destructive production derivative of the approved clip, preserving the exact performance and identity. Keep the approved 720p source.
-5. If a production upscale or re-encode weakens identity, motion, framing, or atmosphere, ship the approved source instead.
-6. The previous approved ChatGPT stills remain supplementary art direction. They do not replace the stronger Grok Batch 1 assets.
+### Owner decisions that are closed
 
----
-
-# 1. Existing approved assets to integrate first
-
-## B1.1 — Genuine capture rage
-
-**Cue:** `moriondo.capture_rage`  
-**Video:** `/prison/cycle-01/moriondo-capture-rage.mp4`  
-**Poster:** `/prison/cycle-01/moriondo-capture-rage.jpg`
-
-**Canonical use:** the immediate post–Dol Guldur capture cinematic. This is the first proof that Moriondo's defeat is real.
-
-Do not use this as generic later anger. It belongs to the beginning of the arc.
-
-## B1.2 — Genuine narcissistic break
-
-**Cue:** `moriondo.rage_true_break`  
-**Video:** `/prison/cycle-01/moriondo-rage-true-break.mp4`  
-**Poster:** `/prison/cycle-01/moriondo-rage-true-break.jpg`
-
-**Canonical use:** the later interrogation beat when the Fellowship proves that Steven's spider did not remain because Moriondo allowed it; it remained because it broke his command.
-
-This must remain distinct from performed intimidation and generic `rage.mp4`.
-
-## B1.3 — Empty stall takeover
-
-**Cue:** `stall.web_takeover`  
-**Desktop:** `/duesterwald/cycle-01/stall-web-takeover-16x9.mp4`  
-**Profile/mobile:** `/duesterwald/cycle-01/stall-web-takeover-4x3.mp4`  
-**Posters:** matching JPG files.
-
-**Canonical use:** first profile visit after the abduction. The mount card is replaced by its empty stall, left tack, tightening silk, and the route toward the Düsterwald.
-
-The 4:3 version is not an optional derivative. It is the canonical profile presentation.
-
-## B1.4 — Steven's spider assumes command
-
-**Cue:** `spider.steven_command`  
-**Desktop:** `/duesterwald/cycle-01/steven-spider-command-16x9.mp4`  
-**Profile/mobile:** `/duesterwald/cycle-01/steven-spider-command-4x3.mp4`  
-**Posters:** matching JPG files.
-
-**Canonical use:** Steven's exceptional profile state and the first proof that his spider can impose its will upon the lower brood.
-
-Use this clip twice only when the context is meaningfully different:
-
-- first as discovery of authority;
-- later as the opening movement of the completed counter-command, before a new continuation clip takes over.
-
-## B1.5 — The living mount nest
-
-**Cue:** `mounts.hidden_nest`  
-**Video:** `/duesterwald/cycle-01/mounts-hidden-nest.mp4`  
-**Poster:** `/duesterwald/cycle-01/mounts-hidden-nest.jpg`
-
-**Canonical use:** the first collective proof that the abducted mount roster is alive and physically held in the Düsterwald.
-
-This is the **mount nest**, not the later great human-binding cocoon. Keep both visually and narratively distinct.
+- The current abduction flashback may show controlled injury or blood where silk bites. The mounts remain alive; no death, mutilation or permanent loss.
+- The three-smith strike and Ruben assembly are intentional. Do not rewrite them into a single-smith scene.
 
 ---
 
-# 2. Phase 0 — integration before any new generation
+## 2. Dramatic spine
 
-Before generating the Jan extension, make the approved work function as one coherent cinematic sequence inside the existing review application.
+1. Dol Guldur falls.
+2. Moriondo is genuinely imprisoned and loses control against the glass.
+3. His contingency command activates in the Düsterwald.
+4. Lower spiders physically abduct the mounts alive.
+5. Empty, web-filled stalls appear in the riders’ profiles.
+6. Steven’s spider remains because it overpowered Moriondo’s command at its knot.
+7. The Fellowship finds the living mount nest.
+8. The evidence network exposes an additional structure belonging to no mount.
+9. The great cocoon appears first as an unassigned monument, then as a living inner pressure.
+10. Only late does the Fellowship discover that Jan is held inside it.
+11. The ancient silk requires a jointly forged Phial.
+12. The mount network is reversed, the Urseide is broken and Jan’s app arc begins.
 
-## Required sequence preview
-
-Build a review-only linear sequence using existing assets:
-
-1. `moriondo.corridor`
-2. `moriondo.capture_rage`
-3. temporary recovery through the best existing neutral presence clip (`hands`, `over`, or `idle`) until M02 exists
-4. `stall.web_takeover`
-5. `mounts.hidden_nest`
-6. `spider.steven_command`
-7. reusable interrogation presence: `pace`, `approach`, `glass`, `whisper`, `bow`, `delight`, `turn`, `sit`
-8. `moriondo.rage_true_break`
-9. temporary aftermath through `hands`, `over`, or `sit` until M05 exists
-
-This sequence is not final game logic. It is an asset-integration proof showing that the existing work already forms the spine of Cycle I.
-
-## Manifest and review changes
-
-- Change the five Batch 1 statuses from `batch-1-preview` to a new status such as `owner-approved-existing`.
-- Add `locked: true` to their manifest records.
-- Add `usedIn` fields describing their exact narrative beats.
-- Do not remove the existing SHA-256 values.
-- Add an **Approved existing assets** filter to `/review/presence`.
-- Add a **Play Cycle I spine** button that plays the sequence above.
-- Add desktop and mobile preview controls for the 16:9 and 4:3 pairs.
-- Add `docs/ASSET_USAGE_MAP.md` proving where every approved asset is used.
-
-No new story clip is accepted until this Phase 0 preview uses all five approved Batch 1 assets successfully.
+The mount rescue is a real crisis and a real victory. Jan is the hidden centre beneath it.
 
 ---
 
-# 3. Revised story extension — the hidden Jan arc
+## 3. The two nests must never collapse into one
 
-The mount abduction remains the visible crisis. It is not the deepest purpose of Moriondo's spider command.
+### Mount nest
 
-## The dramatic structure
+`mounts.hidden_nest` is the roster source of truth:
 
-1. Dol Guldur falls and Moriondo is genuinely imprisoned.
-2. His contingency command activates.
-3. Düsterwald spiders abduct the mounts alive.
-4. Empty stalls and cobwebs lead the riders into the investigation.
-5. Steven's spider remains because it broke Moriondo's authority over the local brood.
-6. The Fellowship discovers the normal mount nests and sees that the mounts live.
-7. A further nest is found that belongs to **none of the mounts**.
-8. It is older, larger, and built to bind more than an animal body.
-9. The riders initially do not know what it contains.
-10. The late reveal is Jan, held inside the great cocoon.
+- the abducted mounts are visible as distinct species;
+- they remain alive;
+- the lower spiders maintain the holding structure;
+- it is a practical node of Moriondo’s command network.
 
-Jan is the hidden centre of the arc and the beginning of his entry into the JGA app.
+### Great cocoon
 
-## Moriondo's objective
+The great cocoon is:
 
-The mount abduction is both leverage and construction.
+- older;
+- architecturally larger;
+- made from Urseide;
+- deliberately bound to hold more than an animal body;
+- initially non-identifying;
+- visually separate from the mount nest.
 
-The rider–mount bonds form living directional anchors. Moriondo uses the lower spiders to map and maintain a command-web across the Düsterwald. The riders must partially reconstruct that web to recover the mounts.
-
-The great cocoon is the deeper strike: Jan was bound before the Fellowship could openly gather around him. Moriondo attempted to imprison the future centre of the group before the Ringträger's arrival became manifest.
-
-The Fellowship must reverse the network without completing it for Moriondo.
-
-## The ancient silk
-
-Do not depict Shelob or Ungoliant directly and do not copy an existing screen creature.
-
-Use an original Fellowship-OS concept:
-
-> **Urseide der Großen Verzehrerin** — silk descended from an ancient devouring brood, preserved from the Elder Days and newly rebound through Moriondo's command craft.
-
-The ordinary lower spiders can maintain it, but they cannot create or destroy it. Normal blades, fire, and Steven's counter-command can loosen the network around it but cannot break its innermost binding.
+`nest.great_cocoon_teaser` and `nest.cocoon_inner_pulse` must remain spoiler-safe. No readable Jan face may appear in either.
 
 ---
 
-# 4. The Phial arc
+## 4. Steven’s spider
 
-The ancient silk requires a new counter-artifact.
+The approved Steven identity remains fixed across:
 
-The Fellowship does not simply obtain a brighter lamp. It forges a vessel that combines:
+- `spider.steven_command`
+- `spider.lower_brood_answers`
+- `spider.counter_command`
 
-- the inherited light of the old Phial tradition;
+Steven’s spider is necessary but not sufficient. It can transmit authority through the lower brood, but it cannot independently discover the four final elements:
+
+- Brut
+- Pfad
+- Hort
+- Schnitt
+
+The proof that it broke Moriondo’s command triggers `moriondo.rage_true_break`.
+
+---
+
+## 5. The Phial and the owner-approved forge structure
+
+The new Phial combines:
+
+- inherited light;
 - surrendered and transformed rider-runes;
-- the freely released strength of the Fellowship;
-- the proven friendship that was created through sharing, contesting, and corroborating clues.
+- voluntarily contributed Fellowship strength;
+- friendship demonstrated through shared, contested and corroborated evidence.
 
-The light must feel concentrated, grave, and difficult to bear—not sentimental and not like a superhero beam.
+The old light is preserved and rehoused. It is not ordinary glass melted into a brighter lamp.
 
-## The Runenschmied der Mark
+### Existing forge beats
 
-The person who holds the title **Runenschmied der Mark** at that point in JGA OS performs the forging.
+`phial.three_smiths_strike` is the collective act:
 
-Do not invent his face, armour, species, or workshop costume. Before character generation begins, lock the current title-holder's canonical JGA portrait, rank armour, race, and Rüstkammer reference.
+- Ruben, Max and Hendrik participate;
+- Max delivers the depicted principal strike;
+- Hendrik appears in the approved white Kriegsfürsten armour;
+- the Blaue-Glut anvil rune remains visible.
 
-The old light is not crudely melted as glass. The Runenschmied:
+`phial.ruben_assemble` is the fine assembly:
 
-1. opens and reforges the rune-setting;
-2. receives the riders' surrendered runes;
-3. forms a new metal lattice and crystal vessel;
-4. binds the old light into the new vessel;
-5. seals the Fellowship's voluntary bond into the finished Phial.
+- Ruben works on the vessel;
+- the smaller chasing hammer and seated rune remain part of the approved sequence.
 
-The forging takes two real days in the story and should be represented as a progressing app event rather than one instantaneous cinematic.
+These are not mistakes and must not be reclassified as temporary substitutes.
 
----
+### Two-day app structure
 
-# 5. New cues to add without replacing Batch 1
+The app may still stage the forge across two real days by placing the approved clips inside a longer progression:
 
-## Connective Moriondo clips
+**Day one**
 
-### `moriondo.mask_reassembles`
-Connect the approved capture rage to the existing controlled presence library.
+- the riders surrender selected runes;
+- preparation of lattice, crystal and old light;
+- `phial.three_smiths_strike` as the decisive collective blow.
 
-### `moriondo.rage_performed`
-Calculated intimidation. He still watches the reaction and stops by choice.
+**Night watch**
 
-### `moriondo.rage_aftermath`
-After the approved true break: control returns, but the defeat remains visible.
+- the vessel remains incomplete;
+- heat, light and runes are held in tension;
+- a new connective asset may be generated if needed.
 
-## Spider and mount continuations
+**Day two**
 
-### `spider.lower_brood_answers`
-A partial command reaches the lower brood. Some groups answer; others remain still.
+- `phial.ruben_assemble` as the fine binding and seating of the rune;
+- final contribution of Fellowship strength;
+- a new completion asset reveals the finished Phial.
 
-### `mounts.abduction_flashback`
-Confirms physical abduction. Mounts alive, controlled, no gore.
-
-### `spider.counter_command`
-Must begin in a pose compatible with the end of the approved `spider.steven_command` clip. The completed command reverses the brood and severs the strand leading back to Moriondo.
-
-### `mounts.release`
-Restraints loosen and lower spiders withdraw.
-
-### `mounts.return`
-Mounts return exhausted but alive.
-
-## Jan mystery cues
-
-### `nest.great_cocoon_teaser`
-The first appearance of the unassigned nest. Huge, ancient, breathing under tension. Do not reveal a human form clearly.
-
-### `nest.cocoon_inner_pulse`
-A later clue that the occupant is not a mount. Keep the reveal uncertain.
-
-### `jan.reveal_in_cocoon`
-The major revelation. Jan becomes recognisable inside the cocoon. Quiet, grave, and unmistakable—never a jump scare.
-
-### `jan.emergence`
-Jan is freed and enters the JGA story. He is weakened but not passive, and central without receiving a superhero entrance.
-
-## Two-day forge cues
-
-### `phial.forge_day_one`
-The Runenschmied opens the old setting, receives the first surrendered runes, and begins the new lattice.
-
-### `phial.forge_night_watch`
-The forge continues through the night. The metal and crystal hold conflicting lights; the work is incomplete.
-
-### `phial.forge_day_two`
-The Runenschmied is visibly more exhausted. Remaining runes are integrated and the Fellowship's bond begins to cohere.
-
-### `phial.forge_completion`
-The new Phial is born. Pure, concentrated, living light contained by a visible rune-lattice.
-
-### `phial.ignition_against_silk`
-The Phial breaks the spell in the Urseide. The silk does not burn normally; the ancient binding loses coherence.
-
-### `nest.silk_break_release`
-The great cocoon's tension collapses and Jan is released.
+The missing forge clips extend these two approved scenes. They do not replace them.
 
 ---
 
-# 6. Revised work order
+## 6. Missing production cues
 
-## Phase 0 — preserve and integrate what already exists
+### Moriondo connective cues
 
-- lock all five Batch 1 assets;
-- update statuses and manifest metadata;
-- build the Cycle I spine preview;
-- verify mobile crops;
-- document every use;
-- no regeneration.
+Already produced but not yet immutable unless separately approved:
 
-## Phase 1 — connective production
+- `moriondo.mask_reassembles`
+- `moriondo.rage_performed`
+- `moriondo.rage_aftermath`
 
-1. `moriondo.mask_reassembles`
-2. `moriondo.rage_performed`
-3. `moriondo.rage_aftermath`
-4. `spider.lower_brood_answers`
-5. `mounts.abduction_flashback`
-6. `spider.counter_command`
+They connect the approved capture and true-break beats.
 
-These clips extend approved work rather than replacing it.
+### Mount resolution
 
-## Phase 2 — Jan mystery previews
+Still required:
 
-1. `nest.great_cocoon_teaser`
-2. `nest.cocoon_inner_pulse`
+- `mounts.release`
+- `mounts.return`
 
-Return both for review before generating any visible Jan reveal.
+The release must preserve the species and scale relationships established by `mounts.hidden_nest`.
 
-## Phase 3 — forge identity and storyboard lock
+### Forge continuation
 
-- fetch and lock the current Runenschmied der Mark identity from JGA OS;
-- create still storyboards for all four forge phases;
-- create a separate Phial design sheet;
+Still required:
+
+- `phial.forge_night_watch`
+- `phial.forge_completion`
+- `phial.ignition_against_silk`
+
+Optional only if necessary for rhythm:
+
+- a short day-one preparation asset before `phial.three_smiths_strike`;
+- a short day-two transition into `phial.ruben_assemble`.
+
+Do not regenerate either approved forge clip.
+
+### Jan reveal and release
+
+Still required:
+
+- `jan.reveal_in_cocoon`
+- `nest.silk_break_release`
+- `jan.emergence`
+
+A readable Jan reveal requires his canonical JGA identity. The teaser assets remain non-identifying until that identity is locked.
+
+---
+
+## 7. Revised production order
+
+### Phase A — governance and integration
+
+- keep all approved binaries unchanged;
+- validate them through `npm run check:presence`;
+- keep the active media demo aligned with `docs/STORY_CONTRACT.md`;
+- retain the complete Cycle I review spine.
+
+### Phase B — missing mount resolution
+
+1. `mounts.release`
+2. `mounts.return`
+
+### Phase C — forge continuation
+
+1. optional preparation transition
+2. approved `phial.three_smiths_strike`
+3. `phial.forge_night_watch`
+4. approved `phial.ruben_assemble`
+5. `phial.forge_completion`
+6. `phial.ignition_against_silk`
+
+### Phase D — Jan identity gate
+
+- fetch Jan’s canonical identity from JGA OS;
+- prepare one visible reveal still;
+- prove that the two approved teaser clips do not identify him early;
 - obtain owner approval before video generation.
 
-## Phase 4 — two-day forge production
-
-1. `phial.forge_day_one`
-2. `phial.forge_night_watch`
-3. `phial.forge_day_two`
-4. `phial.forge_completion`
-
-## Phase 5 — Jan identity and reveal lock
-
-- fetch and lock Jan's canonical JGA identity;
-- create obscured-cocoon and visible-reveal stills;
-- prove that the early teaser does not spoil him;
-- obtain owner approval.
-
-## Phase 6 — resolution production
+### Phase E — Jan resolution
 
 1. `jan.reveal_in_cocoon`
 2. `phial.ignition_against_silk`
 3. `nest.silk_break_release`
 4. `jan.emergence`
-5. `mounts.release`
-6. `mounts.return`
 
 ---
 
-# 7. Asset continuity requirements
+## 8. Acceptance gates
 
-## Moriondo
+A delivery is accepted only when:
 
-All new Moriondo clips must match the approved Batch 1 actor, chamber, glass curvature, coat, facial identity, hair, grade, and torchlight. Do not fall back to a generic blond prisoner or a different chamber.
-
-## Steven's spider
-
-All continuation clips must preserve the exact dominant spider identity from the approved Batch 1 asset. Do not generate a second “leader spider.”
-
-## The mount nest
-
-The existing `mounts.hidden_nest` is the visual roster source of truth. Later release clips must preserve the same individual mount types and avoid collapsing the group into generic horses.
-
-## Great cocoon
-
-The great cocoon must be clearly distinct from the mount nest:
-
-- older silk;
-- larger architecture;
-- deeper pressure;
-- fewer visible lower spiders;
-- more deliberate binding geometry;
-- no early readable human face.
-
-## Forge
-
-The Runenschmied identity must come from the app. The workshop should feel like a Mark rune-forge, not a generic dwarf forge unless the actual title-holder's canon requires it.
+- no approved asset has been overwritten;
+- the physical spider abduction remains explicit;
+- the current controlled-injury treatment remains as approved;
+- Steven’s spider stays visually identical across all three cues;
+- the mount nest remains distinct from the great cocoon;
+- the teaser clips do not expose Jan;
+- the three-smith strike and Ruben assembly remain in the forge arc;
+- the old light is preserved and rehoused;
+- the Phial’s additional power comes from freely contributed Fellowship bonds;
+- the final reveal begins Jan’s app arc rather than resolving his entire role;
+- no public client asset contains the authoritative multiplayer solution.
 
 ---
 
-# 8. Acceptance gates
+## Immediate instruction
 
-The next handover is accepted only when:
+Do not regenerate any owner-approved asset.
 
-- all five approved Batch 1 assets remain unchanged and are used;
-- the review app can play the Cycle I spine from capture through the true break;
-- 16:9 and 4:3 pairs are both reviewable;
-- `mounts.hidden_nest` remains the mount nest rather than being repurposed as Jan's cocoon;
-- the Jan teaser hides Jan successfully;
-- Steven's spider remains necessary but cannot solve the mystery alone;
-- the forge does not begin without the actual Runenschmied identity;
-- the old light is preserved and rehoused, not treated as molten glass;
-- the Phial's strength comes from freely contributed Fellowship bonds;
-- the final reveal begins Jan's app arc rather than ending it;
-- no new animation invalidates or duplicates the approved first batch.
-
----
-
-# Immediate instruction
-
-Do **not** generate a replacement Batch 1.
-
-First integrate and lock the five existing approved assets, build the Cycle I spine preview, and return that integrated sequence for review. Then proceed with the two Jan mystery previews and the missing connective clips according to the revised order above.
+Continue from the existing review spine. Produce the missing mount resolution and forge continuation around the approved scenes, then pass through the Jan identity gate before generating a readable reveal.

@@ -6,10 +6,9 @@ import { CODEX, RIDDLE } from "@/lib/prison/script";
 import { usePrison, type Panel } from "@/lib/prison/store";
 import { cn } from "@/lib/utils";
 
-
 const TABS: { id: Panel; label: string }[] = [
   { id: "verhoer", label: "Verhör" },
-  { id: "codex", label: "Codex" },
+  { id: "codex", label: "Spuren" },
   { id: "akte", label: "Akte" },
 ];
 
@@ -42,23 +41,23 @@ export function Dock() {
           </button>
         ))}
       </div>
-      <Rites />
-      {panel === "verhoer" ? <Verhoer /> : panel === "codex" ? <Codex /> : <Akte />}
+      <EvidenceProgress />
+      {panel === "verhoer" ? <Verhoer /> : panel === "codex" ? <Spuren /> : <Akte />}
     </aside>
   );
 }
 
-function Rites() {
+function EvidenceProgress() {
   const riddle = usePrison((s) => s.riddle);
   const letters = usePrison((s) => s.letters);
   const items = [
-    { id: "riddle", n: "1", label: "Rätsel", done: riddle },
-    { id: "letters", n: "2", label: "Lettern", done: letters },
-    { id: "cipher", n: "3", label: "Chiffre", done: false },
-    { id: "stall", n: "4", label: "Stall", done: false },
+    { id: "trace", n: "1", label: "Spur", done: true },
+    { id: "break", n: "2", label: "Bruch", done: riddle },
+    { id: "proof", n: "3", label: "Beweis", done: letters },
+    { id: "counter", n: "4", label: "Befehl", done: false },
   ];
   return (
-    <ol className="grid shrink-0 grid-cols-4 gap-1 px-3 pt-2">
+    <ol className="grid shrink-0 grid-cols-4 gap-1 px-3 pt-2" aria-label="Stand der Untersuchung">
       {items.map((it) => (
         <li
           key={it.id}
@@ -94,26 +93,26 @@ function Verhoer() {
     <>
       <p className="shrink-0 px-4 pt-2 text-[0.82rem] leading-snug text-muted">{objective}</p>
       <div className="flex shrink-0 flex-wrap gap-2 px-4 py-2">
-        {chips.map((c) => (
+        {chips.map((chip) => (
           <button
-            key={c}
+            key={chip}
             type="button"
             disabled={busy || questions >= maxQ}
-            onClick={() => send(c)}
-            className="min-h-11 rounded-full bg-accent/15 px-3.5 py-2 text-[0.78rem] text-fg shadow-[0_0_0_1px_var(--color-border)] transition-transform duration-150 ease-out active:scale-[0.96]"
+            onClick={() => send(chip)}
+            className="min-h-11 rounded-full bg-accent/15 px-3.5 py-2 text-[0.78rem] text-fg shadow-[0_0_0_1px_var(--color-border)] transition-transform duration-150 ease-out active:scale-[0.96] disabled:opacity-45"
           >
-            {c}
+            {chip}
           </button>
         ))}
       </div>
       <div className="min-h-0 flex-1 overflow-y-auto px-4">
         <div className="rounded-xl bg-raised/80 px-3 py-2">
           <p className="mb-1 font-display text-[0.62rem] uppercase tracking-[0.16em] text-accent">
-            Sein Rätsel
+            Der erste Knoten
           </p>
           <p className="text-[0.82rem] leading-snug">{RIDDLE}</p>
         </div>
-        <div className="mt-2 flex gap-1 pb-1">
+        <div className="mt-2 flex gap-1 pb-1" aria-label={`${questions} von ${maxQ} Fragen gestellt`}>
           {Array.from({ length: maxQ }, (_, i) => (
             <span
               key={i}
@@ -127,14 +126,15 @@ function Verhoer() {
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           maxLength={400}
-          placeholder="Oder selbst antworten…"
+          placeholder="Oder selbst fragen…"
           autoComplete="off"
           className="min-h-11 flex-1 rounded-xl bg-surface px-3 text-base text-fg outline-none shadow-[0_0_0_1px_var(--color-border)] placeholder:text-muted"
         />
         <button
           type="submit"
-          aria-label="Senden"
-          className="flex size-11 items-center justify-center rounded-xl bg-accent text-bg transition-transform duration-150 ease-out active:scale-[0.96]"
+          aria-label="Frage stellen"
+          disabled={busy || questions >= maxQ || !draft.trim()}
+          className="flex size-11 items-center justify-center rounded-xl bg-accent text-bg transition-transform duration-150 ease-out active:scale-[0.96] disabled:opacity-45"
         >
           <Send className="size-4" strokeWidth={2} />
         </button>
@@ -143,37 +143,37 @@ function Verhoer() {
   );
 }
 
-function Codex() {
+function Spuren() {
   const send = usePrison((s) => s.send);
   const setPanel = usePrison((s) => s.setPanel);
   return (
     <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
-      {CODEX.map((s) => (
-        <section key={s.title} className="mb-5">
+      {CODEX.map((section) => (
+        <section key={section.title} className="mb-5">
           <p className="font-display text-[0.62rem] uppercase tracking-[0.16em] text-accent">
-            {s.kicker}
+            {section.kicker}
           </p>
-          <h3 className="mt-1 font-display text-[0.95rem]">{s.title}</h3>
-          {s.paragraphs.map((p) => (
-            <p key={p.slice(0, 24)} className="mt-2 text-[0.88rem] leading-relaxed">
-              {p}
+          <h3 className="mt-1 font-display text-[0.95rem]">{section.title}</h3>
+          {section.paragraphs.map((paragraph) => (
+            <p key={paragraph.slice(0, 32)} className="mt-2 text-[0.88rem] leading-relaxed">
+              {paragraph}
             </p>
           ))}
-          {s.green ? (
+          {section.green && section.citeKey ? (
             <div className="mt-3 rounded-xl bg-accent/12 px-3 py-2.5">
               <p className="mb-1 font-display text-[0.62rem] uppercase tracking-[0.14em] text-accent">
-                Grüne Lettern
+                Dem Glas vorlegen
               </p>
-              <p className="font-display text-accent">{s.green}</p>
+              <p className="font-display text-accent">{section.green}</p>
               <button
                 type="button"
                 className="mt-2 min-h-10 rounded-lg bg-accent px-3 font-display text-[0.68rem] uppercase tracking-[0.1em] text-bg transition-transform duration-150 ease-out active:scale-[0.96]"
                 onClick={() => {
                   setPanel("verhoer");
-                  send(s.citeKey === "wege" ? "Drei glühende Wege" : "Bruchstelle");
+                  send(section.citeKey === "wege" ? "Brut · Pfad · Hort · Schnitt" : "Stevens Spinne");
                 }}
               >
-                Zum Glas sagen
+                Als Spur verwenden
               </button>
             </div>
           ) : null}
@@ -189,21 +189,29 @@ function Akte() {
   return (
     <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
       <p className="font-display text-[0.62rem] uppercase tracking-[0.16em] text-accent">Akte</p>
-      <h2 className="mt-1 font-display text-xl">Akte des Verhörs</h2>
+      <h2 className="mt-1 font-display text-xl">Erste persönliche Wache</h2>
       <p className="mt-2 text-[0.88rem] leading-relaxed">
-        Vier Türen. Die ersten zwei gehen heute. Die letzten brauchen Zeit.
+        Diese Medienfassung zeigt Moriondos Präsenz und die ersten Spuren. Die gemeinsame Freigabe,
+        unabhängige Belege und der endgültige Gegenbefehl werden serverseitig in JGA OS geführt.
       </p>
       <p className="mt-4">
-        <strong className={riddle ? "text-accent" : ""}>{riddle ? "Geöffnet" : "Offen"} · Rätsel</strong>
+        <strong className="text-accent">Gesichert · Leere Ställe</strong>
         <br />
-        <span className="text-muted">Wähle die Antwort unter den Karten.</span>
+        <span className="text-muted">Die körperliche Verschleppung ist bestätigt.</span>
+      </p>
+      <p className="mt-2">
+        <strong className={riddle ? "text-accent" : ""}>
+          {riddle ? "Belegt" : "Offen"} · Der gebrochene Knoten
+        </strong>
+        <br />
+        <span className="text-muted">Welcher Wille setzte Moriondos Befehl außer Kraft?</span>
       </p>
       <p className="mt-2">
         <strong className={letters ? "text-accent" : ""}>
-          {letters ? "Geöffnet" : riddle ? "Offen" : "Verriegelt"} · Lettern
+          {letters ? "Benannt" : riddle ? "Offen" : "Verriegelt"} · Der Gegenbefehl
         </strong>
         <br />
-        <span className="text-muted">Codex, grüne Zeile.</span>
+        <span className="text-muted">Brut, Pfad, Hort und Schnitt müssen getrennt belegt werden.</span>
       </p>
       <blockquote className="mt-4 border-l-2 border-accent/50 pl-3 text-[0.88rem] italic leading-relaxed">
         {RIDDLE}

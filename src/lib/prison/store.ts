@@ -2,12 +2,7 @@
 
 import { create } from "zustand";
 import { AFTER_MOOD, AMBIENT_CYCLE, type Mood } from "./presence";
-import {
-  chipsFor,
-  matchReply,
-  objectiveFor,
-  REPLIES,
-} from "./script";
+import { chipsFor, matchReply, objectiveFor, REPLIES, type Reply } from "./script";
 import { envelopeDurationMs } from "./lipsync";
 import { glassTick, playVoice, setMuted, stopVoice, unlockAudio } from "./audio";
 
@@ -53,6 +48,23 @@ function clearHold() {
   }
 }
 
+function silentReadingDuration(text: string) {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.min(9000, Math.max(2400, Math.round((words / 150) * 60_000)));
+}
+
+function playCanonSafeReply(reply: Reply, finish: () => void) {
+  if (reply.audio) {
+    playVoice(reply.audio, finish);
+    holdTimer = setTimeout(finish, envelopeDurationMs(reply.audio) + 400);
+    return;
+  }
+
+  // The existing speech files contain superseded song-prototype copy. New canon remains
+  // text-only until matching voice lines are deliberately produced and owner-approved.
+  holdTimer = setTimeout(finish, silentReadingDuration(reply.text));
+}
+
 export const usePrison = create<PrisonState>((set, get) => ({
   entered: false,
   panel: "verhoer",
@@ -71,20 +83,20 @@ export const usePrison = create<PrisonState>((set, get) => ({
   enter: () => {
     unlockAudio();
     clearHold();
+    const reply = REPLIES.open;
     set({
       entered: true,
-      mood: "idle",
+      mood: reply.mood,
       speaking: true,
       busy: true,
-      line: REPLIES.open.text,
+      line: reply.text,
       panel: "verhoer",
     });
     const finish = () => {
       if (!get().entered) return;
       set({ mood: "idle", busy: false, speaking: false });
     };
-    playVoice("open", finish);
-    holdTimer = setTimeout(finish, envelopeDurationMs("open") + 400);
+    playCanonSafeReply(reply, finish);
     if (ambientTimer) clearInterval(ambientTimer);
     ambientTimer = setInterval(() => get().cycleAmbient(), 11000);
   },
@@ -141,14 +153,19 @@ export const usePrison = create<PrisonState>((set, get) => ({
       if (!now.entered || !now.busy) return;
       set({ busy: false, speaking: false, mood: AFTER_MOOD[reply.mood] ?? "pace" });
     };
-    playVoice(reply.audio, finish);
-    holdTimer = setTimeout(finish, envelopeDurationMs(reply.audio) + 400);
+    playCanonSafeReply(reply, finish);
   },
 
   cycleAmbient: () => {
     const s = get();
     if (!s.entered || s.busy || s.speaking) return;
-    if (s.mood === "talk" || s.mood === "laugh" || s.mood === "song" || s.mood === "storm" || s.mood === "rage") {
+    if (
+      s.mood === "talk" ||
+      s.mood === "laugh" ||
+      s.mood === "song" ||
+      s.mood === "storm" ||
+      s.mood === "rage"
+    ) {
       return;
     }
     ambientIndex = (ambientIndex + 1) % AMBIENT_CYCLE.length;

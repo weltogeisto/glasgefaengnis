@@ -1,6 +1,6 @@
 {
-  "version": "cycle-01-phase-b",
-  "note": "Phase B mount resolution review masters 2026-08-22. Release and return are not locked. Approved binaries unchanged.",
+  "version": "cycle-01-phase-c",
+  "note": "Phase C forge continuation I2V review masters 2026-08-22. Night-watch keeps the teardrop still. Completion still is the knotwork vessel (no ᛒ). Not locked. Approved binaries unchanged.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -516,28 +516,30 @@
       "status": "storyboard"
     },
     "phial.forge_night_watch": {
-      "video": null,
+      "video": "/phial/cycle-01/phial-forge-night-watch.mp4",
       "poster": "/phial/cycle-01/phial-forge-night-watch.jpg",
       "loop": false,
-      "durationMs": 10000,
+      "durationMs": 10790,
       "camera": "wide",
       "desktopObjectPosition": "50% 48%",
       "mobileObjectPosition": "50% 50%",
       "entryPose": "incomplete-vessel",
       "exitPose": "held-heat",
-      "status": "storyboard"
+      "sha256": "07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77",
+      "status": "batch-2-production"
     },
     "phial.forge_completion": {
-      "video": null,
+      "video": "/phial/cycle-01/phial-forge-completion.mp4",
       "poster": "/phial/cycle-01/phial-forge-completion.jpg",
       "loop": false,
-      "durationMs": 10000,
+      "durationMs": 10790,
       "camera": "medium",
       "desktopObjectPosition": "50% 40%",
       "mobileObjectPosition": "52% 38%",
       "entryPose": "rune-seated",
       "exitPose": "vessel-complete",
-      "status": "storyboard"
+      "sha256": "294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded",
+      "status": "batch-2-production"
     },
     "phial.ignition_against_silk": {
       "video": null,

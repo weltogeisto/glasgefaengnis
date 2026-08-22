@@ -12,6 +12,7 @@ import {
   FORGE_CONTINUATION_IDS,
   PHASE_2_IDS,
   REVIEW_SECTIONS,
+  SCHMIEDE_PLAYLIST,
   STORY_BY_ID,
   STORY_CLIPS,
   nextClip,
@@ -128,6 +129,13 @@ export function PresenceReview() {
             </button>
             <button
               type="button"
+              onClick={() => playSequence(SCHMIEDE_PLAYLIST, "phase-3")}
+              className="inline-flex min-h-11 items-center rounded-xl bg-raised px-4 font-display text-[0.68rem] uppercase tracking-[0.14em] text-fg"
+            >
+              Play Schmiede
+            </button>
+            <button
+              type="button"
               onClick={() => playSequence(CYCLE_I_SPINE, "spine")}
               className="inline-flex min-h-11 items-center rounded-xl bg-raised px-4 font-display text-[0.68rem] uppercase tracking-[0.14em] text-fg"
             >
@@ -199,8 +207,9 @@ export function PresenceReview() {
         ) : null}
         {filter === "phase-3" || filter === "phial-forge" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Drei Schmiede und Rubens Feinmontage sind locked. Nachtwache und Vollendung sind Storyboards
-            um diese beiden Schläge — kein Einzel-Schmied.
+            Drei Schmiede und Rubens Feinmontage sind locked. Nachtwache (Teardrop) und Vollendung
+            (Knotenwerk, kein ᛒ) sind I2V-Review-Master — nicht locked. Play Schmiede:
+            Strike → Nachtwache → Ruben → Vollendung.
           </p>
         ) : null}
         {filter === "batch-2" ? (

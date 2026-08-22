@@ -565,11 +565,11 @@ export const STORY_CLIPS: StoryClip[] = [
     label: "Forge Night Watch",
     purpose: "Between the collective strike and the fine assembly. The vessel remains incomplete.",
     section: "phial-forge",
-    status: "storyboard",
-    video: null,
+    status: "batch-2-production",
+    video: "/phial/cycle-01/phial-forge-night-watch.mp4",
     poster: "/phial/cycle-01/phial-forge-night-watch.jpg",
     loop: false,
-    durationMs: 10000,
+    durationMs: 10790,
     camera: "wide",
     desktopObjectPosition: "50% 48%",
     mobileObjectPosition: "50% 50%",
@@ -578,18 +578,19 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "one-shot",
     filename: "phial-forge-night-watch.mp4",
     batch: 5,
-    usedIn: "Phase C connective. Extends the approved three-smith strike into the two-day forge. Storyboard still only until Freigabe.",
+    sha256: "07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77",
+    usedIn: "Phase C connective. Teardrop still unchanged. I2V review master, not locked.",
   },
   {
     id: "phial.forge_completion",
     label: "Forge Completion",
     purpose: "The finished Phial. Inherited light rehoused. Grave, not a brighter lamp.",
     section: "phial-forge",
-    status: "storyboard",
-    video: null,
+    status: "batch-2-production",
+    video: "/phial/cycle-01/phial-forge-completion.mp4",
     poster: "/phial/cycle-01/phial-forge-completion.jpg",
     loop: false,
-    durationMs: 10000,
+    durationMs: 10790,
     camera: "medium",
     desktopObjectPosition: "50% 40%",
     mobileObjectPosition: "52% 38%",
@@ -598,7 +599,8 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "one-shot",
     filename: "phial-forge-completion.mp4",
     batch: 5,
-    usedIn: "Phase C. Extends Ruben's approved assembly. Readable Jan remains blocked. Storyboard still only until Freigabe.",
+    sha256: "294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded",
+    usedIn: "Phase C. Knotwork starlight vessel, no ᛒ, blank anvil. I2V from still 4gRk2. Not locked.",
   },
   {
     id: "phial.ignition_against_silk",
@@ -739,6 +741,14 @@ export const FORGE_CONTINUATION_IDS: StoryCueId[] = [
   "phial.ruben_assemble",
   "phial.forge_completion",
   "phial.ignition_against_silk",
+];
+
+/** Play Schmiede — two-day forge without ignition (still storyboard). */
+export const SCHMIEDE_PLAYLIST: StoryCueId[] = [
+  "phial.three_smiths_strike",
+  "phial.forge_night_watch",
+  "phial.ruben_assemble",
+  "phial.forge_completion",
 ];
 
 /**

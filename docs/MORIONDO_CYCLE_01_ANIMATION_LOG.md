@@ -211,6 +211,30 @@ QC:
 
 ### Not yet
 
-Forge continuation videos (`phial.forge_night_watch`, `phial.forge_completion`, `phial.ignition_against_silk`) remain storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
+`phial.ignition_against_silk` remains storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
+
+## Phase C — Forge continuation I2V review masters — 2026-08-22
+
+Status `batch-2-production`, `locked: false`, awaiting Freigabe. Locked three-smith strike and Ruben assembly were not regenerated. Night-watch still is the prior teardrop / incomplete vessel (not the completion redesign).
+
+| Cue | File | Duration | fps | Loop | SHA-256 (mp4) | Size |
+|---|---|---|---|---|---|---|
+| `phial.forge_night_watch` | `/phial/cycle-01/phial-forge-night-watch.mp4` | 10.79s | 24 | one-shot | `07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77` | 3.3 MB |
+| `phial.forge_completion` | `/phial/cycle-01/phial-forge-completion.mp4` | 10.79s | 24 | one-shot | `294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded` | 6.7 MB |
+
+- Codec: H.264 High, yuv420p, 24 fps, `+faststart`, **no audio**, 1280×720.
+- 259 frames: native 10.04s I2V + 0.375s freeze pads start/end.
+- Posters are the source stills (no motion blur). Completion poster SHA-256 `462b3cce061c88084f932b71add88be5d7736a6669904f6e1b8f57366aab368a` (gen 4gRk2). Night-watch poster unchanged.
+- Review: `/review/presence` filter **Schmiede** and **Play Schmiede** (Strike → Nachtwache → Ruben → Vollendung).
+
+QC:
+- Night watch keeps the incomplete teardrop vessel. Not the intricate completion flask.
+- Completion vessel is a round nebula core in irregular knotwork. No Berkano / Bluetooth ᛒ. Blank anvil, no inscription.
+- Real I2V motion (embers, inner pulse, smith breath/work). Not Ken Burns zoompan.
+- No burned-in text, logos or audio. No readable Jan.
+
+### Not yet after Phase C
+
+`phial.ignition_against_silk` remains storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
 
 

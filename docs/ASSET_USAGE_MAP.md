@@ -48,6 +48,8 @@ The following cues are protected by the approval registry. Their current files m
 | `moriondo.rage_aftermath` | `deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91` | Cold recovery after the genuine break. |
 | `mounts.release` | `1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e` | Phase B review master. Silk loosens, spiders withdraw, mounts regain footing. Awaiting Freigabe. |
 | `mounts.return` | `f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e` | Phase B review master. Exhausted stall-roster return toward the empty stall. Awaiting Freigabe. |
+| `phial.forge_night_watch` | `07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77` | Phase C I2V from the restored teardrop still. Incomplete vessel held in heat. Not locked. |
+| `phial.forge_completion` | `294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded` | Phase C I2V from still 4gRk2 / poster `462b3cce…`. Round knotwork starlight vessel, no ᛒ, blank anvil. Not locked. |
 
 ---
 
@@ -111,13 +113,13 @@ The two locations must never be merged.
 
 - the vessel remains incomplete;
 - heat and light are held in tension;
-- a missing connective animation may show the guarded forge.
+- `phial.forge_night_watch` is the I2V connective from the teardrop still.
 
 ### Day two
 
 - `phial.ruben_assemble` performs fine binding and rune seating;
 - the Fellowship’s freely contributed strength is integrated;
-- a missing completion asset reveals the finished Phial.
+- `phial.forge_completion` reveals the finished knotwork Phial.
 
 The owner-approved three-smith and Ruben structure is final unless the owner changes it. There is no single-smith correction gate.
 
@@ -127,9 +129,9 @@ The owner-approved three-smith and Ruben structure is final unless the owner cha
 
 ### Forge continuation
 
-- `phial.forge_night_watch` — storyboard still present, video not produced
-- `phial.forge_completion` — storyboard still present, video not produced
-- `phial.ignition_against_silk`
+- `phial.forge_night_watch` — I2V review master from the teardrop still. Not locked.
+- `phial.forge_completion` — I2V review master from the knotwork still (no ᛒ). Not locked.
+- `phial.ignition_against_silk` — still missing
 
 Optional only when pacing requires it:
 

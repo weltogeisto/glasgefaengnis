@@ -9,6 +9,7 @@ import {
   BATCH_2_IDS,
   CYCLE_I_SPINE,
   PHASE_2_IDS,
+  PHASE_3_IDS,
   REVIEW_SECTIONS,
   STORY_BY_ID,
   STORY_CLIPS,
@@ -20,12 +21,13 @@ import {
 } from "@/lib/prison/storyPresence";
 import { cn } from "@/lib/utils";
 
-type Filter = "approved-existing" | "spine" | "batch-2" | "batch-1" | "phase-2" | ReviewSection | "all";
+type Filter = "approved-existing" | "spine" | "batch-2" | "batch-1" | "phase-2" | "phase-3" | ReviewSection | "all";
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "approved-existing", label: "Approved existing" },
   { id: "spine", label: "Cycle I Spine" },
   { id: "phase-2", label: "Jan" },
+  { id: "phase-3", label: "Schmiede" },
   { id: "batch-2", label: "Batch 2" },
   { id: "batch-1", label: "Batch 1" },
   { id: "all", label: "Alle" },
@@ -34,6 +36,7 @@ const FILTERS: { id: Filter; label: string }[] = [
   { id: "stall-spider", label: "Wald" },
   { id: "mount-rescue", label: "Reittiere" },
   { id: "jan-mystery", label: "Großes Nest" },
+  { id: "phial-forge", label: "Phial" },
   { id: "cycle-02", label: "Zyklus II" },
 ];
 
@@ -63,6 +66,7 @@ export function PresenceReview() {
     if (filter === "batch-2") return STORY_CLIPS.filter((c) => BATCH_2_IDS.includes(c.id));
     if (filter === "batch-1") return STORY_CLIPS.filter((c) => BATCH_1_IDS.includes(c.id));
     if (filter === "phase-2") return STORY_CLIPS.filter((c) => PHASE_2_IDS.includes(c.id));
+    if (filter === "phase-3") return STORY_CLIPS.filter((c) => PHASE_3_IDS.includes(c.id));
     if (filter === "all") return STORY_CLIPS;
     return STORY_CLIPS.filter((c) => c.section === filter);
   }, [filter]);

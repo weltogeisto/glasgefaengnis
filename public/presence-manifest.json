@@ -1,6 +1,6 @@
 {
-  "version": "cycle-01-phase-2",
-  "note": "Phase 1 locked (nest rev. 4 + three connectives). Phase 2 Jan teasers in review, not locked. Cycle I spine includes Phase 1. 720p masters.",
+  "version": "cycle-01-phase-3",
+  "note": "Phase 1 locked. Phase 3 Phial smith clips owner-approved 2026-08-22 (Blaue-Glut rune, Max strikes, Ruben assembles the vessel). 720p masters.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -422,6 +422,36 @@
       "status": "owner-approved-existing",
       "locked": true,
       "usedIn": "Phase 1 connective. Steven successfully counters. Slack strand and brood reversal must stay readable."
+    },
+    "phial.three_smiths_strike": {
+      "video": "/phial/cycle-01/phial-three-smiths-strike.mp4",
+      "poster": "/phial/cycle-01/phial-three-smiths-strike.jpg",
+      "loop": false,
+      "durationMs": 10040,
+      "camera": "wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "50% 50%",
+      "entryPose": "hammers-high",
+      "exitPose": "impact",
+      "sha256": "caa1d2a634ded41209f15294d01ec6bf166e730b3025e5bce80484dce54e3506",
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase 3/4. Owner-approved 2026-08-22. Ruben, Max, Hendrik (weiße Kriegsfürsten-Rüstung). Blaue-Glut Amboss-Rune. Max hits."
+    },
+    "phial.ruben_assemble": {
+      "video": "/phial/cycle-01/phial-ruben-assemble.mp4",
+      "poster": "/phial/cycle-01/phial-ruben-assemble.jpg",
+      "loop": false,
+      "durationMs": 10040,
+      "camera": "medium",
+      "desktopObjectPosition": "50% 40%",
+      "mobileObjectPosition": "52% 38%",
+      "entryPose": "fine-work",
+      "exitPose": "rune-seated",
+      "sha256": "119c08a7933b72b3da98f52b12211d95a9746d2aece227a5b308a5577b8d8410",
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase 3/4. Owner-approved 2026-08-22. Ruben on the Phial, small chasing hammer, Blaue-Glut rune seated."
     },
     "mounts.release": {
       "video": null,

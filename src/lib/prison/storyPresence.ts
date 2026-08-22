@@ -36,6 +36,8 @@ export type StoryCueId =
   | "mounts.return"
   | "nest.great_cocoon_teaser"
   | "nest.cocoon_inner_pulse"
+  | "phial.three_smiths_strike"
+  | "phial.ruben_assemble"
   | "moriondo.open_door_seated"
   | "moriondo.threshold_study"
   | "moriondo.remembered_grudge";
@@ -46,6 +48,7 @@ export type ReviewSection =
   | "stall-spider"
   | "mount-rescue"
   | "jan-mystery"
+  | "phial-forge"
   | "cycle-02";
 
 export type ClipStatus = "reusable" | "approved" | "batch-1-preview" | "batch-2-production" | "owner-approved-existing" | "awaiting-production" | "storyboard";
@@ -503,6 +506,50 @@ export const STORY_CLIPS: StoryClip[] = [
     filename: "moriondo-remembered-grudge.mp4",
     batch: 5,
   },
+  {
+    id: "phial.three_smiths_strike",
+    label: "Three Smiths Strike",
+    purpose: "Top three Waffenschmiede. Max strikes. Ostmark Blaue-Glut rune forged into the Phial.",
+    section: "phial-forge",
+    status: "owner-approved-existing",
+    video: "/phial/cycle-01/phial-three-smiths-strike.mp4",
+    poster: "/phial/cycle-01/phial-three-smiths-strike.jpg",
+    loop: false,
+    durationMs: 10040,
+    camera: "wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "50% 50%",
+    entryPose: "hammers-high",
+    exitPose: "impact",
+    playback: "one-shot",
+    filename: "phial-three-smiths-strike.mp4",
+    batch: 5,
+    sha256: "caa1d2a634ded41209f15294d01ec6bf166e730b3025e5bce80484dce54e3506",
+    locked: true,
+    usedIn: "Phase 3/4. Owner-approved 2026-08-22. Ruben, Max, Hendrik (weiße Kriegsfürsten-Rüstung). Blaue-Glut Amboss-Rune. Max hits.",
+  },
+  {
+    id: "phial.ruben_assemble",
+    label: "Ruben Assembles the Phial",
+    purpose: "Fine work on the Phial. Small hammer. Ostmark Blaue-Glut rune seated into the vessel.",
+    section: "phial-forge",
+    status: "owner-approved-existing",
+    video: "/phial/cycle-01/phial-ruben-assemble.mp4",
+    poster: "/phial/cycle-01/phial-ruben-assemble.jpg",
+    loop: false,
+    durationMs: 10040,
+    camera: "medium",
+    desktopObjectPosition: "50% 40%",
+    mobileObjectPosition: "52% 38%",
+    entryPose: "fine-work",
+    exitPose: "rune-seated",
+    playback: "one-shot",
+    filename: "phial-ruben-assemble.mp4",
+    batch: 5,
+    sha256: "119c08a7933b72b3da98f52b12211d95a9746d2aece227a5b308a5577b8d8410",
+    locked: true,
+    usedIn: "Phase 3/4. Owner-approved 2026-08-22. Ruben on the Phial, small chasing hammer, Blaue-Glut rune seated.",
+  },
 ];
 
 export const STORY_BY_ID: Record<StoryCueId, StoryClip> = Object.fromEntries(
@@ -535,11 +582,18 @@ export const APPROVED_EXISTING_IDS: StoryCueId[] = [
   "spider.lower_brood_answers",
   "mounts.abduction_flashback",
   "spider.counter_command",
+  "phial.three_smiths_strike",
+  "phial.ruben_assemble",
 ];
 
 export const PHASE_2_IDS: StoryCueId[] = [
   "nest.great_cocoon_teaser",
   "nest.cocoon_inner_pulse",
+];
+
+export const PHASE_3_IDS: StoryCueId[] = [
+  "phial.three_smiths_strike",
+  "phial.ruben_assemble",
 ];
 
 /**
@@ -575,6 +629,7 @@ export const REVIEW_SECTIONS: { id: ReviewSection; title: string; kicker: string
   { id: "stall-spider", title: "Stall und Spinne", kicker: "S01–S03" },
   { id: "mount-rescue", title: "Rettung der Reittiere", kicker: "A01–A05" },
   { id: "jan-mystery", title: "Jan · Das große Nest", kicker: "Phase 2 · Teaser" },
+  { id: "phial-forge", title: "Phial · Schmiede", kicker: "Phase 3 · Blaue Glut" },
   { id: "cycle-02", title: "Zyklus II · Konzepte", kicker: "Die offene Tür" },
 ];
 

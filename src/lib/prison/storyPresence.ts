@@ -609,11 +609,11 @@ export const STORY_CLIPS: StoryClip[] = [
     label: "Ignition Against Silk",
     purpose: "The completed Phial meets the Urseide. No readable occupant.",
     section: "phial-forge",
-    status: "storyboard",
-    video: null,
-    poster: "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+    status: "batch-2-production",
+    video: "/phial/cycle-01/phial-ignition-against-silk.mp4",
+    poster: "/phial/cycle-01/phial-ignition-against-silk.jpg",
     loop: false,
-    durationMs: 10000,
+    durationMs: 10790,
     camera: "wide",
     desktopObjectPosition: "50% 48%",
     mobileObjectPosition: "50% 50%",
@@ -622,7 +622,8 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "one-shot",
     filename: "phial-ignition-against-silk.mp4",
     batch: 5,
-    usedIn: "Phase C/E. Uses the locked great-cocoon architecture. No Jan face. Storyboard until identity gate.",
+    sha256: "8aed296f0df99bb0590d628c2410ec5a4d71e0676b47d403a3f815e583d06c2d",
+    usedIn: "Phase C/E review master. I2V: knotwork Phial raised as a ward against the locked great-cocoon. Silk recoils. No Jan face. Awaiting Freigabe.",
   },
   {
     id: "jan.reveal_in_cocoon",
@@ -749,12 +750,13 @@ export const FORGE_CONTINUATION_IDS: StoryCueId[] = [
   "phial.ignition_against_silk",
 ];
 
-/** Play Schmiede — two-day forge without ignition (still storyboard). */
+/** Play Schmiede — two-day forge plus ignition review master (not locked). */
 export const SCHMIEDE_PLAYLIST: StoryCueId[] = [
   "phial.three_smiths_strike",
   "phial.forge_night_watch",
   "phial.ruben_assemble",
   "phial.forge_completion",
+  "phial.ignition_against_silk",
 ];
 
 /**

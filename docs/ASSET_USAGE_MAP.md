@@ -50,6 +50,7 @@ The following cues are protected by the approval registry. Their current files m
 | `moriondo.rage_aftermath` | `deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91` | Cold recovery after the genuine break. |
 | `mounts.release` | `1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e` | Phase B review master. Silk loosens, spiders withdraw, mounts regain footing. Awaiting Freigabe. |
 | `mounts.return` | `f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e` | Phase B review master. Exhausted stall-roster return toward the empty stall. Awaiting Freigabe. |
+| `phial.ignition_against_silk` | `8aed296f0df99bb0590d628c2410ec5a4d71e0676b47d403a3f815e583d06c2d` | Phase C/E review master. Knotwork Phial raised as a ward against the locked great-cocoon. Silk recoils. No Jan face. Awaiting Freigabe. |
 
 ---
 
@@ -131,7 +132,7 @@ The owner-approved three-smith and Ruben structure is final unless the owner cha
 
 - `phial.forge_night_watch` — locked 2026-08-22
 - `phial.forge_completion` — locked 2026-08-22
-- `phial.ignition_against_silk` — still missing
+- `phial.ignition_against_silk` — I2V review master 2026-08-22, awaiting Freigabe
 
 Optional only when pacing requires it:
 

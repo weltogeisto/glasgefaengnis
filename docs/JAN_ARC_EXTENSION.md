@@ -181,7 +181,7 @@ Owner-approved and locked 2026-08-22:
 - `phial.forge_night_watch`
 - `phial.forge_completion`
 
-Still required:
+Produced, awaiting Freigabe:
 
 - `phial.ignition_against_silk`
 

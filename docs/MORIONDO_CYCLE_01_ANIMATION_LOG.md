@@ -235,6 +235,29 @@ QC:
 
 ### Not yet after Phase C
 
-`phial.ignition_against_silk` remains storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
+Readable Jan reveal remains blocked on the JGA identity gate.
+
+## Phase C/E — Ignition against silk I2V — review master 2026-08-22
+
+Status `batch-2-production`. **Not locked.** Locked great-cocoon teaser/pulse, Phase C, three-smiths, Ruben, mounts and Batch 1 were not regenerated.
+
+| Cue | File | Duration | fps | Loop | SHA-256 (mp4) | Size |
+|---|---|---|---|---|---|---|
+| `phial.ignition_against_silk` | `/phial/cycle-01/phial-ignition-against-silk.mp4` | 10.79s | 24 | one-shot | `8aed296f0df99bb0590d628c2410ec5a4d71e0676b47d403a3f815e583d06c2d` | 10.9 MB |
+
+- Poster SHA-256 `cbcde8fd7810c2f02d2dd2d8adf016dd6871e2a2dbdcd3c90ac43fb49e349989`
+- Codec: H.264 High, yuv420p, 24 fps, `+faststart`, **no audio**, 1280×720.
+- 259 frames: native ~10.04s I2V + 0.375s freeze pads start/end.
+- Action: knotwork Phial raised as a ward against the locked monumental cocoon. Light flares; Urseide recoils. No giant spider as opponent. No readable Jan.
+- Real I2V, not Ken Burns.
+- Review: `/review/presence` filter **Schmiede** and **Play Schmiede** (now includes ignition last).
+
+QC:
+- Target is the great cocoon, not Hidden Nest and not a Shelob-body.
+- Vessel is the completion knotwork flask (round nebula core). No ᛒ.
+- No face, no free identifying occupant hand from inside the silk.
+- No burned-in text, logos or audio.
+
+Do not write this into `presence-approvals.json` until owner Freigabe.
 
 

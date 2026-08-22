@@ -15,14 +15,14 @@ Owner: `/review/presence` → **Jan** → Great Cocoon Teaser, then Cocoon Inner
 - [ ] One monument vessel, not the mount hammock nest
 - [ ] Older, heavier spiral Urseide
 - [ ] No readable human face
-- [ ] Inner Pulse: a hand bends the silk from inside, trying to escape
+- [ ] Inner Pulse: occupant trapped inside — cloth-imprint of a hand, no visible skin
 - [ ] No mounts
 - [ ] Distinct from Hidden Nest
 
 | Cue | Video SHA-256 |
 |-----|---------------|
 | nest.great_cocoon_teaser | `c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16` |
-| nest.cocoon_inner_pulse | `0a70338dff861ad707fe7d37244f45dcc5d85db3d4ea5a8d47b61eff0dd4c64b` |
+| nest.cocoon_inner_pulse | `fc361c74399e85fbc93e6d842dea32fdfbea80290c4e237c8cfb0f31fb36fc23` |
 
 Status `batch-2-production`, `locked: false`.
 

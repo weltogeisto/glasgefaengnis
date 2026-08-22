@@ -51,7 +51,7 @@ Phase 2 Jan teasers are **not** in the spine until Freigabe.
 |---|---|
 | `mounts.hidden_nest` | Living **mount** roster in silk. Stall species remain recognisable. **Rev. 4 locked.** |
 | `nest.great_cocoon_teaser` | Older, larger **human-binding** site. One vessel. No face. **In review.** |
-| `nest.cocoon_inner_pulse` | Same vessel, closer. A hand bends the silk from inside. No face. **In review.** |
+| `nest.cocoon_inner_pulse` | Same vessel, sealed. Occupant trapped inside. Cloth-imprint of a hand, no visible skin. **In review.** |
 
 ---
 
@@ -60,7 +60,7 @@ Phase 2 Jan teasers are **not** in the spine until Freigabe.
 | Cue | Files | SHA-256 |
 |---|---|---|
 | `nest.great_cocoon_teaser` | `/duesterwald/cycle-01/nest-great-cocoon-teaser.mp4` · `.jpg` | `c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16` |
-| `nest.cocoon_inner_pulse` | `/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4` · `.jpg` | `0a70338dff861ad707fe7d37244f45dcc5d85db3d4ea5a8d47b61eff0dd4c64b` |
+| `nest.cocoon_inner_pulse` | `/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4` · `.jpg` | `fc361c74399e85fbc93e6d842dea32fdfbea80290c4e237c8cfb0f31fb36fc23` |
 
 Return both for review before any visible Jan reveal. Do not generate `jan.reveal_in_cocoon` yet.
 

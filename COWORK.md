@@ -9,12 +9,13 @@ This repository is the cinematic presence and animation workshop for the Moriond
 
 1. `docs/STORY_CONTRACT.md` — the only active canon contract.
 2. `config/presence-approvals.json` — immutable owner-approved asset revisions.
-3. `public/presence-manifest.json` — runtime delivery metadata.
-4. `docs/ASSET_USAGE_MAP.md` — where approved assets belong in the story.
-5. `docs/JAN_ARC_EXTENSION.md` — current Jan, cocoon and Phial production arc.
-6. `docs/MORIONDO_CYCLE_01_ANIMATION_LOG.md` — generation history, not an authority over the current contract.
+3. `docs/MORIONDO_CYCLE_01_BRIEF_OVERRIDES.md` — explicit owner changes to the original animation brief.
+4. `public/presence-manifest.json` — runtime delivery metadata.
+5. `docs/ASSET_USAGE_MAP.md` — where approved assets belong in the story.
+6. `docs/JAN_ARC_EXTENSION.md` — current Jan, cocoon and Phial production arc.
+7. `docs/MORIONDO_CYCLE_01_ANIMATION_LOG.md` — generation history, not an authority over the current contract.
 
-When documents conflict, `docs/STORY_CONTRACT.md` and the approval registry win.
+When documents conflict, `docs/STORY_CONTRACT.md`, the approval registry and the explicit override file win.
 
 ## Repository responsibilities
 
@@ -48,7 +49,7 @@ Moriondo is the principal active antagonist and is physically imprisoned after a
 
 The owner has explicitly confirmed both of the following and they must not be reopened as errors:
 
-- `mounts.abduction_flashback` may show controlled injury or visible blood where the silk bites. The mounts remain alive and recoverable; there is no death or mutilation.
+- `mounts.abduction_flashback` may show the current restrained injury treatment where the silk bites. The mounts remain alive and recoverable.
 - The current three-smith strike and Ruben assembly structure is intentional. Do not revert it to a single-smith production concept unless the owner changes the decision.
 
 ## Forbidden active canon

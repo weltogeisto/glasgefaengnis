@@ -170,11 +170,11 @@ Owner-visible stills + videos. Status `batch-2-production` — **not locked**. D
 | Cue | File | SHA-256 (video) | Notes |
 |-----|------|-----------------|-------|
 | nest.great_cocoon_teaser | nest-great-cocoon-teaser.mp4 | c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16 | One monument vessel, older spiral Urseide, no face, no mounts. 10.04s loop |
-| nest.cocoon_inner_pulse | nest-cocoon-inner-pulse.mp4 | f1ef83a4455e8654c1dda8fe50f9d8669b5f4cf9dbdd7b848089848c7d10d687 | Same cocoon, closer. Human-scale inner pulse, no face. 10.04s one-shot |
+| nest.cocoon_inner_pulse | nest-cocoon-inner-pulse.mp4 | 0a70338dff861ad707fe7d37244f45dcc5d85db3d4ea5a8d47b61eff0dd4c64b | Same cocoon. Adult hand stretches silk from inside, trying to escape. No face. 10.04s one-shot. Rev. 2; v1 SHA f1ef83a4 backed up. |
 
 Posters SHA:
 - nest-great-cocoon-teaser.jpg `373bfdb4563a2d77a59962f0ca25790600bc8331c67da7122529c5f22f88ad91`
-- nest-cocoon-inner-pulse.jpg `2dfdcb17505a4030942028e33954d0c83400bd547cc820e5dd1c5f97536d07da`
+- nest-cocoon-inner-pulse.jpg `11c416bdaba9e83f6e8f7ab073d3cc33d844c954636b49eb289c01bbd0492b2b`
 
 All: 1280×720 H.264 High yuv420p 24 fps, no audio, `+faststart`. Posters are source stills (no motion blur).
 
@@ -184,6 +184,6 @@ QC:
 - No mounts
 - No Nazgûl
 - Fewer lower spiders (one on a distant strand)
-- Inner pulse implies occupant is not a mount without revealing Jan
+- Inner pulse: an adult hand bends the silk from inside as if wanting to escape. No face. Occupant is not a mount.
 
 

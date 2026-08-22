@@ -402,11 +402,11 @@
       "desktopObjectPosition": "50% 48%",
       "mobileObjectPosition": "52% 50%",
       "entryPose": "silk-taut",
-      "exitPose": "pulse-settled",
-      "sha256": "f1ef83a4455e8654c1dda8fe50f9d8669b5f4cf9dbdd7b848089848c7d10d687",
+      "exitPose": "hand-strain",
+      "sha256": "0a70338dff861ad707fe7d37244f45dcc5d85db3d4ea5a8d47b61eff0dd4c64b",
       "status": "batch-2-production",
       "locked": false,
-      "usedIn": "Phase 2 Jan mystery preview. Same cocoon as the teaser. Human-scale pulse, no face. Awaiting Freigabe."
+      "usedIn": "Phase 2 Jan mystery preview. Same cocoon as the teaser. Adult hand stretches Urseide from inside. Occupant is not a mount. No face. Awaiting Freigabe."
     },
     "spider.counter_command": {
       "video": "/duesterwald/cycle-01/spider-counter-command.mp4",

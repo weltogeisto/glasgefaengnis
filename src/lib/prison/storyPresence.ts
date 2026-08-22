@@ -565,7 +565,7 @@ export const STORY_CLIPS: StoryClip[] = [
     label: "Forge Night Watch",
     purpose: "Between the collective strike and the fine assembly. The vessel remains incomplete.",
     section: "phial-forge",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/phial/cycle-01/phial-forge-night-watch.mp4",
     poster: "/phial/cycle-01/phial-forge-night-watch.jpg",
     loop: false,
@@ -579,14 +579,15 @@ export const STORY_CLIPS: StoryClip[] = [
     filename: "phial-forge-night-watch.mp4",
     batch: 5,
     sha256: "07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77",
-    usedIn: "Phase C connective. Teardrop still unchanged. I2V review master, not locked.",
+    locked: true,
+    usedIn: "Phase C. Owner-approved 2026-08-22. Teardrop / incomplete vessel. I2V, not Ken Burns. Do not redesign to the completion flask.",
   },
   {
     id: "phial.forge_completion",
     label: "Forge Completion",
     purpose: "The finished Phial. Inherited light rehoused. Grave, not a brighter lamp.",
     section: "phial-forge",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/phial/cycle-01/phial-forge-completion.mp4",
     poster: "/phial/cycle-01/phial-forge-completion.jpg",
     loop: false,
@@ -600,7 +601,8 @@ export const STORY_CLIPS: StoryClip[] = [
     filename: "phial-forge-completion.mp4",
     batch: 5,
     sha256: "294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded",
-    usedIn: "Phase C. Knotwork starlight vessel, no ᛒ, blank anvil. I2V from still 4gRk2. Not locked.",
+    locked: true,
+    usedIn: "Phase C. Owner-approved 2026-08-22. Knotwork starlight vessel, no ᛒ, blank anvil. I2V from still 4gRk2 / sha 462b3cce.",
   },
   {
     id: "phial.ignition_against_silk",
@@ -718,6 +720,8 @@ export const APPROVED_EXISTING_IDS: StoryCueId[] = [
   "nest.cocoon_inner_pulse",
   "phial.three_smiths_strike",
   "phial.ruben_assemble",
+  "phial.forge_night_watch",
+  "phial.forge_completion",
 ];
 
 export const PHASE_2_IDS: StoryCueId[] = [
@@ -727,7 +731,9 @@ export const PHASE_2_IDS: StoryCueId[] = [
 
 export const PHASE_3_IDS: StoryCueId[] = [
   "phial.three_smiths_strike",
+  "phial.forge_night_watch",
   "phial.ruben_assemble",
+  "phial.forge_completion",
 ];
 
 export const PHASE_B_IDS: StoryCueId[] = [

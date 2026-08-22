@@ -170,6 +170,33 @@
           "gitBlobSha": "1494ac80f92e436775fd350a20e5b5b1ff745b47"
         }
       }
+    },
+    "phial.forge_night_watch": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approved the Phase C I2V from the teardrop still. Incomplete vessel held in heat. Do not redesign to match the completion flask.",
+      "files": {
+        "public/phial/cycle-01/phial-forge-night-watch.mp4": {
+          "gitBlobSha": "0d12cbfb4480194f8e2f0b9e25b99c959505d91f",
+          "sha256": "07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77"
+        },
+        "public/phial/cycle-01/phial-forge-night-watch.jpg": {
+          "gitBlobSha": "8db5005013fd6c600c63a8bbd1f5b736d52589d8"
+        }
+      }
+    },
+    "phial.forge_completion": {
+      "approvedAt": "2026-08-22",
+      "basis": "Owner approved the Phase C knotwork starlight vessel I2V. No Berkano/Bluetooth rune. Blank anvil. Still 4gRk2 / sha 462b3cce.",
+      "files": {
+        "public/phial/cycle-01/phial-forge-completion.mp4": {
+          "gitBlobSha": "f10c78f9435d1e6865b4bb85aaa88f1047c1231f",
+          "sha256": "294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded"
+        },
+        "public/phial/cycle-01/phial-forge-completion.jpg": {
+          "gitBlobSha": "a0e6d5be8f3f2b0767e4f73e94d31b1dd9e82244",
+          "sha256": "462b3cce061c88084f932b71add88be5d7736a6669904f6e1b8f57366aab368a"
+        }
+      }
     }
   }
 }

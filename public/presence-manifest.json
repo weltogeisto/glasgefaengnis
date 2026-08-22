@@ -1,6 +1,6 @@
 {
   "version": "cycle-01-phase-c",
-  "note": "Phase C forge continuation I2V review masters 2026-08-22. Night-watch keeps the teardrop still. Completion still is the knotwork vessel (no ᛒ). Not locked. Approved binaries unchanged.",
+  "note": "Phase C forge continuation locked 2026-08-22. Night-watch teardrop + completion knotwork vessel (no ᛒ). Three-smiths, Ruben, mounts, nests and Batch 1 unchanged.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -526,7 +526,9 @@
       "entryPose": "incomplete-vessel",
       "exitPose": "held-heat",
       "sha256": "07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77",
-      "status": "batch-2-production"
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase C. Owner-approved 2026-08-22. Teardrop / incomplete vessel. I2V, not Ken Burns. Do not redesign to the completion flask."
     },
     "phial.forge_completion": {
       "video": "/phial/cycle-01/phial-forge-completion.mp4",
@@ -539,7 +541,9 @@
       "entryPose": "rune-seated",
       "exitPose": "vessel-complete",
       "sha256": "294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded",
-      "status": "batch-2-production"
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase C. Owner-approved 2026-08-22. Knotwork starlight vessel, no ᛒ, blank anvil. I2V from still 4gRk2 / sha 462b3cce."
     },
     "phial.ignition_against_silk": {
       "video": null,

@@ -184,7 +184,7 @@ export function PresenceReview() {
         {filter === "approved-existing" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
             Owner-approved und <strong>locked</strong>. Nicht regenerieren. Capture, Stall, Steven,
-            Abduction, Nest, Counter, Jan-Teaser und die zwei Schmiede-Schläge.
+            Abduction, Nest, Counter, Jan-Teaser, die zwei Schmiede-Schläge, Nachtwache und Vollendung.
           </p>
         ) : null}
         {filter === "spine" ? (
@@ -207,9 +207,8 @@ export function PresenceReview() {
         ) : null}
         {filter === "phase-3" || filter === "phial-forge" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Drei Schmiede und Rubens Feinmontage sind locked. Nachtwache (Teardrop) und Vollendung
-            (Knotenwerk, kein ᛒ) sind I2V-Review-Master — nicht locked. Play Schmiede:
-            Strike → Nachtwache → Ruben → Vollendung.
+            Drei Schmiede, Nachtwache, Rubens Feinmontage und Vollendung sind locked. Play Schmiede:
+            Strike → Nachtwache → Ruben → Vollendung. Zündung gegen Seide bleibt Storyboard.
           </p>
         ) : null}
         {filter === "batch-2" ? (

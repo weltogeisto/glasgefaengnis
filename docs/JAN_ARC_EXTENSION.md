@@ -24,6 +24,8 @@ The following approved cues are already part of the story and are protected by `
 - `nest.cocoon_inner_pulse`
 - `phial.three_smiths_strike`
 - `phial.ruben_assemble`
+- `phial.forge_night_watch`
+- `phial.forge_completion`
 
 They must be used, not treated as disposable previews.
 
@@ -174,10 +176,13 @@ The release must preserve the species and scale relationships established by `mo
 
 ### Forge continuation
 
-Still required:
+Owner-approved and locked 2026-08-22:
 
 - `phial.forge_night_watch`
 - `phial.forge_completion`
+
+Still required:
+
 - `phial.ignition_against_silk`
 
 Optional only if necessary for rhythm:
@@ -217,9 +222,9 @@ A readable Jan reveal requires his canonical JGA identity. The teaser assets rem
 
 1. optional preparation transition
 2. approved `phial.three_smiths_strike`
-3. `phial.forge_night_watch`
+3. approved `phial.forge_night_watch`
 4. approved `phial.ruben_assemble`
-5. `phial.forge_completion`
+5. approved `phial.forge_completion`
 6. `phial.ignition_against_silk`
 
 ### Phase D — Jan identity gate

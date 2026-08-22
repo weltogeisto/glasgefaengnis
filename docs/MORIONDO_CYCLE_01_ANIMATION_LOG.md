@@ -213,9 +213,9 @@ QC:
 
 `phial.ignition_against_silk` remains storyboard. Readable Jan reveal remains blocked on the JGA identity gate.
 
-## Phase C — Forge continuation I2V review masters — 2026-08-22
+## Phase C — Forge continuation I2V — owner-approved and locked 2026-08-22
 
-Status `batch-2-production`, `locked: false`, awaiting Freigabe. Locked three-smith strike and Ruben assembly were not regenerated. Night-watch still is the prior teardrop / incomplete vessel (not the completion redesign).
+Status `owner-approved-existing`, `locked: true`. Locked three-smith strike and Ruben assembly were not regenerated. Night-watch still is the prior teardrop / incomplete vessel (not the completion redesign).
 
 | Cue | File | Duration | fps | Loop | SHA-256 (mp4) | Size |
 |---|---|---|---|---|---|---|

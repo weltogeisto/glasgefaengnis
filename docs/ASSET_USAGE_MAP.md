@@ -34,6 +34,8 @@ The following cues are protected by the approval registry. Their current files m
 | `nest.cocoon_inner_pulse` | `a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e` | Proof of a living non-mount occupant; no face is shown. |
 | `phial.three_smiths_strike` | `caa1d2a634ded41209f15294d01ec6bf166e730b3025e5bce80484dce54e3506` | Collective forge blow by Ruben, Max and Hendrik; Max delivers the depicted main strike. |
 | `phial.ruben_assemble` | `119c08a7933b72b3da98f52b12211d95a9746d2aece227a5b308a5577b8d8410` | Ruben performs the approved fine assembly and seats the Blaue-Glut rune. |
+| `phial.forge_night_watch` | `07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77` | Night watch: incomplete teardrop vessel held in heat. I2V. Do not redesign to the completion flask. |
+| `phial.forge_completion` | `294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded` | Finished knotwork starlight vessel, no ᛒ, blank anvil. I2V from still 4gRk2 / poster `462b3cce…`. |
 
 `npm run check:presence` verifies the registered binaries and posters against their immutable checksums.
 
@@ -48,8 +50,6 @@ The following cues are protected by the approval registry. Their current files m
 | `moriondo.rage_aftermath` | `deba88ccadfdfe26c06ec0cc5b7c216b31bfbe602ee8f076dce331e0d2553e91` | Cold recovery after the genuine break. |
 | `mounts.release` | `1f77e0cf91c9e30dbc3f9dd59b692863021ce96a03327bbe89606c8d6595e79e` | Phase B review master. Silk loosens, spiders withdraw, mounts regain footing. Awaiting Freigabe. |
 | `mounts.return` | `f4c9b7117d9d1d548fdae4edbc2ccd5ec30dab4d2b1296ac1e7da4028b96df1e` | Phase B review master. Exhausted stall-roster return toward the empty stall. Awaiting Freigabe. |
-| `phial.forge_night_watch` | `07ceb67fe89e12901e88b9c0fee09ddb793fe4759f088f70746d326438588f77` | Phase C I2V from the restored teardrop still. Incomplete vessel held in heat. Not locked. |
-| `phial.forge_completion` | `294466b642ac72dc46aee2dffb8655f4d5e31288bce07c00b134fa34ddfe4ded` | Phase C I2V from still 4gRk2 / poster `462b3cce…`. Round knotwork starlight vessel, no ᛒ, blank anvil. Not locked. |
 
 ---
 
@@ -129,8 +129,8 @@ The owner-approved three-smith and Ruben structure is final unless the owner cha
 
 ### Forge continuation
 
-- `phial.forge_night_watch` — I2V review master from the teardrop still. Not locked.
-- `phial.forge_completion` — I2V review master from the knotwork still (no ᛒ). Not locked.
+- `phial.forge_night_watch` — locked 2026-08-22
+- `phial.forge_completion` — locked 2026-08-22
 - `phial.ignition_against_silk` — still missing
 
 Optional only when pacing requires it:

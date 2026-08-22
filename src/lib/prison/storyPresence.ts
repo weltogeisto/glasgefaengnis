@@ -34,6 +34,8 @@ export type StoryCueId =
   | "spider.counter_command"
   | "mounts.release"
   | "mounts.return"
+  | "nest.great_cocoon_teaser"
+  | "nest.cocoon_inner_pulse"
   | "moriondo.open_door_seated"
   | "moriondo.threshold_study"
   | "moriondo.remembered_grudge";
@@ -43,6 +45,7 @@ export type ReviewSection =
   | "moriondo-cycle-01"
   | "stall-spider"
   | "mount-rescue"
+  | "jan-mystery"
   | "cycle-02";
 
 export type ClipStatus = "reusable" | "approved" | "batch-1-preview" | "batch-2-production" | "owner-approved-existing" | "awaiting-production" | "storyboard";
@@ -278,7 +281,7 @@ export const STORY_CLIPS: StoryClip[] = [
     label: "Lower Brood Answers",
     purpose: "Partial command: one group turns, another stays still.",
     section: "stall-spider",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/duesterwald/cycle-01/lower-brood-answers.mp4",
     poster: "/duesterwald/cycle-01/lower-brood-answers.jpg",
     loop: false,
@@ -293,13 +296,14 @@ export const STORY_CLIPS: StoryClip[] = [
     batch: 3,
     sha256: "c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845",
     usedIn: "Phase 1 connective. Steven identity locked to stall/mount view. Lower brood partial response.",
+    locked: true,
   },
   {
     id: "mounts.abduction_flashback",
     label: "Abduction Flashback",
     purpose: "Mounts physically taken alive. Moriondo is not present. Horse-sized Fellbeast + Oliphaunt.",
     section: "mount-rescue",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/duesterwald/cycle-01/mounts-abduction-flashback.mp4",
     poster: "/duesterwald/cycle-01/mounts-abduction-flashback.jpg",
     loop: false,
@@ -314,13 +318,14 @@ export const STORY_CLIPS: StoryClip[] = [
     batch: 3,
     sha256: "2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723",
     usedIn: "Phase 1 connective. Alive capture of the stall roster. Fellbeast is a stall mount, smaller than the Mûmak. No spiders as captives. Gore where silk bites.",
+    locked: true,
   },
   {
     id: "mounts.hidden_nest",
     label: "Hidden Nest",
     purpose: "Living stall-roster nest. Full species identity. Breathing. No gore. No spiders as captives.",
     section: "mount-rescue",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/duesterwald/cycle-01/mounts-hidden-nest.mp4",
     poster: "/duesterwald/cycle-01/mounts-hidden-nest.jpg",
     loop: true,
@@ -334,15 +339,59 @@ export const STORY_CLIPS: StoryClip[] = [
     filename: "mounts-hidden-nest.mp4",
     batch: 1,
     sha256: "ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16",
+    locked: true,
+    usedIn: "First collective proof the stall-roster mounts live in the Düsterwald. Rev. 4 owner-approved 2026-08-22. Full live stall roster. Mount nest only — not the Jan great cocoon.",
+  },
+  {
+    id: "nest.great_cocoon_teaser",
+    label: "Great Cocoon Teaser",
+    purpose: "A further nest belongs to none of the mounts. Older, larger, one vessel. No readable human.",
+    section: "jan-mystery",
+    status: "batch-2-production",
+    video: "/duesterwald/cycle-01/nest-great-cocoon-teaser.mp4",
+    poster: "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+    loop: true,
+    durationMs: 10040,
+    camera: "wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "50% 50%",
+    entryPose: "unassigned-monument",
+    exitPose: "unassigned-monument",
+    playback: "loop",
+    filename: "nest-great-cocoon-teaser.mp4",
+    batch: 4,
+    sha256: "c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16",
     locked: false,
-    usedIn: "Owner-requested nest rev. 4 2026-08-22: full live stall roster — Mûmak, Königselch, Schattenelch, Glutfalke, Sturmfalke, Grauwarg, Kriegswidder, Fellbiest (stall mount, no Nazgûl), Fellpony, Trosspony, Bree-Fohlen, Khazad-Lämmchen. Spiders are abductors, not captives. Prior v3 SHA c4b1453f backed up. Awaiting re-Freigabe.",
+    usedIn: "Phase 2 Jan mystery preview. Distinct site from Hidden Nest. Urseide der Großen Verzehrerin. No face. Awaiting Freigabe.",
+  },
+  {
+    id: "nest.cocoon_inner_pulse",
+    label: "Cocoon Inner Pulse",
+    purpose: "Closer on the same vessel. Occupant is not a mount. Reveal stays uncertain.",
+    section: "jan-mystery",
+    status: "batch-2-production",
+    video: "/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4",
+    poster: "/duesterwald/cycle-01/nest-cocoon-inner-pulse.jpg",
+    loop: false,
+    durationMs: 10040,
+    camera: "medium-wide",
+    desktopObjectPosition: "50% 48%",
+    mobileObjectPosition: "52% 50%",
+    entryPose: "silk-taut",
+    exitPose: "pulse-settled",
+    playback: "one-shot",
+    filename: "nest-cocoon-inner-pulse.mp4",
+    batch: 4,
+    sha256: "f1ef83a4455e8654c1dda8fe50f9d8669b5f4cf9dbdd7b848089848c7d10d687",
+    locked: false,
+    usedIn: "Phase 2 Jan mystery preview. Same cocoon as the teaser. Human-scale pulse, no face. Awaiting Freigabe.",
   },
   {
     id: "spider.counter_command",
     label: "Counter Command",
     purpose: "Steven’s pulse reverses the brood. A strand toward Moriondo goes slack. Successful defense readable.",
     section: "mount-rescue",
-    status: "batch-2-production",
+    status: "owner-approved-existing",
     video: "/duesterwald/cycle-01/spider-counter-command.mp4",
     poster: "/duesterwald/cycle-01/spider-counter-command.jpg",
     loop: false,
@@ -357,6 +406,7 @@ export const STORY_CLIPS: StoryClip[] = [
     batch: 3,
     sha256: "f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a",
     usedIn: "Phase 1 connective. Steven successfully counters. Slack strand and brood reversal must stay readable.",
+    locked: true,
   },
   {
     id: "mounts.release",
@@ -475,18 +525,26 @@ export const BATCH_2_IDS: StoryCueId[] = [
   "moriondo.rage_aftermath",
 ];
 
-/** The five owner-approved Batch 1 assets. Locked — do not regenerate. */
+/** Owner-approved locked assets. Do not regenerate. */
 export const APPROVED_EXISTING_IDS: StoryCueId[] = [
   "moriondo.capture_rage",
   "moriondo.rage_true_break",
   "stall.web_takeover",
   "spider.steven_command",
   "mounts.hidden_nest",
+  "spider.lower_brood_answers",
+  "mounts.abduction_flashback",
+  "spider.counter_command",
+];
+
+export const PHASE_2_IDS: StoryCueId[] = [
+  "nest.great_cocoon_teaser",
+  "nest.cocoon_inner_pulse",
 ];
 
 /**
- * Cycle I spine — review-only linear sequence proving all five locked assets
- * plus existing presence and already-produced connective masters form one arc.
+ * Cycle I spine — review-only linear sequence proving locked Batch 1 + Phase 1
+ * connectives form one arc. Phase 2 Jan teasers stay out until Freigabe.
  * Played by the "Play Cycle I spine" button on /review/presence.
  */
 export const CYCLE_I_SPINE: StoryCueId[] = [
@@ -494,8 +552,10 @@ export const CYCLE_I_SPINE: StoryCueId[] = [
   "moriondo.capture_rage",
   "moriondo.mask_reassembles",
   "stall.web_takeover",
+  "mounts.abduction_flashback",
   "mounts.hidden_nest",
   "spider.steven_command",
+  "spider.lower_brood_answers",
   "moriondo.pace",
   "moriondo.approach",
   "moriondo.glass",
@@ -505,6 +565,7 @@ export const CYCLE_I_SPINE: StoryCueId[] = [
   "moriondo.turn",
   "moriondo.sit",
   "moriondo.rage_true_break",
+  "spider.counter_command",
   "moriondo.rage_aftermath",
 ];
 
@@ -513,6 +574,7 @@ export const REVIEW_SECTIONS: { id: ReviewSection; title: string; kicker: string
   { id: "moriondo-cycle-01", title: "Moriondo · Zyklus I", kicker: "M01–M05" },
   { id: "stall-spider", title: "Stall und Spinne", kicker: "S01–S03" },
   { id: "mount-rescue", title: "Rettung der Reittiere", kicker: "A01–A05" },
+  { id: "jan-mystery", title: "Jan · Das große Nest", kicker: "Phase 2 · Teaser" },
   { id: "cycle-02", title: "Zyklus II · Konzepte", kicker: "Die offene Tür" },
 ];
 

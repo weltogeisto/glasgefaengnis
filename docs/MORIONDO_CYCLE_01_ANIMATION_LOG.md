@@ -140,7 +140,7 @@ Changes vs rev. 3:
 - No gore (nest remains alive / breathing)
 - Still hammock composition — distinct from abduction drag
 
-Status: `batch-2-production`, `locked: false`, awaiting re-Freigabe.
+Status: `owner-approved-existing`, `locked: true`.
 
 ### Hidden Nest rev. 3 — superseded
 
@@ -161,5 +161,29 @@ Rev. 3 added Grauwarg and removed spiders/Nazgûl but collapsed the roster to wo
 
 ### Not yet
 
-Cycle I spine does **not** include these three until owner-approved-existing.
+Cycle I spine now includes Phase 1 connectives. Phase 2 Jan teasers are in review and stay **out of the spine** until Freigabe. No visible Jan reveal yet.
+
+## Phase 2 Jan mystery previews — 2026-08-22 (in review)
+
+Owner-visible stills + videos. Status `batch-2-production` — **not locked**. Distinct site from Hidden Nest.
+
+| Cue | File | SHA-256 (video) | Notes |
+|-----|------|-----------------|-------|
+| nest.great_cocoon_teaser | nest-great-cocoon-teaser.mp4 | c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16 | One monument vessel, older spiral Urseide, no face, no mounts. 10.04s loop |
+| nest.cocoon_inner_pulse | nest-cocoon-inner-pulse.mp4 | f1ef83a4455e8654c1dda8fe50f9d8669b5f4cf9dbdd7b848089848c7d10d687 | Same cocoon, closer. Human-scale inner pulse, no face. 10.04s one-shot |
+
+Posters SHA:
+- nest-great-cocoon-teaser.jpg `373bfdb4563a2d77a59962f0ca25790600bc8331c67da7122529c5f22f88ad91`
+- nest-cocoon-inner-pulse.jpg `2dfdcb17505a4030942028e33954d0c83400bd547cc820e5dd1c5f97536d07da`
+
+All: 1280×720 H.264 High yuv420p 24 fps, no audio, `+faststart`. Posters are source stills (no motion blur).
+
+QC:
+- Distinct from Hidden Nest (one vessel vs many hammocks)
+- No readable human face or limbs
+- No mounts
+- No Nazgûl
+- Fewer lower spiders (one on a distant strand)
+- Inner pulse implies occupant is not a mount without revealing Jan
+
 

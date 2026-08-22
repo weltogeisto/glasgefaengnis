@@ -1,6 +1,6 @@
 {
-  "version": "cycle-01-phase-0",
-  "note": "Phase 1 connective masters in review (batch-2-production, not locked). Five Batch 1 assets remain owner-approved-existing. 720p masters.",
+  "version": "cycle-01-phase-2",
+  "note": "Phase 1 locked (nest rev. 4 + three connectives). Phase 2 Jan teasers in review, not locked. Cycle I spine includes Phase 1. 720p masters.",
   "cues": {
     "moriondo.idle": {
       "video": "/prison/idle.mp4",
@@ -344,7 +344,8 @@
       "entryPose": "brood-bowed",
       "exitPose": "split-response",
       "sha256": "c7d0a63628fbcc66e53f0158f562b850a32137d27076f5c0dcd834c318b91845",
-      "status": "batch-2-production",
+      "status": "owner-approved-existing",
+      "locked": true,
       "usedIn": "Phase 1 connective. Steven identity locked to stall/mount view. Lower brood partial response."
     },
     "mounts.abduction_flashback": {
@@ -358,7 +359,8 @@
       "entryPose": "alive-resisting",
       "exitPose": "deeper-forest",
       "sha256": "2745ebcf061a2e94e80f436e7dda77fc02cfc40d05cd26501f6c29a43f4a3723",
-      "status": "batch-2-production",
+      "status": "owner-approved-existing",
+      "locked": true,
       "usedIn": "Phase 1 connective. Alive capture of the stall roster. Fellbeast is a stall mount, smaller than the Mûmak. No spiders as captives. Gore where silk bites."
     },
     "mounts.hidden_nest": {
@@ -372,9 +374,39 @@
       "entryPose": "restrained-alive",
       "exitPose": "restrained-alive",
       "sha256": "ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16",
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "First collective proof the stall-roster mounts live in the Düsterwald. Rev. 4 owner-approved 2026-08-22. Full live stall roster. Mount nest only — not the Jan great cocoon."
+    },
+    "nest.great_cocoon_teaser": {
+      "video": "/duesterwald/cycle-01/nest-great-cocoon-teaser.mp4",
+      "poster": "/duesterwald/cycle-01/nest-great-cocoon-teaser.jpg",
+      "loop": true,
+      "durationMs": 10040,
+      "camera": "wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "50% 50%",
+      "entryPose": "unassigned-monument",
+      "exitPose": "unassigned-monument",
+      "sha256": "c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16",
       "status": "batch-2-production",
       "locked": false,
-      "usedIn": "Owner-requested nest rev. 4 2026-08-22: full live stall roster — Mûmak, Königselch, Schattenelch, Glutfalke, Sturmfalke, Grauwarg, Kriegswidder, Fellbiest (stall mount, no Nazgûl), Fellpony, Trosspony, Bree-Fohlen, Khazad-Lämmchen. Spiders are abductors, not captives. Prior v3 SHA c4b1453f backed up. Awaiting re-Freigabe."
+      "usedIn": "Phase 2 Jan mystery preview. Distinct site from Hidden Nest. Urseide der Großen Verzehrerin. No face. Awaiting Freigabe."
+    },
+    "nest.cocoon_inner_pulse": {
+      "video": "/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4",
+      "poster": "/duesterwald/cycle-01/nest-cocoon-inner-pulse.jpg",
+      "loop": false,
+      "durationMs": 10040,
+      "camera": "medium-wide",
+      "desktopObjectPosition": "50% 48%",
+      "mobileObjectPosition": "52% 50%",
+      "entryPose": "silk-taut",
+      "exitPose": "pulse-settled",
+      "sha256": "f1ef83a4455e8654c1dda8fe50f9d8669b5f4cf9dbdd7b848089848c7d10d687",
+      "status": "batch-2-production",
+      "locked": false,
+      "usedIn": "Phase 2 Jan mystery preview. Same cocoon as the teaser. Human-scale pulse, no face. Awaiting Freigabe."
     },
     "spider.counter_command": {
       "video": "/duesterwald/cycle-01/spider-counter-command.mp4",
@@ -387,7 +419,8 @@
       "entryPose": "sovereign-still",
       "exitPose": "strand-slack",
       "sha256": "f4ccdf19eae4038722f3e819ccf388825dd727517891cbe10e8f2813d352ef7a",
-      "status": "batch-2-production",
+      "status": "owner-approved-existing",
+      "locked": true,
       "usedIn": "Phase 1 connective. Steven successfully counters. Slack strand and brood reversal must stay readable."
     },
     "mounts.release": {

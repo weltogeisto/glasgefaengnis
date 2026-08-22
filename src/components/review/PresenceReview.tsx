@@ -8,6 +8,7 @@ import {
   BATCH_1_IDS,
   BATCH_2_IDS,
   CYCLE_I_SPINE,
+  PHASE_2_IDS,
   REVIEW_SECTIONS,
   STORY_BY_ID,
   STORY_CLIPS,
@@ -19,11 +20,12 @@ import {
 } from "@/lib/prison/storyPresence";
 import { cn } from "@/lib/utils";
 
-type Filter = "approved-existing" | "spine" | "batch-2" | "batch-1" | ReviewSection | "all";
+type Filter = "approved-existing" | "spine" | "batch-2" | "batch-1" | "phase-2" | ReviewSection | "all";
 
 const FILTERS: { id: Filter; label: string }[] = [
   { id: "approved-existing", label: "Approved existing" },
   { id: "spine", label: "Cycle I Spine" },
+  { id: "phase-2", label: "Jan" },
   { id: "batch-2", label: "Batch 2" },
   { id: "batch-1", label: "Batch 1" },
   { id: "all", label: "Alle" },
@@ -31,6 +33,7 @@ const FILTERS: { id: Filter; label: string }[] = [
   { id: "moriondo-cycle-01", label: "Moriondo" },
   { id: "stall-spider", label: "Wald" },
   { id: "mount-rescue", label: "Reittiere" },
+  { id: "jan-mystery", label: "Großes Nest" },
   { id: "cycle-02", label: "Zyklus II" },
 ];
 
@@ -59,6 +62,7 @@ export function PresenceReview() {
     }
     if (filter === "batch-2") return STORY_CLIPS.filter((c) => BATCH_2_IDS.includes(c.id));
     if (filter === "batch-1") return STORY_CLIPS.filter((c) => BATCH_1_IDS.includes(c.id));
+    if (filter === "phase-2") return STORY_CLIPS.filter((c) => PHASE_2_IDS.includes(c.id));
     if (filter === "all") return STORY_CLIPS;
     return STORY_CLIPS.filter((c) => c.section === filter);
   }, [filter]);
@@ -122,8 +126,10 @@ export function PresenceReview() {
                 if (f.id === "spine") setActive(CYCLE_I_SPINE[0]);
                 if (f.id === "batch-2") setActive("moriondo.capture_rage");
                 if (f.id === "batch-1") setActive("moriondo.capture_rage");
+                if (f.id === "phase-2") setActive("nest.great_cocoon_teaser");
                 if (f.id === "stall-spider") setActive("spider.lower_brood_answers");
                 if (f.id === "mount-rescue") setActive("mounts.hidden_nest");
+                if (f.id === "jan-mystery") setActive("nest.great_cocoon_teaser");
               }}
               className={cn(
                 "min-h-11 shrink-0 rounded-lg px-3 font-display text-[0.68rem] uppercase tracking-[0.12em] text-muted transition-colors duration-150",
@@ -139,14 +145,20 @@ export function PresenceReview() {
       <main className="mx-auto max-w-6xl px-4 py-6 md:px-8 md:py-8">
         {filter === "approved-existing" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Die fünf owner-approved Batch-1-Assets sind <strong>locked</strong>. Sie dürfen nicht
-            regeneriert oder still ersetzt werden. Alle fünf erscheinen in der Cycle-I-Spine.
+            Owner-approved und <strong>locked</strong>: Batch 1 plus Phase-1-Connectives. Nicht
+            regenerieren. Alle erscheinen in der Cycle-I-Spine.
           </p>
         ) : null}
         {filter === "spine" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Asset-Integrations-Beweis: Capture → Nest → True Break. Alle fünf locked Assets +
-            vorhandene Connectives. {spineMode ? `Abspielen: ${spineIndex + 1}/${CYCLE_I_SPINE.length}` : "Play-Button starten."}
+            Capture → Abduction → Nest → Steven → True Break → Counter. Locked Assets plus Phase-1-Connectives.
+            Jan-Teaser sind noch nicht in der Spine. {spineMode ? `Abspielen: ${spineIndex + 1}/${CYCLE_I_SPINE.length}` : "Play-Button starten."}
+          </p>
+        ) : null}
+        {filter === "phase-2" || filter === "jan-mystery" ? (
+          <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+            Phase 2 · Jan-Mysterium zur Freigabe. Ein weiteres Nest, das zu keinem Reittier gehört.
+            Älter, größer, ein Gefäß. Kein Gesicht. Nicht das Hidden Nest.
           </p>
         ) : null}
         {filter === "batch-2" ? (
@@ -157,14 +169,13 @@ export function PresenceReview() {
         ) : null}
         {filter === "mount-rescue" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Phase 1 Connectives zur Freigabe. Abduction ist ein eigener Shot — nicht das Nest.
-            Hidden Nest, Rev. 4: voller Stall-Roster (Mûmak, Elche, Falken, Warg, Widder, Fellbiest, Ponys, Lämmchen). Keine Spinnen als Gefangene, kein Nazgûl.
+            Hidden Nest Rev. 4 ist locked. Abduction und Counter Command sind locked Phase-1-Connectives.
+            Release und Return warten auf Produktion.
           </p>
         ) : null}
         {filter === "stall-spider" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
-            Steven-Identität auf dem locked Batch-1-Command. Lower Brood Answers ist der neue
-            Phase-1-Connective.
+            Steven-Identität auf dem locked Batch-1-Command. Lower Brood Answers ist locked.
           </p>
         ) : null}
 
@@ -201,7 +212,9 @@ export function PresenceReview() {
                         ? "Batch 2 · Moriondo"
                         : filter === "batch-1"
                           ? "Batch 1 · Freigabe"
-                          : (FILTERS.find((f) => f.id === filter)?.label ?? "")
+                          : filter === "phase-2"
+                            ? "Phase 2 · Jan-Mysterium"
+                            : (FILTERS.find((f) => f.id === filter)?.label ?? "")
                 }
                 kicker="Cue · Poster · Playback"
                 clips={clips}

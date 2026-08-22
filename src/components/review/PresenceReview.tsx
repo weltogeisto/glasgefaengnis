@@ -158,7 +158,7 @@ export function PresenceReview() {
         {filter === "mount-rescue" ? (
           <p className="mb-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
             Phase 1 Connectives zur Freigabe. Abduction ist ein eigener Shot — nicht das Nest.
-            Hidden Nest, Rev. 3: Grauwarg vorn, keine Spinnen in den Hängematten, kein Nazgûl.
+            Hidden Nest, Rev. 4: voller Stall-Roster (Mûmak, Elche, Falken, Warg, Widder, Fellbiest, Ponys, Lämmchen). Keine Spinnen als Gefangene, kein Nazgûl.
           </p>
         ) : null}
         {filter === "stall-spider" ? (

@@ -43,7 +43,7 @@ This is an **asset-integration proof**, not final game logic.
 
 | Asset | Meaning |
 |---|---|
-| `mounts.hidden_nest` | Living **mount** roster in silk. Stall species must remain recognisable. |
+| `mounts.hidden_nest` | Living **mount** roster in silk. Stall species must remain recognisable. **Rev. 4 (in review):** Mûmak, Königselch, Schattenelch, Glutfalke, Sturmfalke, Grauwarg, Kriegswidder, Fellbiest, ponies, Khazad-Lämmchen. |
 | Future `nest.great_cocoon_*` | Older, larger **human-binding** site. Not a rebrand of the mount nest. |
 
 ---

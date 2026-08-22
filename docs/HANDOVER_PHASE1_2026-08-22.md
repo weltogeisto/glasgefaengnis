@@ -3,23 +3,28 @@
 ## Status: IN REVIEW
 
 Abduction + brood + counter are on `cowork/presence` and in the live preview.
-Hidden Nest was revised **on owner request** (was locked Batch 1).
+Hidden Nest was revised **on owner request** (was locked Batch 1). **Rev. 4** restores the live stall roster.
 
 ---
 
-## Hidden Nest rev. 3 — confirm
+## Hidden Nest rev. 4 — confirm
 
 Owner: `/review/presence` → **Reittiere** → Hidden Nest.
 
-- [ ] Grauwarg (grey wolf mount) is present and readable
+- [ ] Mûmak der Oasen-Karawanen readable (largest, rear, cloth drape)
+- [ ] Königselch (golden moose, lantern antlers) and Schattenelch (black moose)
+- [ ] Glutfalke and Sturmfalke in the canopy
+- [ ] Grauwarg, Kriegswidder, Fellbiest (horse-scale, no rider)
+- [ ] Ponies / Bree-Fohlen / Khazad-Lämmchen in lower hammocks
 - [ ] No spiders hanging as captives
 - [ ] No Nazgûl
 - [ ] Still a hammock nest (not the abduction drag)
 - [ ] No gore
 - [ ] Distinct from Abduction Flashback
 
-Video SHA: `c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52`  
-Prior locked v2 SHA `f3fcf22b…` is backed up. Status `batch-2-production`, not locked.
+Video SHA: `ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16`  
+Poster SHA: `d5fa81cfd80b9e8daf23a6aedac851c15bb0f120f12665c4230e5b05477ba16b`  
+Prior locked v2 SHA `f3fcf22b…` and rev. 3 SHA `c4b1453f…` backed up. Status `batch-2-production`, not locked.
 
 ---
 
@@ -35,4 +40,4 @@ Prior locked v2 SHA `f3fcf22b…` is backed up. Status `batch-2-production`, not
 
 ## After Freigabe
 
-Lock the three Phase 1 cues **and** Hidden Nest rev. 3. Then Cycle I spine. No Jan before that.
+Lock the three Phase 1 cues **and** Hidden Nest rev. 4. Then Cycle I spine. No Jan before that.

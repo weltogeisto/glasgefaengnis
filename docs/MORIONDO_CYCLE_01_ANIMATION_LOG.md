@@ -119,23 +119,37 @@ All: 1280×720 H.264 High yuv420p 24 fps, no audio, `+faststart`.
 Posters are the source stills (no motion blur).
 Do **not** set `locked: true` until owner Freigabe.
 
-### Hidden Nest rev. 3 — owner-requested 2026-08-22
+### Hidden Nest rev. 4 — owner-requested 2026-08-22
 
-Previous locked v2 SHA `f3fcf22b8fa2ebbb6849130910b869c747cf7ca44b4eff189f13bff6fc8d6412` backed up under `duesterwald/cycle-01/locked-batch1/`.
+Previous locked v2 SHA `f3fcf22b8fa2ebbb6849130910b869c747cf7ca44b4eff189f13bff6fc8d6412` and rev. 3 SHA `c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52` backed up under `duesterwald/cycle-01/locked-batch1/`.
+
+| File | SHA-256 |
+|------|---------|
+| mounts-hidden-nest.mp4 | `ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16` |
+| mounts-hidden-nest.jpg | `d5fa81cfd80b9e8daf23a6aedac851c15bb0f120f12665c4230e5b05477ba16b` |
+
+Changes vs rev. 3:
+- Full live stall roster now readable, not a wolf/ram/horse subset
+- Mûmak der Oasen-Karawanen (largest, rear, cloth drape)
+- Königselch des Waldlandreichs (golden moose, lantern antlers)
+- Schattenelch der Emyn-nu-Fuin (black moose)
+- Glutfalke vom Einsamen Berg and Sturmfalke des Nebelgebirges (canopy)
+- Grauwarg, Kriegswidder, Fellbiest (horse-scale, no rider, no Nazgûl)
+- Fellpony, Trosspony, Bree-Fohlen, Khazad-Lämmchen in lower hammocks
+- Spiders remain abductors, not captives
+- No gore (nest remains alive / breathing)
+- Still hammock composition — distinct from abduction drag
+
+Status: `batch-2-production`, `locked: false`, awaiting re-Freigabe.
+
+### Hidden Nest rev. 3 — superseded
 
 | File | SHA-256 |
 |------|---------|
 | mounts-hidden-nest.mp4 | `c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52` |
 | mounts-hidden-nest.jpg | `b98a522a6fccb6cb0ab8fa2bac6e210dfe3581467bb9f6b3e070d17e52046ce5` |
 
-Changes vs locked v2:
-- Grauwarg des Wilderlands now readable (large grey warg, left hammock)
-- Spiders removed from the silk hammocks (they are abductors, not captives)
-- No Nazgûl
-- No gore (nest remains alive / breathing)
-- Still hammock composition — distinct from abduction drag
-
-Status: `batch-2-production`, `locked: false`, awaiting re-Freigabe.
+Rev. 3 added Grauwarg and removed spiders/Nazgûl but collapsed the roster to wolf/ram/generic horse. Replaced by rev. 4.
 
 
 ### Owner rules respected

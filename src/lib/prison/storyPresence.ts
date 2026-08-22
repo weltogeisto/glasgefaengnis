@@ -318,7 +318,7 @@ export const STORY_CLIPS: StoryClip[] = [
   {
     id: "mounts.hidden_nest",
     label: "Hidden Nest",
-    purpose: "Mounts alive in silk. Breathing. No gore. Grauwarg present. No spiders as captives.",
+    purpose: "Living stall-roster nest. Full species identity. Breathing. No gore. No spiders as captives.",
     section: "mount-rescue",
     status: "batch-2-production",
     video: "/duesterwald/cycle-01/mounts-hidden-nest.mp4",
@@ -333,9 +333,9 @@ export const STORY_CLIPS: StoryClip[] = [
     playback: "loop",
     filename: "mounts-hidden-nest.mp4",
     batch: 1,
-    sha256: "c4b1453f2857e28a8bda8f1547286556633aeb1a7c6754a5bbbc6725184c8f52",
+    sha256: "ecce02f0b3109bc26f288ff54818b723758b4979d7a48bc4b51e1f354868db16",
     locked: false,
-    usedIn: "Owner-requested nest revision 2026-08-22: Grauwarg added, spiders removed from hammocks, no Nazgûl. Prior locked SHA f3fcf22b… backed up. Awaiting re-Freigabe.",
+    usedIn: "Owner-requested nest rev. 4 2026-08-22: full live stall roster — Mûmak, Königselch, Schattenelch, Glutfalke, Sturmfalke, Grauwarg, Kriegswidder, Fellbiest (stall mount, no Nazgûl), Fellpony, Trosspony, Bree-Fohlen, Khazad-Lämmchen. Spiders are abductors, not captives. Prior v3 SHA c4b1453f backed up. Awaiting re-Freigabe.",
   },
   {
     id: "spider.counter_command",

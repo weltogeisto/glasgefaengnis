@@ -42,3 +42,12 @@ Status `batch-2-production`, `locked: false`.
 ## After Freigabe of the two teasers
 
 Lock both. Then Phase 3: fetch and lock the current **Runenschmied der Mark** identity from JGA OS, storyboard the four forge phases and the Phial design sheet. **No visible Jan reveal until Phase 5.**
+
+## Owner lock — 2026-08-22 (second pass, pushed)
+
+| Cue | SHA256 | Rule |
+|---|---|---|
+| nest.great_cocoon_teaser | `c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16` | Monument vessel. No face. Distinct from Hidden Nest. |
+| nest.cocoon_inner_pulse | `a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e` | Hand under Urseide. Skin through mesh. No free hand. No face. |
+
+Rev. 3 cloth-imprint only remains in git history (`fc361c74`). Do not restore it.

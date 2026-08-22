@@ -389,9 +389,9 @@
       "entryPose": "unassigned-monument",
       "exitPose": "unassigned-monument",
       "sha256": "c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16",
-      "status": "batch-2-production",
-      "locked": false,
-      "usedIn": "Phase 2 Jan mystery preview. Distinct site from Hidden Nest. Urseide der Großen Verzehrerin. No face. Awaiting Freigabe."
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase 2. Owner-approved 2026-08-22. Monument vessel, no face. Distinct from Hidden Nest."
     },
     "nest.cocoon_inner_pulse": {
       "video": "/duesterwald/cycle-01/nest-cocoon-inner-pulse.mp4",
@@ -403,10 +403,10 @@
       "mobileObjectPosition": "52% 50%",
       "entryPose": "silk-sealed",
       "exitPose": "imprint-strain",
-      "sha256": "fc361c74399e85fbc93e6d842dea32fdfbea80290c4e237c8cfb0f31fb36fc23",
-      "status": "batch-2-production",
-      "locked": false,
-      "usedIn": "Phase 2 Jan mystery preview. Same cocoon as the teaser. Occupant is caught inside — only a five-finger cloth imprint, no skin. No face. Awaiting Freigabe."
+      "sha256": "a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e",
+      "status": "owner-approved-existing",
+      "locked": true,
+      "usedIn": "Phase 2. Owner-approved 2026-08-22. Hand under Urseide, skin through mesh, no free hand, no face."
     },
     "spider.counter_command": {
       "video": "/duesterwald/cycle-01/spider-counter-command.mp4",

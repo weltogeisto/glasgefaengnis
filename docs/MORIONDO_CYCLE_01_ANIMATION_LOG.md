@@ -170,7 +170,7 @@ Owner-visible stills + videos. Status `batch-2-production` — **not locked**. D
 | Cue | File | SHA-256 (video) | Notes |
 |-----|------|-----------------|-------|
 | nest.great_cocoon_teaser | nest-great-cocoon-teaser.mp4 | c143105522904b2eb1c457413466208af70b5dcdebf1f6bc37a1e7a26594db16 | One monument vessel, older spiral Urseide, no face, no mounts. 10.04s loop |
-| nest.cocoon_inner_pulse | nest-cocoon-inner-pulse.mp4 | fc361c74399e85fbc93e6d842dea32fdfbea80290c4e237c8cfb0f31fb36fc23 | Sealed cocoon. Occupant trapped inside. Five-finger cloth imprint, no visible hand. 10.04s. Rev. 3; v2 SHA 0a70338d (visible hand) backed up. |
+| nest.cocoon_inner_pulse | nest-cocoon-inner-pulse.mp4 | a46761b740749fde8332d0d12d750cb861e7ba1450d16aa27770a78c4d72659e | Owner-locked 2026-08-22. Hand under Urseide, skin through mesh, no free hand, no face. 10.04s 720p. |
 
 Posters SHA:
 - nest-great-cocoon-teaser.jpg `373bfdb4563a2d77a59962f0ca25790600bc8331c67da7122529c5f22f88ad91`

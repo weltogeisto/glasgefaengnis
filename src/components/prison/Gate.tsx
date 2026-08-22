@@ -28,8 +28,9 @@ export function Gate() {
           Das Glasgefängnis
         </h1>
         <p className="lead mt-3 text-[0.95rem] leading-relaxed text-muted">
-          Ein hoher Gefangener. Höflich. Nicht gütig. Der Stall der Mark ist leer — nicht weil
-          Hände stahlen, sondern weil ein Lied die Bindung umschrieb.
+          Moriondo ist gebunden. Doch während das Glas seinen Zorn hält, sind Düsterwald-Spinnen
+          in die Stallungen eingedrungen. Die Reittiere wurden lebend verschleppt. Nur ein Faden
+          seines Befehls riss.
         </p>
         <button
           type="button"
@@ -42,7 +43,7 @@ export function Gate() {
           to="/"
           className="mt-3 flex min-h-12 w-full items-center justify-center rounded-xl bg-raised font-display text-[0.8rem] uppercase tracking-[0.12em] text-accent shadow-[0_0_0_1px_var(--color-border)]"
         >
-          Batch 2 prüfen
+          Animationswerkbank öffnen
         </Link>
         <div className="mt-3 flex items-center justify-between gap-3">
           <button
@@ -56,7 +57,7 @@ export function Gate() {
           >
             {sound ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
             <span className="font-display text-[0.68rem] uppercase tracking-[0.14em]">
-              {sound ? "Ton bereit" : "Stumm"}
+              {sound ? "Atmosphäre bereit" : "Stumm"}
             </span>
           </button>
         </div>

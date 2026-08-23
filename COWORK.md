@@ -97,15 +97,48 @@ Düsterwald:
 
 Existing speech audio belongs to the deprecated song-prototype script. Do not reuse it under new canon merely because filenames still exist. Current canon dialogue may remain text-only until matching audio is deliberately generated and approved. Ambient sound and glass effects may remain active.
 
+## Current production checkpoint — Phase C
+
+The following work already exists and must not be regenerated merely because an older handover still calls it missing:
+
+- `mounts.release`
+- `mounts.return`
+- `phial.forge_night_watch`
+- `phial.forge_completion`
+- `phial.ignition_against_silk`
+
+`phial.forge_night_watch` and `phial.forge_completion` are owner-approved and locked. The release/return clips and the ignition clip remain review masters until Hendrik explicitly approves them.
+
+The immutable integration snapshot for the current JGA rehearsal is:
+
+```text
+snapshot/moriondo-phase-c-20260823
+f0fe9136df1baa5d58454a3e0128527777524c44
+```
+
+Never rewrite that snapshot. New work stays on `cowork/presence` and enters JGA only through a later reviewed snapshot.
+
 ## Immediate work order
 
-1. Keep the approved media unchanged.
-2. Use `/review/presence` to review the integrated Cycle I spine.
-3. Review Phase B `mounts.release` and `mounts.return` (filter **Rettung**) — do not lock them without owner Freigabe.
-4. Continue missing forge continuation clips only under semantic cue IDs, around the two approved smith scenes.
-5. Lock Jan’s canonical JGA identity before a readable reveal.
-6. Keep the first two cocoon clips non-identifying.
-7. Produce Jan/Phial resolution assets only after the corresponding identity and storyboard gates.
+1. Keep every approved and snapshotted asset unchanged.
+2. Use `/review/presence` to present one focused owner-review queue for:
+   - `moriondo.mask_reassembles`
+   - `moriondo.rage_performed`
+   - `moriondo.rage_aftermath`
+   - `mounts.release`
+   - `mounts.return`
+   - `phial.ignition_against_silk`
+3. For each review master, verify identity continuity, story continuity, mobile crop, first/last frame compatibility and absence of accidental spoilers.
+4. Do not mark any review master as `owner-approved-existing` without Hendrik’s explicit Freigabe.
+5. Do not regenerate `phial.forge_night_watch` or `phial.forge_completion`; they are complete and locked.
+6. Do not generate a readable Jan face yet. First import and lock Jan’s canonical JGA identity, then produce a still reveal sheet for owner approval.
+7. Keep `nest.great_cocoon_teaser` and `nest.cocoon_inner_pulse` non-identifying.
+8. After the Jan identity and reveal-still gate, the next unresolved Cycle-I assets are:
+   - `jan.reveal_in_cocoon`
+   - `nest.silk_break_release`
+   - `jan.emergence`
+9. Cycle-II assets remain lower priority until Cycle I has a complete owner-approved resolution sequence.
+10. Never add puzzle answers, private clue rules or participant state to this public media repository.
 
 ## Development rules
 

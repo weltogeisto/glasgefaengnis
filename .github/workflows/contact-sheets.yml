@@ -14,9 +14,9 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install numpy pillow opencv-python-headless
-      - run: python scripts/contact_sheets.py
+      - run: python scripts/fast_clip_diagnostics.py
       - uses: actions/upload-artifact@v4
         with:
-          name: clip-contact-sheets
-          path: clip-analysis/
+          name: clip-fast-diagnostics
+          path: clip-analysis-fast/
           retention-days: 1

@@ -3,7 +3,7 @@ import json, math
 from pathlib import Path
 import cv2
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "clip-analysis"
@@ -25,26 +25,24 @@ def read_frames(path):
     cap.release(); return fps,frames
 
 def diff_scores(frames):
-    s=[]
-    prev=None
+    s=[]; bright=[]; prev=None
     for f in frames:
         g=cv2.cvtColor(f,cv2.COLOR_BGR2GRAY)
         g=cv2.resize(g,(256,144),interpolation=cv2.INTER_AREA)
         g=cv2.GaussianBlur(g,(3,3),0)
+        bright.append(float(np.mean(g)))
         if prev is not None:
             s.append(float(np.mean(cv2.absdiff(prev,g))))
         prev=g
-    return s
+    return s,bright
 
 def freeze_window(scores,fps,duration_ms):
     if not scores:return 0,duration_ms
     a=np.asarray(scores)
-    # Decode-identical/near-identical cloned pads are orders of magnitude quieter than generated motion.
     low=float(np.percentile(a,5)); med=float(np.median(a)); hi=float(np.percentile(a,75))
     spread=max(hi-low,0.01)
     thr=min(max(low+0.12*spread, low*1.5+0.015, 0.025), max(0.12, med*0.45))
     still=a<=thr
-    # Require >=4 consecutive quiet transitions to call a deliberate freeze pad.
     lead=0
     while lead<len(still) and still[lead]: lead+=1
     trail=0
@@ -65,13 +63,44 @@ def make_sheet(frames,fps,path,n=12,cols=4):
         sheet.paste(im,(x,y)); d.text((x+5,y+th+4),f'{i/fps:.3f}s  f{i}',fill=(255,255,255))
     sheet.save(path,quality=88,optimize=True)
 
-stats={}
+def tile_from_frame(frame, size=(300,169)):
+    f=cv2.resize(frame,size,interpolation=cv2.INTER_AREA)
+    return Image.fromarray(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
+
+def tile_from_poster(path,size=(300,169)):
+    if not path or not path.exists():
+        return Image.new('RGB',size,(50,0,0))
+    im=Image.open(path).convert('RGB')
+    im.thumbnail(size)
+    canvas=Image.new('RGB',size,(0,0,0))
+    canvas.paste(im,((size[0]-im.width)//2,(size[1]-im.height)//2))
+    return canvas
+
+def make_overview(page_no, rows):
+    tw,th=300,169; labelh=40; cols=4
+    sheet=Image.new('RGB',(cols*tw,len(rows)*(th+labelh)),(12,12,12)); d=ImageDraw.Draw(sheet)
+    for r,(rel,poster_path,fps,frames) in enumerate(rows):
+        idx=[0,len(frames)//2,len(frames)-1]
+        tiles=[tile_from_poster(poster_path,(tw,th))]+[tile_from_frame(frames[i],(tw,th)) for i in idx]
+        y=r*(th+labelh)
+        for c,im in enumerate(tiles): sheet.paste(im,(c*tw,y))
+        d.text((4,y+th+3),f'{rel} | poster | first | mid | last',fill=(255,255,255))
+    sheet.save(OUT/f'poster-overview-{page_no}.jpg',quality=90,optimize=True)
+
+stats={}; overview_rows=[]
 for cue,meta,rel in items:
     p=ROOT/'public'/rel
     fps,frames=read_frames(p)
     dur=int(round(len(frames)/fps*1000)) if fps else None
-    scores=diff_scores(frames)
+    scores,bright=diff_scores(frames)
     ms,me=freeze_window(scores,fps,dur)
+    order=np.argsort(np.asarray(scores))[::-1][:8] if scores else []
+    topdiff=[{'ms':int(round((int(i)+1)/fps*1000)),'score':round(float(scores[int(i)]),5)} for i in order]
+    bd=np.diff(np.asarray(bright)) if len(bright)>1 else np.asarray([])
+    rise_i=int(np.argmax(bd))+1 if len(bd) else None
+    fall_i=int(np.argmin(bd))+1 if len(bd) else None
+    poster_rel=meta.get('poster')
+    poster_path=ROOT/'public'/str(poster_rel).lstrip('/') if poster_rel else None
     stats[rel]={
         'cue':cue,'fps':fps,'frames':len(frames),'durationFromFramesMs':dur,
         'motionStartClonePadMs':ms,'motionEndClonePadMs':me,
@@ -80,6 +109,11 @@ for cue,meta,rel in items:
         'diffMedian':round(float(np.median(scores)),5) if scores else None,
         'diffP95':round(float(np.percentile(scores,95)),5) if scores else None,
         'diffMax':round(max(scores),5) if scores else None,
+        'topDiff':topdiff,
+        'maxBrightnessRiseMs':int(round(rise_i/fps*1000)) if rise_i is not None else None,
+        'maxBrightnessRise':round(float(bd[rise_i-1]),5) if rise_i is not None else None,
+        'maxBrightnessFallMs':int(round(fall_i/fps*1000)) if fall_i is not None else None,
+        'maxBrightnessFall':round(float(bd[fall_i-1]),5) if fall_i is not None else None,
         'first30Diff':[round(x,4) for x in scores[:30]],
         'last30Diff':[round(x,4) for x in scores[-30:]],
     }
@@ -87,6 +121,11 @@ for cue,meta,rel in items:
     make_sheet(frames,fps,OUT/safe,n=12,cols=4)
     if 'phial' in rel:
         make_sheet(frames,fps,OUT/(safe.replace('.jpg','__dense.jpg')),n=24,cols=4)
+    overview_rows.append((rel,poster_path,fps,frames))
+
+for page,start in enumerate(range(0,len(overview_rows),13),1):
+    make_overview(page,overview_rows[start:start+13])
 
 (OUT/'frame-diff-stats.json').write_text(json.dumps(stats,indent=2),encoding='utf-8')
 print('CONTACT_COUNT',len(stats))
+print('PEAK_DIAGNOSTICS',json.dumps({k:{'topDiff':v['topDiff'],'maxBrightnessRiseMs':v['maxBrightnessRiseMs'],'maxBrightnessRise':v['maxBrightnessRise']} for k,v in stats.items()},separators=(',',':')))

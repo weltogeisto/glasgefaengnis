@@ -1,0 +1,22 @@
+name: Temporary clip contact sheets
+on:
+  push:
+    branches: [codex/clip-contact-20260825]
+permissions:
+  contents: read
+jobs:
+  sheets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install numpy pillow opencv-python-headless
+      - run: python scripts/contact_sheets.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: clip-contact-sheets
+          path: clip-analysis/
+          retention-days: 1

@@ -9,7 +9,7 @@ import type { Sitzung } from "@/lib/glas/verhoer";
 import { starteSitzung, wendeZugAn } from "@/lib/glas/verhoer";
 import { legeAkteAb } from "@/lib/glas/speicher";
 import { Antwort } from "./Antwort";
-import { Scheibe } from "./Scheibe";
+import { Glas } from "./Glas";
 import { useRuhigeBewegung } from "./bewegung";
 
 /**
@@ -101,6 +101,7 @@ export function Zelle({
   const gezeigt = useMemo(() => sitzung.beats.slice(0, sichtbar), [sitzung.beats, sichtbar]);
   const stufe = stufeAus(sitzung);
 
+
   return (
     <main className="zelle px-5 pb-24 pt-10 sm:px-8" data-zelle={dossier.slug} data-glas-stufe={stufe}>
       <div className="mx-auto w-full max-w-2xl">
@@ -113,7 +114,7 @@ export function Zelle({
           </h1>
         </header>
 
-        <Scheibe siegel={dossier.siegel} />
+        <Glas siegel={dossier.siegel} stufe={stufe} ruhig={ruhig} />
 
         <div className="mt-10 space-y-5" aria-live="polite" aria-atomic="false">
           {gezeigt.map((beat, index) => (

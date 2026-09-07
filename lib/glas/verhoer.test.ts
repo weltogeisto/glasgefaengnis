@@ -48,10 +48,9 @@ describe("Die Sitzung", () => {
   });
 
   it("nimmt eine leere Antwort nicht als Bezahlung an", () => {
-    const dossier = DOSSIERS.find((eintrag) => eintrag.slug === "steven")!;
     const gewaehlt = wendeZugAn(starteSitzung("steven")!, {
       art: "frage",
-      frageId: waehleFragen(dossier)[0].id,
+      frageId: waehleFragen(DOSSIERS.find((eintrag) => eintrag.slug === "steven")!)[0].id,
     });
     expect(wendeZugAn(gewaehlt, { art: "preis", text: "  " })).toEqual(gewaehlt);
     expect(wendeZugAn(gewaehlt, { art: "preis", text: "ja" })).toEqual(gewaehlt);
@@ -65,7 +64,6 @@ describe("Die Sitzung", () => {
   });
 
   it("gilt als abgeschlossen, sobald der Abschied läuft", () => {
-    const dossier = DOSSIERS.find((eintrag) => eintrag.slug === "domi")!;
     const bisAbschied = volleZuege("domi").slice(0, 3);
     const sitzung = spieleNach("domi", bisAbschied)!;
     expect(sitzung.phase).toBe("abschied");

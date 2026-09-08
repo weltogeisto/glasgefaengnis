@@ -1,3 +1,4 @@
+import "./framing.css";
 import type { Metadata } from "next";
 import manifest from "@/public/presence-manifest.json";
 import { CUE_IDS, type MediaLibrary } from "@/lib/glas/regie";

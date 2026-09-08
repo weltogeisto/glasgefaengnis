@@ -1,0 +1,6 @@
+/* One image plane, never an enlarged duplicate face behind the prisoner.
+   Portrait windows crop the lateral margins, not the original vertical frame. */
+[data-regie] [data-presence-cue] { --regie-focal: var(--regie-desktop-focal); }
+@media (max-width: 800px) {
+  [data-regie] [data-presence-cue] { --regie-focal: var(--regie-mobile-focal); }
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
 import type { CueId, MediaLibrary } from "@/lib/glas/regie";
 import styles from "./regie.module.css";
 
@@ -39,16 +39,16 @@ export function Presence({ cue, media, still, onRageEnd }: {
 
   return (
     <div className={styles.presence} data-presence-cue={id}
-      style={{ backgroundImage: `url("${asset.poster}")` }}>
+      style={{ "--regie-desktop-focal": asset.desktopObjectPosition, "--regie-mobile-focal": asset.mobileObjectPosition } as CSSProperties}>
       <div className={styles.mediaShade} />
       {still || failed ? (
         <div className={styles.poster} role="img"
           aria-label="Moriondo im schwarzen Mantel hinter der kreisrunden Glaswand. Seine Handlung wird im Untertitel beschrieben."
-          style={{ backgroundImage: `url("${asset.poster}")`, backgroundPosition: asset.desktopObjectPosition }} />
+          style={{ backgroundImage: `url("${asset.poster}")`, backgroundSize: "cover", backgroundPosition: "var(--regie-focal)" }} />
       ) : (
         <video key={id} ref={video} className={styles.video} src={asset.video} poster={asset.poster}
           autoPlay muted playsInline loop={asset.loop} preload="metadata" aria-hidden="true"
-          style={{ objectPosition: asset.desktopObjectPosition }}
+          style={{ objectFit: "cover", objectPosition: "var(--regie-focal)" }}
           onPlaying={() => setPlaying(true)} onPause={() => setPlaying(false)}
           onError={() => setFailed(true)}
           onEnded={() => {

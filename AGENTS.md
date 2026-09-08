@@ -102,3 +102,25 @@ synthetisch, nichts zu lizenzieren), `lib/glas/klang.ts` hängt sie an Web Audio
 Aus, bis jemand ihn anschaltet.
 
 Offen: das Hineinheben in das Fellowship OS als `/glasgefaengnis`.
+
+## Erweiterung: Urteilsglas-Regieprobe, 2026-09-08
+
+Der Owner verlangt ein immersives Verhör-Weltereignis, nicht nur das Heft.
+`/ermittlung` ergänzt deshalb eine ausdrücklich lokale Regieprobe. Vor Arbeit
+an dieser Route **`docs/URTEILSGLAS-REVIEW.md`** lesen: Quellen, bewusste
+Abweichungen vom alten Heft-Prototyp und noch offene Live-Grenzen.
+
+`lib/glas/ermittlung.ts` hält den Beweiskern; `ermittlung-speicher.ts` hält nur
+dessen versioniertes Zugprotokoll, getrennt von privaten Heft-Antworten.
+`praesenz.ts` bindet die unveränderten Originalaufnahmen an semantische Zustände.
+Dazu gehören drei neue Testdateien. Der oben genannte Teststand 46 beschreibt
+den ursprünglichen Prototyp, nicht die erweiterte Gesamtsuite.
+
+Die alte absolute Befehlsregel darf in dieser Route nicht den späteren
+Cycle-I-Kanon verdrängen: Ein vorher gesetzter Spinnenbefehl ist nicht
+Herrschaft über die Blauen Zauberer. Neue Dialogzeilen sind Entwürfe zur
+Abnahme, keine stillschweigend genehmigte Kanonerweiterung.
+
+Keine Live-Freigabe mit Rollenumschalter oder clientseitigem Lösungsgraphen.
+Keine Änderung an Supabase, XP oder Stallungen in diesem Patch. Für die
+Browserprüfung bei laufendem Server: `node scripts/smoke-ermittlung.mjs`.

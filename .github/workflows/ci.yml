@@ -29,3 +29,26 @@ jobs:
         with:
           name: verhoere
           path: .artifacts/verhoere.txt
+      - name: Browser for the local rehearsal
+        run: npx playwright install --with-deps chromium
+      - name: Urteilsglas browser smoke
+        timeout-minutes: 6
+        run: |
+          mkdir -p .artifacts/ermittlung-smoke
+          npm run start -- -H 127.0.0.1 > .artifacts/ermittlung-smoke/server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          ready=0
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:3000/ermittlung >/dev/null; then ready=1; break; fi
+            sleep 2
+          done
+          test "$ready" = 1
+          node scripts/smoke-ermittlung.mjs
+        env:
+          SESSION_SECRET: ci-dummy-session-secret
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ermittlung-smoke
+          path: .artifacts/ermittlung-smoke/

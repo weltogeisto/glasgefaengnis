@@ -66,7 +66,7 @@ scripts/           die Rauchprobe
 
 ## Was wo geprüft wird
 
-- **`npm run test`** — 40 Tests. Darunter die Registerprüfung über den
+- **`npm run test`** — 46 Tests. Darunter die Registerprüfung über den
   *gesamten* Bestand: null Imperative, keine Machtansprüche, die zwei Blauen
   bleiben unbenannt, Satzlänge, Determinismus, genau ein Riss.
 - **`npm run verhoer`** — schreibt alle siebzehn Verhöre am Stück nach
@@ -96,6 +96,9 @@ Kern, Raum und Scheibe stehen. Alle siebzehn Sitzungen sind geschrieben und
 lesen sich am Stück. Demo-Modus vollständig; Supabase optional und ungenutzt,
 solange keine Umgebung gesetzt ist.
 
-Offen: Klang (`lib/glas/stimmklang.ts` als reine Spezifikation nach dem Muster
-von `lib/caressVoices.ts` — synthetisch, nichts zu lizenzieren), und das
-Hineinheben in das Fellowship OS als `/glasgefaengnis`.
+Klang steht: `lib/glas/stimmklang.ts` beschreibt drei Geräusche und den
+Nachhall der Zelle als reine, prüfbare Daten (Muster `lib/caressVoices.ts` —
+synthetisch, nichts zu lizenzieren), `lib/glas/klang.ts` hängt sie an Web Audio.
+Aus, bis jemand ihn anschaltet.
+
+Offen: das Hineinheben in das Fellowship OS als `/glasgefaengnis`.

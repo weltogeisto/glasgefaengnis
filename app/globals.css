@@ -284,6 +284,27 @@ a:focus-visible {
   font-size: 0.86rem;
 }
 
+/* Ein Schalter, der sich nicht wichtig macht. 44px Zielfläche über Padding,
+   ohne dass ein Kasten den Raum stört. */
+.leiser-schalter {
+  min-height: 44px;
+  padding: 0.5rem 0.2rem 0.5rem 0.8rem;
+  border: 0;
+  background: none;
+  color: var(--tinte-fern);
+  font-family: var(--font-display), "Cinzel", Georgia, serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.leiser-schalter:hover,
+.leiser-schalter[aria-pressed="true"] {
+  color: var(--rune);
+}
+
 .feld {
   width: 100%;
   min-height: 6.5rem;

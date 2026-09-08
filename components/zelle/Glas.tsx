@@ -54,7 +54,10 @@ export function Glas({
   // das Glas legt sich danach darüber. Nie andersherum.
   const webgl = useSyncExternalStore(abonniereNichts, browserCanUseWebGL, () => false);
 
-  if (!webgl) return <Scheibe siegel={siegel} />;
+  // Ohne WebGL, und ebenso bei `prefers-reduced-motion`: die CSS-Scheibe. Ein
+  // Bild, das genau einmal gerendert wird, sieht schlechter aus als eine
+  // Fläche, die für Stillstand gebaut ist.
+  if (!webgl || ruhig) return <Scheibe siegel={siegel} />;
 
   return (
     <div

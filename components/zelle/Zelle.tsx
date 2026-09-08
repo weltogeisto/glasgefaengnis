@@ -10,6 +10,8 @@ import { starteSitzung, wendeZugAn } from "@/lib/glas/verhoer";
 import { legeAkteAb } from "@/lib/glas/speicher";
 import { Antwort } from "./Antwort";
 import { Glas } from "./Glas";
+import { Klangschalter } from "./Klangschalter";
+import { spiele, starteRaumton, stoppeRaumton } from "@/lib/glas/klang";
 import { useRuhigeBewegung } from "./bewegung";
 
 /**
@@ -80,6 +82,18 @@ export function Zelle({
   }, [ruhig, getaktet, sitzung.beats]);
 
   useEffect(() => {
+    void starteRaumton();
+    return () => stoppeRaumton();
+  }, []);
+
+  useEffect(() => {
+    const frisch = sitzung.beats[sichtbar - 1];
+    if (!frisch) return;
+    if (frisch.art === "regie") void spiele("sprechanlage");
+    if (frisch.art === "bruchstueck") void spiele("knoechel");
+  }, [sichtbar, sitzung.beats]);
+
+  useEffect(() => {
     if (ruhig || !endeRef.current) return;
     endeRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [sichtbar, ruhig]);
@@ -105,10 +119,11 @@ export function Zelle({
   return (
     <main className="zelle px-5 pb-24 pt-10 sm:px-8" data-zelle={dossier.slug} data-glas-stufe={stufe}>
       <div className="mx-auto w-full max-w-2xl">
-        <header className="nicht-drucken mb-8 text-center">
+        <header className="nicht-drucken mb-8 flex items-baseline justify-between gap-4">
           <p className="font-display text-[0.68rem] uppercase tracking-[0.34em] text-tinte-leise">
             Das Glasgefängnis
           </p>
+          <Klangschalter />
           <h1 className="sr-only">
             Verhör: {dossier.name} — {dossier.figur}
           </h1>

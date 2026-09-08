@@ -49,7 +49,7 @@ describe.skipIf(!AN)("Verhörprotokolle", () => {
         if (beat.art === "bruchstueck") zeilen.push("", `  ◆  „${beat.text}"`, "");
       }
     }
-    zeilen.push("", "", `${auswahl.length} Sitzungen. Der Riss liegt bei: ${risstraeger()}.`, "");
+    zeilen.push("", "", `${auswahl.length} ${auswahl.length === 1 ? "Sitzung" : "Sitzungen"}. Der Riss liegt bei: ${risstraeger()}.`, "");
     mkdirSync(".artifacts", { recursive: true });
     writeFileSync(".artifacts/verhoere.txt", zeilen.join("\n"), "utf8");
     console.log(`→ .artifacts/verhoere.txt (${zeilen.length} Zeilen)`);

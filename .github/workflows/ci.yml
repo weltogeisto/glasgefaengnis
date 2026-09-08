@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tor:
+    name: Das ganze Tor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --legacy-peer-deps
+      - run: npm run lint
+      - run: npm run test
+      - run: npx tsc --noEmit
+      # Bewusst ohne Supabase-Variablen: der Lauf hier *ist* der Demo-Modus-Beweis.
+      - run: npm run build
+        env:
+          SESSION_SECRET: ci-dummy-session-secret
+      # Die siebzehn Verhöre am Stück — als Artefakt zum Nachlesen.
+      - run: npm run verhoer
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verhoere
+          path: .artifacts/verhoere.txt

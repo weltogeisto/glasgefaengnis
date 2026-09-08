@@ -84,6 +84,7 @@ Satz in der Hand, den die anderen nicht haben.
 ```bash
 npm install
 npm run dev            # http://localhost:3000 — ohne .env.local, voller Demo-Modus
+npm run dev -- -H 0.0.0.0   # dazu vom Telefon aus: http://<deine-IP>:3000
 
 npm run test           # der reine Kern, inklusive Registerprüfung
 npm run verhoer        # alle siebzehn Verhöre nach .artifacts/verhoere.txt
@@ -93,6 +94,10 @@ SESSION_SECRET=ci-dummy npm run build
 
 npm run smoke:zelle    # Playwright bei 320/390/768/1440 gegen einen laufenden Server
 ```
+
+`/beta` ist ein Werkraum, der von nirgends verlinkt ist: zurücksetzen, direkt
+in jede Zelle, das Protokoll mit erkennbar unechten Beispielen füllen. Auf dem
+JGA findet ihn niemand versehentlich.
 
 Ohne Umgebungsvariablen läuft alles aus Seed-Akten und `localStorage`. Das ist
 die goldene Regel des Fellowship OS und gilt hier genauso: **das Verhör muss

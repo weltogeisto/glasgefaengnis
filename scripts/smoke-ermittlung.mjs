@@ -50,6 +50,12 @@ try {
         world = core.reduceMove(world, move, actors);
       }
       for (const actor of actors) await perform({ type: "enter", actor: actor.slug });
+      await perform({ type: "ask", actor: who("chronist"), topic: "mounts" });
+      for (const selector of ["[data-presence]", "[data-latest]"]) {
+        const bounds = await page.locator(selector).boundingBox();
+        assert.ok(bounds && bounds.y >= -1 && bounds.y + bounds.height <= 901, `${selector} must stay visible during a mobile question`);
+      }
+      await page.screenshot({ path: `${out}/390-interaction.png` });
       // Silent route: gather all reachable observations and explicitly release them.
       for (let pass = 0; pass < 12; pass++) {
         for (const actor of actors) {

@@ -96,3 +96,18 @@
   .media { transition: opacity .35s ease; }
   .shell button { transition: background .2s, border-color .2s; }
 }
+/* Keep the prisoner and the current response in the room during mobile actions.
+   display: contents makes both sticky elements share the whole investigation's
+   containing block, not a short left-hand column. No duplicate video decoder. */
+@media (max-width: 900px) {
+  .layout { display: block; --cell-height: clamp(160px, 26svh, 260px); }
+  .stage { display: contents; }
+  .scene { position: sticky; top: 0; z-index: 5; }
+  .presence { height: var(--cell-height); min-height: 160px; }
+  .dialogue { position: sticky; top: calc(var(--cell-height) + 2px); z-index: 4; background: #0a1111; padding: 12px 10px 10px; border-bottom: 1px solid var(--edge); }
+  .dialogue .eyebrow { margin-bottom: 5px; }
+  .line { font-size: 1.15rem; line-height: 1.4; }
+  .direction { font-size: .95rem; line-height: 1.45; }
+  .dialogue p:last-child { margin-bottom: 0; }
+  .transcript { margin-bottom: 20px; }
+}

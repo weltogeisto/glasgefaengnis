@@ -96,6 +96,32 @@ export function legeAkteAb(akte: Sitzungsakte): void {
   melden();
 }
 
+/**
+ * Alles auf diesem Gerät vergessen: die Schwelle und jede geführte Sitzung.
+ * Nur der Beta-Raum ruft das auf — im Gang gibt es keinen Weg zurück, und das
+ * ist Absicht.
+ */
+export function leereAlles(): void {
+  try {
+    const speicher = lager();
+    speicher?.removeItem(AKTEN);
+    speicher?.removeItem(SCHWELLE);
+  } catch {
+    /* Nichts zu vergessen. */
+  }
+  melden();
+}
+
+/** Mehrere Akten auf einmal ablegen — für die Protokoll-Vorschau. */
+export function legeAktenAb(akten: readonly Sitzungsakte[]): void {
+  try {
+    lager()?.setItem(AKTEN, JSON.stringify(akten));
+  } catch {
+    /* Voll oder gesperrt. */
+  }
+  melden();
+}
+
 /** Das Bannlied wurde auf diesem Gerät gesungen. */
 export function schwelleSchnappschuss(): boolean {
   if (schwelleCache !== null) return schwelleCache;

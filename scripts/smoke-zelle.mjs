@@ -182,8 +182,67 @@ async function main() {
       });
       assert(fokussiert !== null, "Eine Tür lässt sich nicht fokussieren");
 
+      // ── Der Werkraum: füllen, prüfen, zurücksetzen ──────────────────────
+      await page.goto(`${baseUrl}/beta`, { waitUntil: "networkidle" });
+      await page.waitForSelector("[data-beta]");
+      mess = await messe(page, breite);
+      pruefeRahmen(mess, breite, "beta");
+      await page.click("[data-beta-fuellen]");
+      await page.click("[data-beta-protokoll]");
+      await page.waitForSelector("[data-fuer-jan]");
+      mess = await messe(page, breite);
+      assert(mess.fuerJan === 17, "Die Vorschau füllt nicht alle siebzehn", { fuerJan: mess.fuerJan });
+      pruefeRahmen(mess, breite, "protokoll/voll");
+      await page.screenshot({ path: path.join(outDir, `${breite}-protokoll-voll.png`), fullPage: true });
+
+      await page.goto(`${baseUrl}/beta`, { waitUntil: "networkidle" });
+      await page.click("[data-beta-zuruecksetzen]");
+      await page.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+      await page.waitForSelector("[data-schwelle]");
+      assert(
+        (await page.locator("[data-tuer]").count()) === 0,
+        "Zurücksetzen hat die Schwelle nicht wieder geschlossen",
+      );
+
       assert(fehler.length === 0, `Der Browser hat Fehler gemeldet (${breite}px)`, fehler);
       ergebnisse.push({ breite, beats: mess.beats.length, ok: true });
+      await context.close();
+    }
+    // ── Tempo: vorlehnen ja, spulen nein ─────────────────────────────────
+    // Eigener Kontext mit Bewegung — sonst stehen alle Beats sofort da.
+    {
+      const context = await browser.newContext({ locale: "de-DE", viewport: { width: 390, height: 844 } });
+      const page = await context.newPage();
+      const fehler = [];
+      page.on("pageerror", (e) => fehler.push(`pageerror:${e.message}`));
+      page.on("console", (m) => {
+        if (m.type() === "error") fehler.push(`console:${m.text()}`);
+      });
+
+      await page.goto(`${baseUrl}/zelle/frithjof`, { waitUntil: "networkidle" });
+      await page.waitForSelector("[data-weiter]");
+      const zaehle = () => page.locator("[data-beat]").count();
+      const vorher = await zaehle();
+      const tippen = () => page.$eval("[data-weiter]", (el) => el.click());
+      await tippen();
+      const nachher = await zaehle();
+      assert(nachher > vorher, "Antippen bringt keine Zeile weiter", { vorher, nachher });
+
+      // Tippen im Antwortfeld darf niemals weiterschalten.
+      for (let i = 0; i < 40 && (await page.locator("[data-frage]").count()) === 0; i += 1) {
+        await tippen();
+      }
+      await page.click("[data-frage] >> nth=0");
+      await page.waitForSelector("#antwort-feld");
+      const vorEingabe = await zaehle();
+      await page.fill("#antwort-feld", "Letzten Sommer.");
+      assert(
+        (await zaehle()) === vorEingabe,
+        "Tippen im Antwortfeld hat die Sitzung weitergeschaltet",
+      );
+
+      assert(fehler.length === 0, "Der Browser hat beim Tempo-Test Fehler gemeldet", fehler);
+      ergebnisse.push({ breite: 390, tempo: "geprüft", ok: true });
       await context.close();
     }
   } finally {

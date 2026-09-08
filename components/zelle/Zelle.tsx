@@ -46,6 +46,21 @@ function dauer(beat: Beat): number {
   }
 }
 
+/**
+ * Wie weit ein Antippen springt: über die laufende Pause hinweg und eine
+ * Replik weiter. Nicht ans Ende — man darf sich vorlehnen, aber nicht spulen.
+ */
+function naechsterHalt(beats: readonly Beat[], von: number): number {
+  let i = von;
+  while (i < beats.length && beats[i].art === "pause") i += 1;
+  return Math.min(beats.length, i + 1);
+}
+
+/** Tippen auf einer Schaltfläche ist Bedienung, nicht Ungeduld. */
+function istBedienung(ziel: EventTarget | null): boolean {
+  return ziel instanceof Element && ziel.closest("button, a, textarea, input, label, form") !== null;
+}
+
 function stufeAus(sitzung: Sitzung): 1 | 2 | 3 {
   if (sitzung.phase === "abschied" || sitzung.phase === "ende") return 3;
   if (sitzung.phase === "forderung" || sitzung.phase === "letzte-frage") return 2;
@@ -115,9 +130,22 @@ export function Zelle({
   const gezeigt = useMemo(() => sitzung.beats.slice(0, sichtbar), [sitzung.beats, sichtbar]);
   const stufe = stufeAus(sitzung);
 
+  // Die Pausen sind Inhalt und bleiben die Vorgabe. Aber ein Telefon, das eine
+  // Zeile drei Sekunden zurückhält, liest sich für manche als kaputt — also
+  // darf man nachhelfen. Vorlehnen ja, spulen nein.
+  const weiter = () => setGetaktet((bisher) => naechsterHalt(sitzung.beats, bisher));
+
 
   return (
-    <main className="zelle px-5 pb-24 pt-10 sm:px-8" data-zelle={dossier.slug} data-glas-stufe={stufe}>
+    <main
+      className="zelle px-5 pb-24 pt-10 sm:px-8"
+      data-zelle={dossier.slug}
+      data-glas-stufe={stufe}
+      onClick={(ereignis) => {
+        if (fertigGespielt || istBedienung(ereignis.target)) return;
+        weiter();
+      }}
+    >
       <div className="mx-auto w-full max-w-2xl">
         <header className="nicht-drucken mb-8 flex items-baseline justify-between gap-4">
           <p className="font-display text-[0.68rem] uppercase tracking-[0.34em] text-tinte-leise">
@@ -136,6 +164,20 @@ export function Zelle({
             <BeatZeile key={`${beat.art}-${index}`} beat={beat} />
           ))}
         </div>
+
+        {!fertigGespielt ? (
+          <>
+            {/* Für die Tastatur: dieselbe Geste, ohne dass sie den Raum stört. */}
+            <button type="button" className="sr-only" data-weiter onClick={weiter}>
+              Weiter
+            </button>
+            {sichtbar <= 2 && !ruhig ? (
+              <p className="regie mt-6 text-center" data-hinweis>
+                Tippen geht schneller.
+              </p>
+            ) : null}
+          </>
+        ) : null}
 
         <div className="mt-10" data-bedienung>
           {fertigGespielt && sitzung.phase === "wahl" ? (

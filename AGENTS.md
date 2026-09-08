@@ -102,3 +102,23 @@ synthetisch, nichts zu lizenzieren), `lib/glas/klang.ts` hängt sie an Web Audio
 Aus, bis jemand ihn anschaltet.
 
 Offen: das Hineinheben in das Fellowship OS als `/glasgefaengnis`.
+
+## Ermittlungsprobe — 2026-09-08
+
+Auf dem separaten Review-Branch ergänzt: `/verhoer`, `/verhoer/[slug]`,
+`lib/glas/ermittlung.ts` mit Tests und eine beweisgesteuerte Oberfläche.
+Die bisherigen Verhöre bleiben erhalten; der Gang bietet einen Vergleichslink.
+Die Probe verbindet Belege, Schlussfolgerung, Namensfolge und Rückruf durch die
+Scheibe. Zugprotokolle werden lokal nachgerechnet, nie als Live-Freigabe verwendet.
+
+Wichtig: geschriebenes Themenrouting, kein freier KI-Chat; 2D-Inszenierung des
+bestehenden Moriondo-Porträts, keine fertige Körperanimation. Keine Mutation von
+Stall, XP oder Welt-Ereignis. `docs/MORIONDO-REVIEW.md` trennt implementierte
+Probe, ursprünglichen Auftrag und die noch offenen Freigabebedingungen.
+
+Prüfung in dieser Arbeitsumgebung: reiner Kern strikt mit TypeScript kompiliert,
+13 neue Tests über einen lokalen Node-Testadapter bestanden (einschließlich
+120 Permutationen und 200 nachgespielter Fälle). Nicht mit einem vollständigen
+Vitest-/Next-Lauf verwechseln: Abhängigkeiten konnten hier nicht installiert
+werden. Lint, Projekt-Typecheck, Next-Build, Originaltests und Browserprüfung
+stehen ausdrücklich noch aus. Dieser Branch ist ein Entwurf, kein Release.

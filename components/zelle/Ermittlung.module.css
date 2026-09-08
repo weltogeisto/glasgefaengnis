@@ -1,0 +1,85 @@
+.raum { min-height: 100svh; background: #090c0e; color: #e4ded0; padding: 0 0 3rem; font-family: Georgia, serif; }
+.raum * { box-sizing: border-box; min-width: 0; }
+.raum button, .raum input, .raum textarea { font: inherit; }
+.raum button, .raum a, .raum summary, .raum label { -webkit-tap-highlight-color: transparent; }
+.raum button, .raum input, .raum textarea { border: 1px solid #64736e; background: #151d1e; color: #f0ebdf; border-radius: 3px; }
+.raum button, .raum summary, .raum a { min-height: 44px; }
+.raum button { padding: .7rem .9rem; cursor: pointer; }
+.raum button:disabled { opacity: .46; cursor: not-allowed; }
+.raum button:hover:not(:disabled) { background: #27302c; border-color: #d2b982; }
+.raum :focus-visible { outline: 3px solid #efd190; outline-offset: 4px; }
+.raum input:not([type=checkbox]), .raum textarea { display: block; width: 100%; padding: .8rem; margin: .6rem 0; font-size: 1rem; }
+.raum textarea { resize: vertical; }
+.raum a { display: inline-flex; align-items: center; color: #d7c394; text-decoration: none; }
+.kopf { max-width: 1440px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: .75rem; padding: .7rem clamp(.8rem, 3vw, 2.5rem); }
+.kopf > span { text-transform: uppercase; letter-spacing: .2em; font-size: .7rem; text-align: center; }
+.probe { border-block: 1px solid #394541; padding: .5rem 1rem; text-align: center; font: .67rem/1.5 system-ui, sans-serif; letter-spacing: .09em; color: #bcc8c0; }
+.raster { max-width: 1440px; margin: auto; display: grid; grid-template-columns: 1fr; gap: 0; }
+.buehne { height: clamp(320px, 57svh, 570px); position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 50% 62%, #444341, #151c20 45%, #050808 85%); border-bottom: 1px solid #55625e; }
+.stein { position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(0deg, transparent 0 90px, #0005 91px 94px), linear-gradient(90deg, #070a0ddd, transparent 16% 84%, #070a0dee); }
+.person { position: absolute; width: 84%; height: 93%; bottom: 0; left: 8%; transform-origin: 50% 80%; filter: saturate(.62) brightness(.75); }
+.person img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); }
+.person[data-haltung=ferne] { transform: translateX(-8%) scale(.86); }
+.person[data-haltung=seite] { transform: translateX(10%) scale(.92); }
+.person[data-haltung=nah], .person[data-haltung=hand] { transform: scale(1.12); filter: saturate(.72) brightness(.96); }
+.person[data-haltung=still] { transform: translateX(-3%) scale(.93); }
+.scheibe { position: absolute; inset: 8% 9% 5%; border: 1px solid #b3dbd073; box-shadow: inset 0 0 0 5px #bcddd20a, 0 0 50px #75a2940d; background: linear-gradient(114deg, transparent 18%, #c3e3dc15 18.3%, transparent 19% 47%, #deecec0a 49%, transparent 57%), linear-gradient(0deg, #749b8c12, transparent); pointer-events: none; }
+.buehne[data-haltung=hand] .scheibe { border-color: #e0cea4; box-shadow: inset 0 0 55px #a8cec21d, 0 0 35px #b9cfb815; }
+.siegel { position: absolute; left: 0; right: 0; top: 12%; text-align: center; color: #bbaa80; letter-spacing: .6em; font-size: .85rem; opacity: .6; }
+.szenentitel { position: absolute; top: 1.3rem; left: 1.2rem; z-index: 2; text-shadow: 0 3px 15px #000; }
+.szenentitel > span { font: .65rem system-ui, sans-serif; letter-spacing: .3em; text-transform: uppercase; color: #c0b28d; }
+.szenentitel h1 { font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.9rem); line-height: 1.12; margin: .5rem 0; }
+.hotspots { position: absolute; inset: 45% 0 21%; z-index: 3; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; gap: .4rem; }
+.hotspots button { display: grid; gap: .15rem; justify-items: center; background: #0a1115d9; border-color: #97b6a782; font-size: .77rem; min-width: 64px; box-shadow: 0 3px 20px #0008; }
+.hotspots button:nth-child(2) { align-self: flex-end; }
+.hotspots span { font-size: 1.4rem; color: #dfc891; }
+.buehnenregie { position: absolute; bottom: .65rem; left: 8%; right: 8%; margin: 0; padding: .7rem .8rem; background: #070c10e6; font-size: .85rem; line-height: 1.5; font-style: italic; color: #c3ccc5; border-top: 1px solid #71867a; }
+.bildwarnung { position: absolute; top: 36%; left: 14%; right: 14%; font: .8rem/1.5 system-ui, sans-serif; color: #e4d9bc; background: #111c20; padding: .75rem; z-index: 4; }
+.verhoer { padding: 1.25rem clamp(1rem, 4vw, 2.6rem); }
+.fortschritt { display: flex; justify-content: space-between; gap: .3rem; color: #94a79d; font: .62rem/1.5 system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding-bottom: 1rem; border-bottom: 1px solid #39433e; }
+.fortschritt span[data-aktiv=true] { color: #f0d89e; border-bottom: 2px solid; padding-bottom: .35rem; }
+.fortschritt span[data-fertig=true] { color: #c2dbc7; }
+.replik { min-height: 145px; padding: 1.5rem 0 1rem; }
+.replik > span { color: #c2a46b; text-transform: uppercase; letter-spacing: .3em; font: .62rem system-ui, sans-serif; }
+.replik p { font-size: clamp(1.3rem, 3.4vw, 1.8rem); line-height: 1.42; margin: .7rem 0; }
+.auftrag { font-size: 1.04rem; line-height: 1.6; font-weight: 400; color: #d0dbd4; margin: .3rem 0 1.1rem; }
+.akte, .protokoll { border-block: 1px solid #45534b; margin: 1rem 0; }
+.akte summary, .protokoll summary { cursor: pointer; padding: .9rem .2rem; color: #dcc595; font-size: .95rem; }
+.akte summary span { margin-left: .8rem; font: .7rem system-ui, sans-serif; color: #b3c1b5; }
+.akte > p, .frage p, .fuss p { font: .77rem/1.65 system-ui, sans-serif; color: #aebbb2; }
+.beleg { border-top: 1px solid #35463c; padding: .65rem 0; }
+.beleg > button { width: 100%; text-align: left; }
+.beleg p { font-size: .9rem; line-height: 1.65; color: #d0d9d0; }
+.beleg label { display: flex; align-items: center; gap: .6rem; min-height: 44px; font-size: .82rem; cursor: pointer; }
+.beleg input { width: 22px; height: 22px; accent-color: #bca46c; }
+.raum .haupttaste { display: flex; align-items: center; justify-content: center; width: 100%; background: #c4af7e; color: #0d1513; border: 1px solid #ebd6a5; padding: .9rem; margin: 1rem 0; text-align: center; font-weight: 700; }
+.raum .haupttaste:hover:not(:disabled) { background: #e0c991; color: #071410; }
+.frage { margin-top: 1.4rem; border-top: 1px solid #36493c; padding-top: 1.3rem; }
+.frage > button { width: 100%; }
+.taktiken { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; }
+.taktiken button { flex: 1 1 130px; font-size: .81rem; }
+.plaetze { display: grid; grid-template-columns: repeat(5, 1fr); gap: .3rem; }
+.plaetze span { border-bottom: 2px solid #aabf9b; padding: .7rem 0; text-align: center; color: #e5d3a0; font-size: .78rem; }
+.runentasten { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0; }
+.runentasten button { flex: 1 1 25%; font-size: .85rem; }
+.runenbrett > p { line-height: 1.6; font-size: .85rem; }
+.meldung, .warnung { padding: 1rem; border-left: 3px solid #d3b981; background: #1b2720; color: #f3e2ba; font: .85rem/1.6 system-ui, sans-serif; }
+.protokoll p { line-height: 1.7; font-size: .86rem; overflow-wrap: anywhere; }
+.protokoll p[data-sprecher=regie] { color: #a1b3a7; font-style: italic; }
+.protokoll p[data-sprecher=du] { color: #d6bf8d; }
+.erfolg { border: 1px solid #8b9d77; padding: 1.2rem; background: #142219; }
+.erfolg h2 { font-weight: 400; font-size: 1.5rem; }
+.erfolg p { line-height: 1.65; }
+.fuss { border-top: 1px solid #3c4b40; margin-top: 2rem; padding-top: 1rem; }
+.fuss > button { width: 100%; font-size: .8rem; }
+@media (min-width: 900px) {
+  .raster { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+  .buehne { position: sticky; top: 0; height: 100svh; border-bottom: 0; border-right: 1px solid #53605b; }
+  .szenentitel { top: 2.3rem; left: 2rem; }
+  .verhoer { padding-top: 2.3rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .person { transition: transform 1.8s cubic-bezier(.2,.8,.2,1), filter 1.8s ease; }
+  .scheibe { transition: border-color 1.4s, box-shadow 1.4s; }
+}
+@media print { .kopf, .probe, .buehne, .frage, .taktiken, .fuss { display: none; } .raum { background: white; color: black; } }

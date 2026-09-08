@@ -1,13 +1,12 @@
 name: CI
-
 on:
   push:
   pull_request:
-
 jobs:
   tor:
     name: Das ganze Tor
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -18,12 +17,27 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: npx tsc --noEmit
-      # Bewusst ohne Supabase-Variablen: der Lauf hier *ist* der Demo-Modus-Beweis.
+      - run: node scripts/check-review-assets.mjs
       - run: npm run build
         env:
           SESSION_SECRET: ci-dummy-session-secret
-      # Die siebzehn Verhöre am Stück — als Artefakt zum Nachlesen.
       - run: npm run verhoer
+      - run: npx playwright install --with-deps chromium
+      - name: Browser proof of the actual review route
+        run: |
+          npm run start > /tmp/glas-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" || true; cat /tmp/glas-server.log' EXIT
+          for attempt in $(seq 1 45); do
+            curl -fsS http://127.0.0.1:3000/regie > /dev/null && break
+            sleep 2
+          done
+          node scripts/smoke-regie.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: regie-proof
+          path: .artifacts/regie-smoke/
       - uses: actions/upload-artifact@v4
         if: always()
         with:

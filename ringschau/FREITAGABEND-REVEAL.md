@@ -1,70 +1,79 @@
-# Ringschau-Reveal — Freitagabend
+# Ringschau — Reveal am Freitagabend
 
-**Slot:** Fr, 18.09.2026, 21:00–21:30 · Unterkunft Rømø · alle 18 beisammen
-**Status:** Termin entschieden (Gruppenchat, 15.09. — Vorschlag Hendrik, Zustimmung Leon).
-Moderation, Technik und Materialumfang offen.
-**Quelle Ablauf:** JGA-Wochenendplan, Zeile „Ergebnisse der Ringschau-Videos", Puffer 20:30–21:00.
+**Revealzeitpunkt: Freitag, 18.09.2026, 21:00 Uhr.** Unterkunft Rømø, alle beisammen,
+nach dem Grillen. Slot laut Wochenendplan 21:00–21:30, Puffer davor 20:30–21:00.
 
----
-
-## Der Kern: Der Film ist stumm. Die Moderation ist der Ton.
-
-*Ringschau II* läuft ohne Tonspur — bewusst, die Tonskizze wurde verworfen und ist
-nicht wieder aufgemacht worden. Ein stummer Film vor 18 Leuten nach drei Stunden
-Grillen trägt sich nicht von selbst. Er braucht eine Stimme im Raum.
-
-Das ist keine Verlegenheitslösung, sondern die Form des Abends: Einer erzählt,
-der Rest sieht zu, Jan sitzt mittendrin. Vorführung plus Vortrag, nicht Kinoabend.
-Alles Weitere unten folgt aus diesem einen Punkt.
+Alle eingereichten Videos werden an diesem Abend gezeigt. Vorher sieht sie niemand.
 
 ---
 
-## Materiallage — was am 18.09. sicher existiert
+## Die Rechnung, die alles bestimmt
 
-Zwischen heute und dem JGA liegen drei Tage. Der Reveal wird auf dem geplant, was
-freigegeben ist, nicht auf dem, was noch fertig werden könnte.
+**17 Einreichungen. 30 Minuten. Das sind 105 Sekunden pro Beitrag — inklusive Anmoderation,
+Lachen und Umschalten.**
 
-**Freigegeben und eingefroren:**
-- 14-Sekunden-Eröffnung (S01–S02), stumm, 24 fps, 336 Frames
-- 40 freigegebene Standbild-Master — ausdrücklich als Standbilder, nicht als Bewegtmaterial
-- Besetzung: 18 Gefährten inklusive Moriondo, sechs berittene Gruppen M01–M06
+Daraus folgt alles Weitere. Der Schnitt passiert bei der Einreichung, nicht im Raum.
+Wer am Freitagabend anfängt zu kürzen, hat den Abend schon verloren.
 
-**In Arbeit:**
-- Aktueller Schritt C07 (Schild-Insert), danach C06 (Buchentnahme)
-- 13 Szenen im Rail, S03 ist der Einstiegspunkt
-- Abgerechnet bisher 1,15 $ von 15 $ Deckel
+**Vorgabe an alle: maximal 60 Sekunden pro Video.** Kalkuliert wird mit 70 Sekunden
+pro Platz. Die Differenz ist der Puffer, der den Rundown hält.
 
-**Planungsschluss:** Es gibt am Freitag keinen fertigen Film. Es gibt eine Eröffnung,
-40 Bilder und möglicherweise ein bis zwei freigegebene Clips. Der Ablauf unten
-funktioniert genau damit — jeder zusätzlich freigegebene Clip ist Zugabe, kein
-Baustein, auf dem der Abend steht.
+Wer über 60 Sekunden einreicht, wird nicht gekürzt — er läuft trotzdem. Aber die Vorgabe
+muss raus, bevor gedreht wird, nicht danach.
 
 ---
 
-## Ablauf 21:00–21:30
+## Timeline bis zum Reveal
 
-| Zeit | Block | Inhalt |
+| Wann | Was | Wer |
 |---|---|---|
-| 21:00–21:03 | Raum setzen | Licht runter, Handys weg, alle sitzen. Jan bekommt einen Platz mit Blick auf die Fläche, nicht davor. |
-| 21:03–21:05 | Einordnung | Zwei Sätze: was die Ringschau ist, dass sie stumm läuft, dass erzählt wird. Keine Entschuldigung für den Produktionsstand. |
-| 21:05–21:09 | Eröffnung | Die 14 Sekunden. Zweimal hintereinander — einmal kalt, einmal mit Erzählung. Kurz genug, dass die Wiederholung trägt. |
-| 21:09–21:19 | Die Gefährten | Die Standbild-Master, Gruppe für Gruppe M01 bis M06. Jeder Reiter wird benannt: Name, Reittier, ein Satz. Das ist der Teil, der im Raum zündet — achtzehn Leute sehen sich selbst beritten. |
-| 21:19–21:24 | Neue Clips | Was seit heute freigegeben wurde, in Reihenfolge des Rails. Nichts Unfreigegebenes, keine Rohfassungen, keine Varianten. Fällt weg, wenn nichts dazugekommen ist. |
-| 21:24–21:28 | Der Ausblick | Wohin der Film läuft: Buch, Sprung, Beschwörung, das Finale vor Minas Tirith. Als Ankündigung, nicht als Spoiler-Liste. |
-| 21:28–21:30 | Übergabe | Ende, Licht an. Anschluss an Verborgene Skala (21:30) oder freie Runde. |
+| **Heute, 15.09.** | Aufruf raus: Auftrag, 60-Sekunden-Grenze, Format, Sammelstelle, Frist, Sperrhinweis. | Orga |
+| **Mi 16.09., 20:00** | Zwischenstand. Wer fehlt, wird einzeln angeschrieben — nicht in der Gruppe. | Orga |
+| **Do 17.09., 20:00** | **Einreichungsschluss.** Hart. Danach ist die Liste zu. | alle |
+| **Do 17.09., ab 20:00** | Sichtung: alles einmal ganz ansehen. Formate vereinheitlichen, Reihenfolge bauen, Playlist anlegen, auf Zweitgerät spiegeln. Rechne mit zwei Stunden. | Materialverantwortung |
+| **Fr 18.09., bis Abfahrt** | Nachzügler laufen nur noch im Nachschlag-Block. Nicht mehr in die Hauptplaylist. | — |
+| **Fr 16:00–19:00** | Technikprobe im Ankunftsfenster. Fläche, Kabel, Ton aus, erste und letzte Datei antesten. | Materialverantwortung |
+| **Fr 20:30–21:00** | Küchenreset, Raum stellen, Sitzordnung. Jan bekommt Blick auf die Fläche, nicht davor. | alle |
+| **Fr 21:00** | **Reveal.** | — |
 
-**Reittierzuordnung für den Gefährten-Block** (aus dem Freigabestand, verbindlich —
-hier wird nichts improvisiert):
+**Die Sperre gilt bis 21:00.** Keine Vorschau im Gruppenchat, kein „schau mal was ich
+gemacht hab", keine Reaktionen auf Einreichungen. Jeder sieht die Beiträge der anderen
+zum ersten Mal im Raum. Das ist der ganze Reiz — und die einzige Regel, die vor dem
+Freitag kaputtgehen kann.
 
-- **M01** Christoph — Widder von Khazad-dûm · Hendrik — Fellpony des Alten Waldes · Steven — Brut des Düsterwalds
-- **M02** Frithjof — Fellbiest von Dol Guldur · Moriondo — Fellbiest der Angmar-Zwinger · Max — Glutfalke vom Einsamen Berg
-- **M03** Oke — Sturmfalke des Nebelgebirges · Leon — Mûmak der Oasen-Karawanen · Boy — Grauwarg des Wilderlands
-- **M04** Finsch — Königselch des Waldlandreichs · Lasse — Schattenelch der Emyn-nu-Fuin · Peter — Königselch des Waldlandreichs
-- **M05** Ruben — Kriegswidder der Eisenberge · Julian — Kriegswidder der Eisenberge · Lennard — Fellpony des Alten Waldes
-- **M06** Domi — Trosspony aus Thal · Finno — Trosspony aus Thal · Simon Axt — Trosspony aus Thal
+---
 
-Jan reitet sein braunes Szenenpferd. Moriondo ist dabei — dunkles Haar, Schnauzbart,
-Runenrüstung, roter Kristallstab. Wer ihn beim Aufzählen vergisst, hat den Block verfehlt.
+## Rundown 21:00–21:30
+
+| Zeit | Dauer | Block |
+|---|---|---|
+| 21:00–21:03 | 3 min | **Aufschlag.** Licht runter, Handys weg. Zwei Sätze: was die Ringschau ist, wie viele Beiträge kommen, dass niemand sie vorher gesehen hat. Dann Sperre gebrochen. |
+| 21:03–21:05 | 2 min | **Opener.** Optional: die freigegebene 14-Sekunden-Eröffnung aus *Ringschau II*, zweimal hintereinander. Setzt den Ton. Entfällt ersatzlos, wenn sie nicht bereitliegt. |
+| 21:05–21:12 | 7 min | **Block I — Einreichungen 1 bis 6.** 70 Sekunden pro Platz. |
+| 21:12–21:13 | 1 min | Atmer. Nachschenken, kurz reden lassen, dann weiter. |
+| 21:13–21:20 | 7 min | **Block II — Einreichungen 7 bis 12.** |
+| 21:20–21:21 | 1 min | Atmer. |
+| 21:21–21:27 | 6 min | **Block III — Einreichungen 13 bis 17.** Der stärkste Beitrag ist der letzte. |
+| 21:27–21:30 | 3 min | **Ergebnisse.** Kurzwertung per Handzeichen, ein Sieger, ein Satz Begründung. Schlusswort. Übergabe an Verborgene Skala (21:30) oder freie Runde. |
+
+**Pro Platz, 70 Sekunden:** 10 Sekunden Anmoderation (nur der Name), bis zu 60 Sekunden
+Video, Rest Reaktion. Keine Nachbesprechung einzelner Beiträge — die frisst den Abend.
+Wer diskutieren will, macht das nach 21:30.
+
+---
+
+## Reihenfolge
+
+Nicht alphabetisch, nicht in Eingangsreihenfolge, nicht zufällig. Die Reihenfolge wird
+Donnerstagabend gebaut, nachdem alles gesichtet ist:
+
+- **Platz 1** ist der sichere Lacher. Er entscheidet, ob der Raum mitgeht.
+- **Die unsicheren Beiträge** liegen früh, solange die Runde noch wohlwollend ist.
+- **Platz 17** ist der stärkste. Was danach kommt, verliert.
+- **Wer nebeneinander sitzt, läuft nicht nacheinander.** Streut die Gruppen.
+
+Die Reihenfolge kennt nur, wer sie gebaut hat. Auch die Moderation braucht sie nicht
+vorher zu verraten.
 
 ---
 
@@ -72,15 +81,16 @@ Runenrüstung, roter Kristallstab. Wer ihn beim Aufzählen vergisst, hat den Blo
 
 Der häufigste Weg, diesen Slot zu verlieren, ist ein Kabel.
 
-- **Wiedergabe:** Eine Fläche, ein Gerät, ein Bedienender. Kein Weiterreichen von Handys.
-- **Dateien lokal.** Kein Streaming, kein Abruf über Hausnetz, kein Konto-Login vor Publikum.
-  Die Rømø-Verbindung ist keine Planungsgrundlage.
-- **Reihenfolge vorher gebaut.** Playlist oder nummerierter Ordner, Sortierung geprüft,
-  bevor der Raum sitzt.
-- **Ton am Gerät aus.** Der Film ist stumm; ein Startgeräusch oder eine automatisch
-  hinzugefügte Tonspur beim Export bricht die Form.
-- **Zweites Gerät mit denselben Dateien.** Kostet nichts, rettet den Slot.
-- **Probelauf Freitag im Ankunftsfenster 16:00–19:00**, nicht um 20:55.
+- **Eine Fläche, ein Gerät, ein Bedienender.** Kein Weiterreichen von Handys, kein
+  „ich hab's hier noch schnell auf meinem".
+- **Alle Dateien lokal.** Kein Streaming, kein Cloud-Abruf, kein Konto-Login vor Publikum.
+  Die Verbindung in Rømø ist keine Planungsgrundlage.
+- **Playlist vorgebaut,** nummeriert, Reihenfolge geprüft, bevor der Raum sitzt.
+- **Hochformat ist die Regel,** nicht die Ausnahme — die Beiträge kommen vom Handy.
+  Fläche und Player entsprechend einrichten, statt sich um 21:06 darüber zu ärgern.
+- **Lautstärke einmal am lautesten Beitrag eingestellt,** nicht pro Video nachgeregelt.
+- **Zweitgerät mit denselben Dateien.** Kostet nichts, rettet den Slot.
+- **Probelauf Freitag 16:00–19:00,** nicht um 20:55.
 
 ---
 
@@ -88,36 +98,39 @@ Der häufigste Weg, diesen Slot zu verlieren, ist ein Kabel.
 
 | ID | Punkt | Bis wann |
 |---|---|---|
-| R01 | **Moderation benennen.** Eine Person, die die 18 Namen und Reittiere sicher spricht. Der Block trägt oder fällt mit ihr. | vor Abfahrt |
-| R02 | **Materialverantwortung.** Wer bringt die Dateien mit, auf welchem Gerät, auf welchem Zweitgerät. Im Plan steht hier „Zuständigkeit offen". | vor Abfahrt |
-| R03 | **Wiedergabefläche.** Was ist in der Unterkunft da — TV mit Anschluss, Beamer, Laptop? Hängt an der Hausbuchung (D03). | 16.09. |
-| R04 | **Freigabeschnitt.** Letzter Zeitpunkt, zu dem ein neuer Clip noch in die Playlist kommt. Vorschlag: Donnerstagabend. Danach ist der Umfang fest. | 17.09. |
-| R05 | **Umgang mit Jans Reaktion.** Aufnahmen ja/nein, und wer fragt ihn vorher nicht. Die Überraschung ist Teil des Konzepts, die Aufnahme ist eine eigene Entscheidung. | vor Abfahrt |
+| R01 | **Auftrag und Länge festlegen und rausgeben.** Was genau reichen alle ein, in maximal 60 Sekunden? Ohne diesen Satz läuft der Countdown nicht an. | heute |
+| R02 | **Sammelstelle benennen.** Ein Ort für alle Einreichungen — App, Drive-Ordner oder Einzelchat an eine Person. Nicht der Gruppenchat: dort ist die Sperre sofort weg. | heute |
+| R03 | **Moderation benennen.** Eine Person führt durch alle 17 Plätze und hält das Tempo. Im Wochenendplan steht hier „Moderation offen". | vor Abfahrt |
+| R04 | **Materialverantwortung benennen.** Wer sichtet, baut die Reihenfolge, bringt Gerät und Zweitgerät mit. Im Plan steht „Zuständigkeit offen". | vor Abfahrt |
+| R05 | **Wiedergabefläche klären.** TV mit Anschluss, Beamer oder Laptop — hängt an der Hausbuchung (D03). | 16.09. |
+| R06 | **Wertung: ja oder nein?** Der Plan nennt den Slot „Ergebnisse der Ringschau-Videos". Vorschlag: Handzeichen am Ende, ein Sieger, drei Minuten. Alles Größere sprengt den Slot. | 16.09. |
+| R07 | **Jans Reaktion aufnehmen?** Eigene Entscheidung, unabhängig von der Überraschung. Wenn ja: zweites Gerät, eine Person, vorher abgesprochen. | vor Abfahrt |
 
 ---
 
 ## Fallbacks
 
-**Der Slot rutscht** (Grillen läuft über, Puffer 20:30–21:00 aufgebraucht):
-Gefährten-Block schützen, Ausblick streichen. Der Namensteil ist der Abend, nicht der Rahmen.
+**Nicht alle reichen ein.** Kein Problem für den Rundown — bei 14 Beiträgen werden die
+Plätze länger. Vorher entscheiden, ob Fehlende benannt werden oder nicht. Empfehlung:
+nicht benennen. Der Abend ist keine Abrechnung.
 
-**Technik fällt aus:** Zweitgerät. Wenn auch das fällt — die 40 Standbild-Master
-als Bildern-Durchgang auf einem Laptopbildschirm im kleineren Kreis. Nicht verschieben;
-Samstagabend ist voll.
+**Der Slot rutscht** (Grillen läuft über, Puffer aufgebraucht): Atmer streichen,
+Opener streichen, Wertung auf ein Handzeichen ohne Begründung kürzen. Die Beiträge
+selbst bleiben vollständig — sie sind der Abend.
 
-**Nichts Neues freigegeben:** Der Ablauf hält. Eröffnung plus Gefährten plus Ausblick
-sind 25 Minuten. Der Clip-Block ist der einzige, der entfallen darf.
+**Technik fällt aus:** Zweitgerät. Wenn auch das fällt, läuft die Schau auf einem
+Laptopbildschirm im engeren Kreis. Nicht verschieben — Samstagabend ist voll.
 
-**Die Runde ist zu laut oder zu müde:** Hart auf zehn Minuten kürzen — Eröffnung,
-M01 bis M06 im Schnelldurchlauf, Schluss. Ein kurzer Reveal, der sitzt, schlägt
-einen langen, der zerfasert.
+**Nachzügler liefern Freitag:** Nachschlag-Block nach der Verborgenen Skala,
+ab 22:00. Nicht nachträglich in die Hauptplaylist einsortieren.
+
+**Ein Beitrag läuft aus dem Ruder** (deutlich zu lang, unpassend): vorher gesichtet,
+also vorher entschieden. Am Freitagabend wird nichts mehr abgebrochen.
 
 ---
 
 ## Was der Reveal nicht ist
 
-- Keine Werkschau des Produktionsstands. Niemand im Raum interessiert sich für
-  Schrittnummern, Kandidaten-IDs oder den Kostendeckel.
-- Keine Freigabe durch Vorführung. Was Freitag gezeigt wird, ist damit nicht
-  für Schnitt, Ton oder Veröffentlichung freigegeben.
-- Keine Tonpremiere. Der Film bleibt stumm.
+- Keine Diskussionsrunde. Einzelbesprechung frisst den Slot; danach ist Zeit.
+- Keine Preisverleihung mit Programm. Ergebnisse dauern drei Minuten.
+- Keine zweite Chance für Nichteinreicher. Der Donnerstag ist die Grenze.
